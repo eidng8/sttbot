@@ -1,0 +1,31 @@
+engines:
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: PSR2
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+    checks:
+      CleanCode/StaticAccess:
+        enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - php
+    exclude_paths:
+      - tests/
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+ratings:
+  paths:
+    - "**.php"
+exclude_paths:
+  - cache/
+  - tests/data/
+  - vendor/
+  - www/

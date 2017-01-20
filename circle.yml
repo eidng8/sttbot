@@ -1,0 +1,14 @@
+machine:
+  pre:
+    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
+  php:
+    version: 7.1.0
+
+test:
+  override:
+    - pwd
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+    - mkdir -p build/logs
+    - phpunit --coverage-clover $CIRCLE_TEST_REPORTS/phpunit/clover.xml --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
+    - 'sed -ie "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME#<file name=\1#" $CIRCLE_TEST_REPORTS/phpunit/clover.xml'
+    - ./vendor/bin/test-reporter --coverage-report $CIRCLE_TEST_REPORTS/phpunit/clover.xml

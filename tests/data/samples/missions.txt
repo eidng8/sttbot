@@ -1,0 +1,133 @@
+<noinclude>'''Missions''', also known as '''episodes''' and '''conflicts''', are a key part of [[Star Trek Timelines]], allowing players to progress in the storyline. Conflicts begin with players selecting their [[crew]]. Different crew are better suited for different tasks. Each character is proficient in at least one [[skill]]: [[Diplomacy]], [[Science]], [[Security]], [[Command]], [[Engineering]] and [[Medicine]]. Skills can be improved by levelling up, and fusing characters with extra copies of themselves. Crew also have inherent abilities called [[traits]]. For example, [[Commander Riker]] has the [[Pilot]] trait.
+
+Once they have been selected, the [[Away Team]] is sent to resolve the conflict. In each conflict, the player is faced with choices, taking them down a different path and leading to different challenges, similar to a Choose Your Own Adventure book <ref name='SubCulutred'>http://www.sub-cultured.com/pax-east-2015-star-trek-timelines-jotun/</ref>. Players may continue with the conflict even if they fail some challenges. However, they will fail the conflict if they fail to complete the last challenge. To determine if they win a challenge or not, characters compete against that challenge's difficulty. This is where their skills and traits are used. For example, a stage may require 22 Security {{skill|sec}}. There can be different mission outcomes, for example if an [[Away Team]] utilising mostly combat oriented crew is used there may be a combat based resolution, which will be different to a diplomatic resolution, and this will affect the narrative <ref name='LoreHound2015'>http://lorehound.com/news/pax-east-2015-our-first-hands-on-with-star-trek-timelines/</ref>.
+
+By completing conflicts, players can gain crew experience, [[credits]], equipment, knowledge and many other items. Completing conflicts is a key way to improve crew in Star Trek Timelines.
+
+== Current Missions ==
+
+The tables below shows [[chroniton]]s cost and requirement level.
+
+They also lists [[credits]], [[Crew Progression|character]] and [[captain XP]] gain per mission, presuming you did not fail any part if it.
+
+===[[Prologue]]===
+The '''Prologue''' missions are the introduction sequence of the game. Many of them cannot be replayed.<br/>
+Upon completion of these missions, the player will gain [[Commander Spock]] and 60000{{currency|crd}}, and will be [[Captain's Profile#Leveling System|level 4]].
+
+==== The Beginning (Intro tutorial only) ====
+</noinclude>{{#if:{{#ifeq:{{{ep|}}}||true|{{#ifeq:{{{ep}}}|p1|true|}}}}
+|<table  class="wikitable" style="text-align:center;">
+<th style="width:10em;" > Name
+<th style="width:2em;" > Type
+<th style="width:5em;" > Chronitons
+<th style="width:6em;" > Requirement
+<th style="width:6em;" > Char XP
+<th style="width:7em;" > Credits {{Currency|crd}}
+<th style="width:6em;" > Capt XP [[File:CaptainXP.png|25px|alt=Captain XP|Captain XP]]
+<th> Remarks
+<tr  >
+<td> '''Mission 1''':<br/>[[The First Battle]]
+<td> {{mtype|s}}
+<td> —
+<td> —
+<td>
+<td>
+<td>
+<td> Skips result screen so can't see XP gained, but whatever it is, captain goes to level 2 instantly.
+<tr  >
+<td> '''Mission 2''':<br/>[[A Violent Birth]]
+<td> {{mtype|a}}
+<td> —
+<td>
+<td> 6
+<td> 300
+<td>
+<td> Play with level 1 [[Rifle Janeway]], [[Defiant Commander Worf]], and [[Commander Spock]], however stats are much higher than level 1 and do not match any level (Intro Janeway has 73 CMD and 73 SEC; those two skills are never equal in the actual Rifle Janeway). Captain level 3 instantly.
+<tr>
+<td colspan="8" > '''Choose''' [[Promoted Sisko]], [[Enterprise-D Picard]], or [[Captain Kirk]]
+</table>
+}}<noinclude>
+
+After the first two missions are done, assuming no failed mission steps, the player will have 41,950 credits.
+
+==== Logic Under Fire (Intro tutorial only) ====
+
+</noinclude>{{#if:{{#ifeq:{{{ep|}}}||true|{{#ifeq:{{{ep}}}|p2|true|}}}}
+|<table  class="wikitable" style="text-align:center;">
+<th style="width:10em;" > Name
+<th style="width:2em;" > Type
+<th style="width:5em;" > Chronitons
+<th style="width:6em;" > Requirement
+<th style="width:6em;" > Char XP
+<th style="width:7em;" > Credits {{Currency|crd}}
+<th style="width:6em;" > Capt XP [[File:CaptainXP.png|25px|alt=Captain XP|Captain XP]]
+<th> Remarks
+<tr>
+<td> '''Mission 1''':<br/>[[A Show of Force]]
+<td> {{mtype|s}}
+<td> 4
+<td> —
+<td> 9
+<td> 300
+<td> 2
+<td> Has a higher drop rate for certain items compared to many early missions. If you were smart enough to look at the wiki before playing the game, it may actually be worth it to repeat this mission about a dozen times before completing the second mission of this episode.
+<br>Gives on average 2.6 [[Basic Survival Training]], which, in addition to victory XP, is equivalent to 22 XP per crew or 5.5 per chroniton.
+<tr  >
+<td colspan="8" > '''<s>Choose</s> Faction:''' Federation for [[Commander Spock]] or KCA for [[Commander Kruge]] (Tutorial forces Federation)
+<tr  >
+<td> '''Federation Victory''':<br/>[[Boots on the Ground]]
+<td> {{mtype|a}}
+<td> 4
+<td>
+<td> 12
+<td> 300
+<td> 2
+<td>
+</table>
+}}<noinclude>
+
+{{:Episode 1 - The Art of War}}
+{{:Episode 2 - Never Forgive, Never Forget}}
+{{:Episode 3 - From On High}}
+{{:Episode 4 - Hostile Takeover}}
+{{:Episode 5 - Ethical Alternatives}}
+{{:Episode 6 - Something Rotten}}
+{{:Episode 7 - When Falcons Clash}}
+{{:Distress Calls - Delphic Expanse}}
+{{:Distress Calls - Celestial Temple}}
+
+== [[Cadet Challenges]] ==
+{{:Ex_Astris,_Scientia}}
+{{:The United Federation}}
+{{:A Certain Formality}}
+
+== Undiscovered Missions ==
+
+These missions are sometimes found in the listing of places to get equipment.
+* [[Boardroom Politics]]
+
+== Gallery ==
+<gallery>
+Mission Layout.PNG|The mission layout as of version 1.1.0
+File:Challenges 1.jpg
+File:Challenges 2.jpg
+File:Challenges 3.jpg
+File:Challenges 4.jpg
+</gallery>
+
+== History ==
+=== Honor Through Victory ===
+[[File:Honor-Through-Victory.gif|thumb|A screenshot from the challenge Honour Through Victory, as seen in the Pax East 2015 demo.]]
+''A mirror universe villain and a catastrophic weapon of the past are threatening the Federation. Can you stop them?''
+
+The mission Honor Through Victory was shown in the [[PAX East 2015 Demo]].
+
+== Related Dev Diaries ==
+* [http://disruptorbeam.com/blog/entry/conflicts-in-star-trek-timelines Conflicts in Star Trek Timelines]
+
+== References ==
+
+<references />
+
+[[Category:Start Pages]]
+</noinclude>

@@ -1,0 +1,22 @@
+{
+  "character": "Changeling",
+  "charpage": "Changeling%20%28Character%29",
+  "name": "Changeling Bashir",
+  "page": "Changeling%20Bashir",
+  "picture": "http://startrektimelineswiki.com/w/images/thumb/d/d0/Changeling_Bashir_head.png/100px-Changeling_Bashir_head.png",
+  "race": "Changeling",
+  "skills": {
+    "eng": "21",
+    "med": "39",
+    "sec": "57"
+  },
+  "stars": "4",
+  "traits": [
+    "Changeling",
+    "Dominion",
+    "Starfleet",
+    "Doctor",
+    "Undercover Operative",
+    "Saboteur}}"
+  ]
+}

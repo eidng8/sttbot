@@ -1,0 +1,94 @@
+{
+  "title": "Teenager Nog",
+  "pageid": 1366,
+  "redirects": [],
+  "links": [
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Security"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Diplomacy"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Science"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Evasion"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Accuracy"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Battle station"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Battle stations"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Bias"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Crit Bonus"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Crit Rating"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Ship ability"
+    },
+    {
+      "ns": 0,
+      "exists": "",
+      "*": "Skills"
+    }
+  ],
+  "templates": [
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:Skill"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:Stars"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:SP"
+    }
+  ],
+  "images": [
+    "SEC.png",
+    "DIP.png",
+    "1star_sm.png",
+    "SCI.png",
+    "Evasion.png"
+  ],
+  "wikitext": {
+    "*": "==Away Team Skills==\n{{PAGENAME}} has the [[skills]] of {{skill|sec|}} and {{skill|dip|}}.\n{| class=\"wikitable\" style=\"text-align:center; font-size:13px;\"\n|-\n! colspan=\"3\" | {{PAGENAME}}'s Away Team Skills\n|-\n| &nbsp;\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|1}}\n|-\n! Lvl\n| class=\"ATSLeft\" | {{Skill|dip}} || {{Skill|sec}}\n|-\n| 1\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|16|4|8}} || {{SP|10|2|4}}\n|-\n| 10\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|29|4|8}} || {{SP|20|2|4}}\n|-\n| 20\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|41|4|8}} || {{SP|37|5|11}}\n|-\n| 30\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|53|5|13}} || {{SP|48|5|11}}\n|-\n| 40\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|68|6|16}} || {{SP|60|6|20}}\n|-\n| 50\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|78|6|20}} || {{SP|85|7|23}}\n|-\n| 60\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|90|10|30}} || {{SP|102|13|43}}\n|-\n| 70\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|112|11|35}} || {{SP|126|14|48}}\n|-\n| 80\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|123|27|69}} || {{SP|143|15|53}}\n|-\n| 90\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|135|42|124}} || {{SP|168|20|66}}\n|-\n| 100\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|196|42|124}} || {{SP|193|45|123}}\n|-\n|}\n\n=== Ship Ability and Bonuses ===\n{|\n|-\n|\n{| class=\"wikitable\" style=\"text-align:center; font-size:90%;\"\n! colspan=\"5\" | {{PAGENAME}}'s<br>Passive Ship Stat Bonuses\n|-\n| colspan=\"5\" |Only active in {{skill|dip}} or {{skill|sci}} [[battle stations]]\n|-\n! Level\n| [[Accuracy]] || [[Evasion]] || [[Crit Rating]] || [[Crit Bonus]]\n|- <!-- Special Character: emdash for 0: \" — \" -->\n| 1 || — || — || — || —\n|-\n| 10 || — || — || 10 || —\n|-\n| 20 || — || — || 20 || —\n|-\n| 30 || 15 || — || 37 || —\n|-\n| 40 || 15 || 75 || 37 || —\n|-\n| 50 || 40 || 75 || 47 || — \n|-\n| 60 || 40 || 75 || 72 || — \n|-\n| 70 || 40 || 75 || 72 || — \n|-\n| 80 || 90 || 75 || 132 || — \n|-\n| 90 || 240 || 75 || 132 || — \n|-\n| 100 || 290 || 75 || 162 || — \n|}\n|\n{| class=\"wikitable\" style=\"text-align:center;\"\n| colspan=\"2\" style=\"font-size:90%;\" | {{PAGENAME}}'s [[ship ability]] when equipped to ''any'' [[battle station]]\n|-\n! Hack Systems || {{Stars|1}}\n|-\n| '''Boosts:''' ([[Bias]]: -1) || +1 {{Skill|eva}}\n|-\n| '''Initialize''' || 6 seconds\n|-\n| '''Duration''' || 10 seconds\n|-\n| '''Cooldown''' || 10 seconds\n|-\n| '''Charge Phases''' || style=\"border: 2px solid royalblue;\" | <code>1</code> After 4s, +1 {{Skill|eva}}, +2s cooldown<br /><code>2</code> After 10s, +2 {{Skill|eva}}, +4s cooldown\n|}\n|}\n\n<div style=\"clear:both;\">"
+  }
+}

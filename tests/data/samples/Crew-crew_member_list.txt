@@ -1,0 +1,44 @@
+{| class="wikitable sortable mw-collapsible" style="text-align: center;"
+|+
+|- style="padding:0px;"
+! Profile<br>Picture
+! Character Name<br>Crew Name
+! Stars
+! CMD<br>{{skill|CMD}}
+! DIP<br>{{skill|DIP}}
+! ENG<br>{{skill|ENG}}
+! SEC<br>{{skill|SEC}}
+! SCI<br>{{skill|SCI}}
+! MED<br>{{skill|MED}}
+! Race
+|- style="align:center;"
+! data-sort-type="text" | <small>Crew Sorting</small>
+! <small>Character Sorting</small>
+! &nbsp;
+! data-sort-type="number"| &nbsp;
+! data-sort-type="number"| &nbsp;
+! data-sort-type="number"| &nbsp;
+! data-sort-type="number"| &nbsp;
+! data-sort-type="number"| &nbsp;
+! data-sort-type="number"| &nbsp;
+! &nbsp;
+|-
+{{MPCrewList
+| CrewName = "Dark Ages" McCoy
+| CharName = McCoy
+| Stars = 5
+| DIP = 32
+| SEC = 57
+| MED = 73
+| Race = Human
+<!--Traits-->|Federation|Starfleet|Civilian|Human|Doctor}}
+{{MPCrewList
+| CrewName = Changeling Bashir
+| CharName = Changeling (Character){{!}}Changeling
+| Stars = 4
+| ENG = 21
+| SEC = 57
+| MED = 39
+| Race = Changeling
+<!--Traits-->|Changeling|Dominion|Starfleet|Doctor|Undercover Operative|Saboteur}}
+|}

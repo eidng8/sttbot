@@ -1,0 +1,22 @@
+{
+  "name": "eidng8/sttbot",
+  "description": "Star Trek Timelines Wiki Scraper",
+  "type": "project",
+  "license": "CC-BY-SA-3.0",
+  "autoload": {
+    "psr-4": {
+      "eidng8\\": "src/",
+      "eidng8\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "monolog/monolog": "^1.21",
+    "corneltek/getoptionkit": "^2.5",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6",
+    "mockery/mockery": "^0.9.5",
+    "codeclimate/php-test-reporter": "dev-master"
+  }
+}
