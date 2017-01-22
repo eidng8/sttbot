@@ -3,3 +3,4 @@
 /cache/
 /www/
 composer.phar
+phpunit.phar
