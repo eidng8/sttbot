@@ -12,12 +12,6 @@ use eidng8\Wiki;
 use eidng8\Wiki\Api\Api;
 use eidng8\Wiki\Api\Http;
 
-define(
-    'JSON_OPTIONS',
-    JSON_NUMERIC_CHECK | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE |
-    JSON_PRESERVE_ZERO_FRACTION
-);
-
 class TestCase extends \PHPUnit_Framework_TestCase
 {
 

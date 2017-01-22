@@ -8,6 +8,14 @@
 
 namespace eidng8\Traits\Wiki;
 
+define(
+    'JSON_OPTIONS',
+    JSON_NUMERIC_CHECK | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE |
+    JSON_PRESERVE_ZERO_FRACTION
+);
+
+
+
 /**
  * File cache of API requests
  */
@@ -27,7 +35,6 @@ trait Cache
      * @var int
      */
     protected $ttl = 3600 * 24;
-
 
     /**
      * Get or set the cache directory
@@ -49,7 +56,6 @@ trait Cache
 
         return $old;
     }//end cacheRoot()
-
 
     /**
      * Retrieves the specified cache content; if it's not cached, then calls
@@ -88,7 +94,6 @@ trait Cache
         return $content;
     }//end cache()
 
-
     /**
      * Check if the specified cache exists and is valid
      *
@@ -100,7 +105,6 @@ trait Cache
     {
         return is_file($path) && filemtime($path) + $this->ttl > time();
     }//end cacheCheckDir()
-
 
     /**
      * Make sure the specified cache directory exists
@@ -114,7 +118,6 @@ trait Cache
             mkdir($dir, 0755, true);
         }
     }//end cacheRead()
-
 
     /**
      * Reads the specified cache
@@ -133,7 +136,6 @@ trait Cache
 
         return json_decode($content, true);
     }//end cacheCheck()
-
 
     /**
      * Write the given content to cache
