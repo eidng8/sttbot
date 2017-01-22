@@ -20,11 +20,6 @@
             <exclude>tests/data</exclude>
         </testsuite>
     </testsuites>
-    <groups>
-        <exclude>
-            <group>unimplmented</group>
-        </exclude>
-    </groups>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/</directory>
@@ -33,7 +28,4 @@
             </exclude>
         </whitelist>
     </filter>
-    <php>
-        <!--env name="DB_HOST" value="localhost:33060"/-->
-    </php>
 </phpunit>
