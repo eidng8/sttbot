@@ -29,7 +29,7 @@ class MissionTest extends TestCase
     {
         $json = file_get_contents(
             static::DIR_CACHE
-            . '/parse/Picking the Bones_4f51e525b22337c60d893d6744a7f579.json'
+            . '/parse/Picking_the_Bones_4f51e525b22337c60d893d6744a7f579.json'
         );
         $text = json_decode($json, true)['wikitext']['*'];
         $actual = Mission::load($text);
@@ -60,7 +60,7 @@ class MissionTest extends TestCase
     {
         $json = file_get_contents(
             static::DIR_CACHE
-            . '/parse/History Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
+            . '/parse/History_Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
         );
         $text = json_decode($json, true)['wikitext']['*'];
         $actual = Mission::load($text);
@@ -89,7 +89,7 @@ class MissionTest extends TestCase
     {
         $json = file_get_contents(
             static::DIR_CACHE
-            . '/parse/History Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
+            . '/parse/History_Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
         );
         $text = json_decode($json, true)['wikitext']['*'];
         $actual = Mission::load($text, null, ['advanced' => true]);
@@ -202,7 +202,7 @@ class MissionTest extends TestCase
     {
         $json = file_get_contents(
             static::DIR_CACHE
-            . '/parse/Picking the Bones_4f51e525b22337c60d893d6744a7f579.json'
+            . '/parse/Picking_the_Bones_4f51e525b22337c60d893d6744a7f579.json'
         );
         $text = json_decode($json, true)['wikitext']['*'];
         $actual = Mission::load($text);

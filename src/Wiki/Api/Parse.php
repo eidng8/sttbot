@@ -214,8 +214,11 @@ class Parse
             return $this->content;
         }
 
-        $file = 'parse/' . $this->option(static::$PAGE) . '_'
-                . md5(serialize($this->optionsToParameters()));
+        $file = 'parse/'
+            . $this->cacheFileName(
+                $this->option(static::$PAGE),
+                $this->optionsToParameters()
+            );
         $this->content = $this->cache($file, [$this, 'fetch']);
 
         if (empty($this->content)) {

@@ -155,4 +155,19 @@ trait Cache
             )
         );
     }//end cacheWrite()
+
+
+    /**
+     * Generate a file name for the given page
+     *
+     * @param string $page
+     * @param array  $options
+     *
+     * @return string
+     */
+    public function cacheFileName(string $page, array $options): string
+    {
+        return preg_replace('#[\s<>:"/\|?*]#', '_', $page)
+            . '_' . md5(serialize($options));
+    }//end fileName()
 }//end trait
