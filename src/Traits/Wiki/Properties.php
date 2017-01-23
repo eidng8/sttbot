@@ -86,9 +86,9 @@ trait Properties
         $prop = $this->option(static::$PROP);
 
         return !empty($prop)
-               && ($property == $prop
-                   || is_array($prop)
-                      && array_search($property, $prop) !== false);
+            && ($property == $prop
+                || is_array($prop)
+                && array_search($property, $prop) !== false);
     }//end has()
 
 

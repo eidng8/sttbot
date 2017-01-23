@@ -47,6 +47,19 @@ class ReqAndBonus extends LeveledValues
 
 
     /**
+     * Alias of `name()`
+     *
+     * @param array|null $names omit to get the value
+     *
+     * @return string[]
+     */
+    public function names(array $names = null): array
+    {
+        return $this->name($names);
+    }//end name()
+
+
+    /**
      * Get or set names
      *
      * @param array|null $names omit to get the value
@@ -60,19 +73,6 @@ class ReqAndBonus extends LeveledValues
         }
 
         return $this->names = $names;
-    }//end name()
-
-
-    /**
-     * Alias of `name()`
-     *
-     * @param array|null $names omit to get the value
-     *
-     * @return string[]
-     */
-    public function names(array $names = null): array
-    {
-        return $this->name($names);
     }//end name()
 
 

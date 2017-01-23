@@ -36,6 +36,7 @@ trait Cache
      */
     protected $ttl = 3600 * 24;
 
+
     /**
      * Get or set the cache directory
      *
@@ -56,6 +57,7 @@ trait Cache
 
         return $old;
     }//end cacheRoot()
+
 
     /**
      * Retrieves the specified cache content; if it's not cached, then calls
@@ -94,30 +96,6 @@ trait Cache
         return $content;
     }//end cache()
 
-    /**
-     * Check if the specified cache exists and is valid
-     *
-     * @param string $path
-     *
-     * @return bool
-     */
-    public function cacheCheck(string $path): bool
-    {
-        return is_file($path) && filemtime($path) + $this->ttl > time();
-    }//end cacheCheckDir()
-
-    /**
-     * Make sure the specified cache directory exists
-     *
-     * @param string $path
-     */
-    public function cacheCheckDir(string $path)
-    {
-        $dir = dirname($path);
-        if (!is_dir($dir)) {
-            mkdir($dir, 0755, true);
-        }
-    }//end cacheRead()
 
     /**
      * Reads the specified cache
@@ -135,7 +113,35 @@ trait Cache
         }
 
         return json_decode($content, true);
+    }//end cacheCheckDir()
+
+
+    /**
+     * Check if the specified cache exists and is valid
+     *
+     * @param string $path
+     *
+     * @return bool
+     */
+    public function cacheCheck(string $path): bool
+    {
+        return is_file($path) && filemtime($path) + $this->ttl > time();
+    }//end cacheRead()
+
+
+    /**
+     * Make sure the specified cache directory exists
+     *
+     * @param string $path
+     */
+    public function cacheCheckDir(string $path)
+    {
+        $dir = dirname($path);
+        if (!is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
     }//end cacheCheck()
+
 
     /**
      * Write the given content to cache

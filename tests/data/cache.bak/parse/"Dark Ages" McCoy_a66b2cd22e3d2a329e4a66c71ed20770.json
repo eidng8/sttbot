@@ -1,114 +1,93 @@
 {
   "title": "\"Dark Ages\" McCoy",
   "pageid": 7141,
-  "redirects": [],
+  "redirects": [ ],
   "links": [
     {
       "ns": 0,
       "exists": "",
       "*": "20th Century Scrubs"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Autosuture"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Communicator (TOS)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Cortical Monitor"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Field Rations"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "First Contact Protocol"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Items"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Laser Scalpel"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Manitoba Journal of Interplanetary Psychology"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "McCoy's Scrubs"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "McCoy's Tricorder"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Medical Experiment"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Palm Beacon"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 2 (TMP)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 2 (TOS)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 3 (TOS)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Psychology Text"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Romulan Ale"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Scalpel"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Single Pot Whiskey"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Stethoscope"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tequila"
@@ -122,10 +101,7 @@
     }
   ],
   "images": [
-    "1star_sm.png",
-    "2star_sm.png",
-    "3star_sm.png",
-    "4star_sm.png",
+    "1star_sm.png", "2star_sm.png", "3star_sm.png", "4star_sm.png",
     "5star_sm.png"
   ],
   "wikitext": {

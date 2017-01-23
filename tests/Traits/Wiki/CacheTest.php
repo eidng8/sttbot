@@ -38,11 +38,16 @@ class CacheTest extends TestCase
     }//end testCacheRoot()
 
 
-    protected function setUp()
+    private function removeFile($file, $dir = false)
     {
-        parent::setUp();
-        $this->cacheRoot = static::DIR_CACHE;
-        $this->removeFile($this->file, true);
+        $path = "{$this->cacheRoot}/$file.json";
+        if (is_file($path)) {
+            unlink($path);
+            if ($dir) {
+                $dirname = dirname($path);
+                rmdir($dirname);
+            }
+        }
     }//end testSetCacheRoot()
 
 
@@ -122,15 +127,10 @@ class CacheTest extends TestCase
     }
 
 
-    private function removeFile($file, $dir = false)
+    protected function setUp()
     {
-        $path = "{$this->cacheRoot}/$file.json";
-        if (is_file($path)) {
-            unlink($path);
-            if ($dir) {
-                $dirname = dirname($path);
-                rmdir($dirname);
-            }
-        }
+        parent::setUp();
+        $this->cacheRoot = static::DIR_CACHE;
+        $this->removeFile($this->file, true);
     }//end testGetCacheNotExist()
 }//end class

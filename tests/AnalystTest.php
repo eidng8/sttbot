@@ -167,7 +167,6 @@ class AnalystTest extends TestCase
      * @param Analyst $analyst
      *
      * @return \eidng8\Wiki\Models\CrewMember[][][]
-     *
      * @depends testCrossRating
      */
     public function testBestCrew(Analyst $analyst)

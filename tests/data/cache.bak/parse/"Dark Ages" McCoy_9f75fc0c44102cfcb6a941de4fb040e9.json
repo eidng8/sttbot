@@ -1,1089 +1,873 @@
 {
   "title": "\"Dark Ages\" McCoy",
   "pageid": 7141,
-  "redirects": [],
+  "redirects": [ ],
   "links": [
     {
       "ns": 0,
       "exists": "",
       "*": "Diplomacy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Security"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Medicine"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Accuracy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Command"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Engineering"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Science"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Evasion"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "20th Century Scrubs"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "APU 3947"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Alexander"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Antaak (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Archer"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Ardra (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Arik"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Autosuture"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "B'Etor"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Barclay"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Bashir"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Battle station"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Battle stations"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Bias"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Boothby"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Brahms"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Brunt"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "CMO 'Bones' McCoy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Castillo"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Chakotay"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Chang"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Changeling (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Chaotica"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Chapel"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Chekov"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Cochrane"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Communicator (TOS)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Contingency Plan"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Cortical Monitor"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Cretak"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Crew"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Crit Bonus"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Crit Chance"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Crusher"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Culluh"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Damar"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Daren"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Data"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Dathon"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "David"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Daystrom"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Degra"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Doctor (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Dolim"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Donik (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Dr. Russell"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Drafted McCoy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Dukat"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Eddington"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Ezri"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Feezal"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Fesek (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Field Rations"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Film"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "First Contact Protocol"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Founder"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Fox"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Galaxy Event"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Garak"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Gegen"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Goran'Agar"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Gorn (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Gowron"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Gralik (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Grilka (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Haron"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Harris"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Hugh (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Idrin (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Items"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "J. Dax"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Jake"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Janeway"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Jennifer"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "K'Ehleyr"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kang"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Karr"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Keeler"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Keevan (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Keiko"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kelby"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kes"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Khan"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kim"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kira"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kirk"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Koloth (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kor"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kruge"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kurak (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kurn"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "La Forge"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Laser Scalpel"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Leeta"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Lefler"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Legendary"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Lily"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Lincoln"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Lore (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Lursa"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Lwaxana"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Maddox"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Manitoba Journal of Interplanetary Psychology"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Mara (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Marcus"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Martok"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Mayweather"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "McCoy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "McCoy's Scrubs"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "McCoy's Tricorder"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Medical Experiment"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Melora"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Mendon"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Money"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Mora"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Morn (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Moset"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Naomi"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Nechayev"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Neelix"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Nog"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "O'Brien"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Odo"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Ogawa"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Opaka"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Orion Slaver (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Palm Beacon"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Paris"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Persis (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 2 (TMP)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 2 (TOS)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 3 (TOS)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phlox"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Picard"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Prisoner 'Bones' McCoy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Professor (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Psychology Text"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Pulaski"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Q"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Quark"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "R'Mor"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Rand"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Rasmussen"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Reed"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Rejal"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Remata'Klan"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Reyga"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Rianna"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Riker"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Ro"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Rom"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Romulan Ale"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Saavik"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sarek"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sato"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Scalpel"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Scotty"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sela"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Selar"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Seska"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Seven"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Shakaar"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Shinzon (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Ship ability"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Shran"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Silik (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Single Pot Whiskey"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sisko"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sito"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Skills"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sloan"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Soong (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Soran"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Spock"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Stethoscope"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Suder"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sulan (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Sulu"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "T'Pol"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "T'Rul"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tain"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tarses"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tash (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tequila"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tomalak"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Torres"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Traveler"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Trelane (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Trip"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Troi"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tuvix (Character)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tuvok"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Uhura"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Valeris"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Vash"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Viceroy"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Vorik"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Wesley"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Weyoun"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Winn"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Worf"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Yar"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Yates"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Zek"
-    },
-    {
+    }, {
       "ns": 14,
       "exists": "",
       "*": "Category:Civilian"
-    },
-    {
+    }, {
       "ns": 14,
       "exists": "",
       "*": "Category:Doctor"
-    },
-    {
+    }, {
       "ns": 14,
       "exists": "",
       "*": "Category:Federation"
-    },
-    {
+    }, {
       "ns": 14,
       "exists": "",
       "*": "Category:Human"
-    },
-    {
+    }, {
       "ns": 14,
       "exists": "",
       "*": "Category:Starfleet"
@@ -1094,67 +878,43 @@
       "ns": 10,
       "exists": "",
       "*": "Template:Infobox crew"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:Stars"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:Skill"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:Cl/crew"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:Cl"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:SP"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:SACharacter"
-    },
-    {
+    }, {
       "ns": 10,
       "exists": "",
       "*": "Template:CrewNav"
     }
   ],
   "images": [
-    "1star_sm.png",
-    "3star_sm.png",
-    "4star_sm.png",
-    "5star_sm.png",
-    "CMO_'Bones'_McCoy_head.png",
-    "Prisoner_'Bones'_McCoy_head.png",
-    "Drafted_McCoy_head.png",
-    "\"Dark_Ages\"_McCoy_head.png",
-    "5star.png",
-    "DIP.png",
-    "SEC.png",
-    "MED.png",
-    "Accuracy.png",
-    "Dark-Ages-McCoy.png",
-    "2star_sm.png",
-    "4darkstar_sm.png",
-    "3darkstar_sm.png",
-    "2darkstar_sm.png",
-    "1darkstar_sm.png",
-    "CMD.png",
-    "ENG.png",
-    "SCI.png",
-    "Evasion.png",
+    "1star_sm.png", "3star_sm.png", "4star_sm.png", "5star_sm.png",
+    "CMO_'Bones'_McCoy_head.png", "Prisoner_'Bones'_McCoy_head.png",
+    "Drafted_McCoy_head.png", "\"Dark_Ages\"_McCoy_head.png", "5star.png",
+    "DIP.png", "SEC.png", "MED.png", "Accuracy.png", "Dark-Ages-McCoy.png",
+    "2star_sm.png", "4darkstar_sm.png", "3darkstar_sm.png", "2darkstar_sm.png",
+    "1darkstar_sm.png", "CMD.png", "ENG.png", "SCI.png", "Evasion.png",
     "Bluedot.png"
   ],
   "wikitext": {

@@ -99,8 +99,8 @@ class InfoBox extends Template
     public function episode(): string
     {
         return $this->found[static::EPISODE]
-               ?? $this->found[static::DISTRESS_CALLS]
-                  ?? $this->found[static::CADET_CHALLENGE] ?? null;
+            ?? $this->found[static::DISTRESS_CALLS]
+            ?? $this->found[static::CADET_CHALLENGE] ?? null;
     }//end episode()
 
 

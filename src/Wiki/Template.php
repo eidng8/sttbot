@@ -18,27 +18,27 @@ use eidng8\Log\Log;
 abstract class Template implements WikiTextParser
 {
 
-    const AWAY_TEAM       = 'away team';
+    const AWAY_TEAM = 'away team';
 
     const CADET_CHALLENGE = 'cadet challenge';
 
-    const COST            = 'cost';
+    const COST = 'cost';
 
-    const CREW            = 'crew';
+    const CREW = 'crew';
 
-    const DISTRESS_CALLS  = 'distress calls';
+    const DISTRESS_CALLS = 'distress calls';
 
-    const EPISODE         = 'episode';
+    const EPISODE = 'episode';
 
-    const MISSION         = 'mission';
+    const MISSION = 'mission';
 
-    const SPACE_BATTLE    = 'space battle';
+    const SPACE_BATTLE = 'space battle';
 
-    const TITLE           = 'title';
+    const TITLE = 'title';
 
-    const TRIPLE          = '/{{triple\d*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*}}/iu';
+    const TRIPLE = '/{{triple\d*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*}}/iu';
 
-    const TYPE            = 'type';
+    const TYPE = 'type';
 
     /**
      * The wiki text to be parsed
@@ -83,6 +83,45 @@ abstract class Template implements WikiTextParser
 
 
     /**
+     * Parse the wiki text and returns all extracted templates
+     *
+*@return string[]
+     */
+    public function parse()
+    {
+        preg_match_all($this->regex(), $this->wikiText, $this->found);
+
+        return $this->found = $this->found[0];
+    }//end extractNames()
+
+    /**
+     * Get a list of all names of a given level
+     *
+     * @param int    $level
+     * @param string $text
+     *
+     * @return string[]
+     */
+    // public static function extractNames(int $level, string $text): array
+    // {
+    //     $regex = str_repeat('=', $level);
+    //     $regex = "/$regex\\[\\[[^\\]]+]]$regex/imsu";
+    //     preg_match_all($regex, $text, $found);
+    //     return $found;
+    // }//end load()
+
+    /**
+     * Regular expression to use when extracting wiki text template
+     *
+     * @return string
+     */
+    protected function regex(): string
+    {
+        return "/^\\s*\\{\\{{$this->name}.+?^\s*}}$/imsu";
+    }//end __construct()
+
+
+    /**
      * Split the given template string into array
      *
      * @param $text
@@ -103,23 +142,8 @@ abstract class Template implements WikiTextParser
         sort($traits);
 
         return $traits;
-    }//end extractNames()
+    }//end get()
 
-    /**
-     * Get a list of all names of a given level
-     *
-     * @param int    $level
-     * @param string $text
-     *
-     * @return string[]
-     */
-    // public static function extractNames(int $level, string $text): array
-    // {
-    //     $regex = str_repeat('=', $level);
-    //     $regex = "/$regex\\[\\[[^\\]]+]]$regex/imsu";
-    //     preg_match_all($regex, $text, $found);
-    //     return $found;
-    // }//end load()
 
     /**
      * Create intance according to wiki text
@@ -149,7 +173,7 @@ abstract class Template implements WikiTextParser
         // }
 
         return null;
-    }//end __construct()
+    }//end parse()
 
 
     /**
@@ -160,20 +184,7 @@ abstract class Template implements WikiTextParser
     public function get()
     {
         return $this->found;
-    }//end get()
-
-
-    /**
-     * Parse the wiki text and returns all extracted templates
-     *
-     * @return string[]
-     */
-    public function parse()
-    {
-        preg_match_all($this->regex(), $this->wikiText, $this->found);
-
-        return $this->found = $this->found[0];
-    }//end parse()
+    }//end sections()
 
 
     /**
@@ -202,16 +213,5 @@ abstract class Template implements WikiTextParser
         $sections[] = substr($text, $last);
 
         return $sections;
-    }//end sections()
-
-
-    /**
-     * Regular expression to use when extracting wiki text template
-     *
-     * @return string
-     */
-    protected function regex(): string
-    {
-        return "/^\\s*\\{\\{{$this->name}.+?^\s*}}$/imsu";
     }//end regex()
 }//end class

@@ -31,6 +31,30 @@ final class Http
 
 
     /**
+     * Create Guzzle client
+     *
+     * @param string $uri
+     *
+     * @return void
+     */
+    protected function createClient(string $uri): void
+    {
+        // merge below into one statement causes PHPUnit reporting uncovered
+        $opts = ['base_uri' => $uri];
+
+        // request options
+        $opts[RequestOptions::ALLOW_REDIRECTS] = true;
+        $opts[RequestOptions::CONNECT_TIMEOUT] = 60;
+        $opts[RequestOptions::SYNCHRONOUS] = true;
+        $opts[RequestOptions::TIMEOUT] = 300;
+
+        // $opts[RequestOptions::DEBUG] = $this->debugMode;
+
+        $this->guzzle = new Client($opts);
+    }//end __construct()
+
+
+    /**
      * Creates a mocked client that will return the given responses.
      *
      * @param array $responses
@@ -45,23 +69,6 @@ final class Http
         );
 
         return $instance;
-    }//end __construct()
-
-
-    /**
-     * HTTP GET
-     *
-     * @param $params
-     *
-     * @return mixed
-     */
-    public function get($params)
-    {
-        $params['format'] = 'json';
-
-        $res = (string)$this->guzzle->get('', ['query' => $params])->getBody();
-
-        return json_decode($res, true);
     }//end createClient()
 
 
@@ -78,6 +85,23 @@ final class Http
 
         return $this->get($params);
     }//end get()
+
+
+    /**
+     * HTTP GET
+     *
+     * @param $params
+     *
+     * @return mixed
+     */
+    public function get($params)
+    {
+        $params['format'] = 'json';
+
+        $res = (string)$this->guzzle->get('', ['query' => $params])->getBody();
+
+        return json_decode($res, true);
+    }//end parse()
 
 
     /**
@@ -107,29 +131,5 @@ final class Http
         $params['action'] = 'expandtemplates';
 
         return $this->get($params);
-    }//end parse()
-
-
-    /**
-     * Create Guzzle client
-     *
-     * @param string $uri
-     *
-     * @return void
-     */
-    protected function createClient(string $uri): void
-    {
-        // merge below into one statement causes PHPUnit reporting uncovered
-        $opts = ['base_uri' => $uri];
-
-        // request options
-        $opts[RequestOptions::ALLOW_REDIRECTS] = true;
-        $opts[RequestOptions::CONNECT_TIMEOUT] = 60;
-        $opts[RequestOptions::SYNCHRONOUS] = true;
-        $opts[RequestOptions::TIMEOUT] = 300;
-
-        // $opts[RequestOptions::DEBUG] = $this->debugMode;
-
-        $this->guzzle = new Client($opts);
     }//end expandTemplates()
 }//end class

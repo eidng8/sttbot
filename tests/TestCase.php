@@ -67,18 +67,18 @@ class TestCase extends \PHPUnit_Framework_TestCase
     }//end tearDown()
 
 
+    protected function newWikiInstance(): Wiki
+    {
+        $api = $this->newApiInstance();
+        return new Wiki($api->parse(), $api->query(), $api->expandTemplates());
+    }//end newApiInstance()
+
+
     protected function newApiInstance(): Api
     {
         return new Api(
             new Http('http://startrektimelineswiki.com/w/api.php'),
             static::DIR_CACHE
         );
-    }//end newApiInstance()
-
-
-    protected function newWikiInstance(): Wiki
-    {
-        $api = $this->newApiInstance();
-        return new Wiki($api->parse(), $api->query(), $api->expandTemplates());
     }//end newApiInstance()
 }//enc class

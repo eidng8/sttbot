@@ -16,7 +16,7 @@ class MissionCost extends LeveledValues
 
     protected $chroniton = false;
 
-    protected $ticket    = false;
+    protected $ticket = false;
 
     /* @noinspection PhpInconsistentReturnPointsInspection */
     /**

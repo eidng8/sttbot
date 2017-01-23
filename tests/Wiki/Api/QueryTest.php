@@ -36,21 +36,9 @@ class QueryTest extends TestCase
         parent::setUpBeforeClass();
 
         static::$cacheFile = static::DIR_CACHE
-                             . '/query/2bc2554e05cf988e81f73d138cc51212.json';
+            . '/query/2bc2554e05cf988e81f73d138cc51212.json';
         touch(static::$cacheFile);
     }
-
-
-    protected function setUp(Http $http = null)
-    {
-        parent::setUp();
-
-        if (!$http) {
-            $http = Http::shouldRespond([new Response(200)]);
-        }
-        $this->query = new Query($http);
-        $this->query->cacheRoot(static::DIR_CACHE);
-    }//end testTitles()
 
 
     public function testTitles()
@@ -58,7 +46,7 @@ class QueryTest extends TestCase
         $this->query->titles([]);
         $this->query->titles(['title']);
         $this->assertSame(['title'], $this->query->option(Query::$TITLES));
-    }//end testThumbnails()
+    }//end testTitles()
 
 
     public function testThumbnails()
@@ -114,17 +102,29 @@ class QueryTest extends TestCase
         $this->assertTrue(is_string($actual['Changeling Bashir']));
         $this->assertContains('Bashir', $actual['Changeling Bashir']);
         $this->assertSame($this->query->get(), $this->query->get());
-    }//end testThumbnailsEmpty()
+    }//end testThumbnails()
 
 
     public function testThumbnailsWithEmptyTitle()
     {
         $this->assertSame([], $this->query->thumbnails([]));
-    }//end testGetThumbnailsGotNull()
+    }//end testThumbnailsEmpty()
 
 
     public function testThumbnailsGotNull()
     {
         $this->assertEmpty($this->query->thumbnails(['nothing']));
+    }//end testGetThumbnailsGotNull()
+
+
+    protected function setUp(Http $http = null)
+    {
+        parent::setUp();
+
+        if (!$http) {
+            $http = Http::shouldRespond([new Response(200)]);
+        }
+        $this->query = new Query($http);
+        $this->query->cacheRoot(static::DIR_CACHE);
     }
 }//end class

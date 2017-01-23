@@ -14,7 +14,6 @@ use Monolog\Logger;
 
 /**
  * Class Log
- *
  * @method static bool debug(string $msg, array $context = [])
  * @method static bool info(string $msg, array $context = [])
  * @method static bool notice(string $msg, array $context = [])
@@ -25,6 +24,20 @@ use Monolog\Logger;
  */
 final class Log
 {
+
+    /**
+     * Unit test standard output content
+     *
+     * @var TestHandler
+     */
+    public static $testOutput;
+
+    /**
+     * Unit test standard error content
+     *
+     * @var TestHandler
+     */
+    public static $testErrorOutput;
 
     /**
      * The looger instance
@@ -46,20 +59,6 @@ final class Log
      * @var int
      */
     private static $level = Logger::WARNING;
-
-    /**
-     * Unit test standard output content
-     *
-     * @var TestHandler
-     */
-    public static $testOutput;
-
-    /**
-     * Unit test standard error content
-     *
-     * @var TestHandler
-     */
-    public static $testErrorOutput;
 
 
     public static function setLevel(int $level): void

@@ -126,16 +126,25 @@ class CrewMember extends Model implements Hyperlink
 
 
     /**
-     * Checks if crew member possess the given skill
+     * Checks if crew member can unlock the given mission step
      *
-     * @param string $skill
+*@param MissionStep $step
      *
      * @return bool
-     *
      */
-    public function hasSkill(string $skill): bool
+    public function canUnlock(MissionStep $step): bool
     {
-        return !!$this->skills[$skill];
+        foreach ($step->locks as $lock) {
+            if (empty($lock)) {
+                continue;
+            }
+            $unlock = $this->hasTraits($lock);
+            if ($unlock) {
+                return $unlock;
+            }
+        }//end foreach
+
+        return false;
     }//end hasSkill()
 
 
@@ -145,7 +154,6 @@ class CrewMember extends Model implements Hyperlink
      * @param string[] $traits
      *
      * @return bool
-     *
      */
     public function hasTraits(?array $traits): bool
     {
@@ -157,30 +165,36 @@ class CrewMember extends Model implements Hyperlink
 
 
     /**
-     * Calculate trait bonus
+     * Checks if crew member can pass the given cadet mission step.
+     * "pass" means 100% success (greed color box).
      *
-     * @param MissionStep $step
+*@param MissionStep $step
+     * @param bool  $critical
      *
-     * @param int         $idx
-     *
-     * @return int
+*@return bool
      */
-    public function traitBonus(MissionStep $step, int $idx)
+    public function canPassCadet(MissionStep $step, bool $critical = false)
     {
-        if (empty($step->traits) || empty($step->traits[$idx])) {
-            return 0;
-        }
-        $value = 0;
-        if ($this->hasTraits($step->traits[$idx]['names'])) {
-            $value += max($step->traits[$idx]['values']);
-        }
-        return $value;
+        return $this->eligible($step) && $this->canPass($step, $critical);
     }//end traitBonus()
 
 
     /**
-     * Checks if crew member can pass the given mission step.
+     * Check if the crew is eligible to the given cadet mission
      *
+     * @param MissionStep $step
+     *
+     * @return bool
+     */
+    public function eligible(MissionStep $step): bool
+    {
+        return empty($step['eligible'])
+            ? false : in_array($this->name, $step['eligible']);
+    }//end canPass()
+
+
+    /**
+     * Checks if crew member can pass the given mission step.
      * `pass` means probably success (yellow color box).
      * `critical` means 100% critical rate (greed color box).
      *
@@ -210,10 +224,57 @@ class CrewMember extends Model implements Hyperlink
             $value = $value[1];
 
             return $value + $this->traitBonus($step, $idx)
-                   >= $skill->epic() * ($critical ? 1.25 : 1);
+                >= $skill->epic() * ($critical ? 1.25 : 1);
         }//end foreach
 
         return false;
+    }//end canCritical()
+
+
+    /**
+     * Checks if crew member possess the given skill
+     *
+     * @param string $skill
+     *
+*@return bool
+     */
+    public function hasSkill(string $skill): bool
+    {
+        return !!$this->skills[$skill];
+    }//end canUnlock()
+
+
+    /**
+     * Calculate trait bonus
+     *
+     * @param MissionStep $step
+     * @param int         $idx
+     *
+*@return int
+     */
+    public function traitBonus(MissionStep $step, int $idx)
+    {
+        if (empty($step->traits) || empty($step->traits[$idx])) {
+            return 0;
+        }
+        $value = 0;
+        if ($this->hasTraits($step->traits[$idx]['names'])) {
+            $value += max($step->traits[$idx]['values']);
+        }
+        return $value;
+    }//end eligible()
+
+
+    /**
+     * Checks if crew member can "critical success" the given cadet mission step
+     *
+     * @param MissionStep $step
+     *
+     * @return bool
+     */
+    public function canCriticalCadet(MissionStep $step)
+    {
+        return $this->eligible($step) && $this->canCritical($step);
     }//end canPass()
 
 
@@ -229,75 +290,8 @@ class CrewMember extends Model implements Hyperlink
         return $this->canPass($step, true);
     }//end canCritical()
 
-
-    /**
-     * Checks if crew member can unlock the given mission step
-     *
-     * @param MissionStep $step
-     *
-     * @return bool
-     */
-    public function canUnlock(MissionStep $step): bool
-    {
-        foreach ($step->locks as $lock) {
-            if (empty($lock)) {
-                continue;
-            }
-            $unlock = $this->hasTraits($lock);
-            if ($unlock) {
-                return $unlock;
-            }
-        }//end foreach
-
-        return false;
-    }//end canUnlock()
-
-
-    /**
-     * Check if the crew is eligible to the given cadet mission
-     *
-     * @param MissionStep $step
-     *
-     * @return bool
-     */
-    public function eligible(MissionStep $step): bool
-    {
-        return empty($step['eligible'])
-            ? false : in_array($this->name, $step['eligible']);
-    }//end eligible()
-
-
-    /**
-     * Checks if crew member can pass the given cadet mission step.
-     *
-     * "pass" means 100% success (greed color box).
-     *
-     * @param MissionStep $step
-     * @param bool        $critical
-     *
-     * @return bool
-     */
-    public function canPassCadet(MissionStep $step, bool $critical = false)
-    {
-        return $this->eligible($step) && $this->canPass($step, $critical);
-    }//end canPass()
-
-
-    /**
-     * Checks if crew member can "critical success" the given cadet mission step
-     *
-     * @param MissionStep $step
-     *
-     * @return bool
-     */
-    public function canCriticalCadet(MissionStep $step)
-    {
-        return $this->eligible($step) && $this->canCritical($step);
-    }//end canCritical()
-
     /**
      * Checks if crew member can unlock the given cadet mission step
-     *
      * As of 2016-12-18, there is no locked cadet mission steps
      *
      * @param MissionStep $step
@@ -309,9 +303,10 @@ class CrewMember extends Model implements Hyperlink
     //     return $this->eligible($step) && $this->canUnlock($step);
     // }//end canUnlock()
 
-    /**
+
+/**
      * @inheritdoc
-     */
+ */
     public function uri(): string
     {
         return $this->page();
@@ -419,6 +414,24 @@ class CrewMember extends Model implements Hyperlink
     }//end offsetSet()
 
 
+/**
+     * @inheritdoc
+ */
+    protected function parseName($name): array
+    {
+        $parts = explode('{{!}}', $name);
+
+        if (1 === count($parts)) {
+            return [$parts[0], rawurlencode($parts[0])];
+        }
+
+        $parts = array_reverse($parts);
+        $parts[1] = rawurlencode($parts[1]);
+
+        return $parts;
+    }
+
+
     /**
      * @inheritdoc
      */
@@ -442,15 +455,16 @@ class CrewMember extends Model implements Hyperlink
     }
 
 
-    /**
-     * Get cross rating
-     *
-     * @return int
+        /**
+         * Get cross rating
+
+*
+*@return int
      */
     public function getRating(): int
     {
         return $this->rating;
-    }
+    }//end offsetUnset()
 
 
     /**
@@ -461,7 +475,7 @@ class CrewMember extends Model implements Hyperlink
     public function setRating(int $rating)
     {
         $this->rating = $rating;
-    }//end offsetUnset()
+    }//end increaseRating()
 
 
     /**
@@ -472,41 +486,23 @@ class CrewMember extends Model implements Hyperlink
     public function incRating(int $increment = 1)
     {
         $this->rating += $increment;
-    }//end increaseRating()
+    }//end addPassMissionStep()
 
 
     public function addPassMissionStep(MissionStep $step): void
     {
         $this->missions['pass'][] = $step;
-    }//end addPassMissionStep()
+    }//end addCriticalMissionStep()
 
 
     public function addCriticalMissionStep(MissionStep $step): void
     {
         $this->missions['critical'][] = $step;
-    }//end addCriticalMissionStep()
+    }//end addUnlockMissionStep()
 
 
     public function addUnlockMissionStep(MissionStep $step): void
     {
         $this->missions['unlock'][] = $step;
-    }//end addUnlockMissionStep()
-
-
-    /**
-     * @inheritdoc
-     */
-    protected function parseName($name): array
-    {
-        $parts = explode('{{!}}', $name);
-
-        if (1 === count($parts)) {
-            return [$parts[0], rawurlencode($parts[0])];
-        }
-
-        $parts = array_reverse($parts);
-        $parts[1] = rawurlencode($parts[1]);
-
-        return $parts;
     }//end parseName()
 }//end class

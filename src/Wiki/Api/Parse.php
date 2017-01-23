@@ -241,19 +241,6 @@ class Parse
 
 
     /**
-     * Fetch the page from API
-     *
-     * @return array
-     */
-    public function fetch(): ?array
-    {
-        $content = $this->api->parse($this->optionsToParameters());
-
-        return $content['parse'] ?? null;
-    }//end fetch()
-
-
-    /**
      * Flatten links array, with the page name as keys
      *
      * @param array $wikiLinks
@@ -270,7 +257,7 @@ class Parse
         }//end foreach
 
         return $flattened;
-    }//end mapLinks()
+    }//end fetch()
 
 
     /**
@@ -288,7 +275,7 @@ class Parse
         }//end foreach
 
         return $flattened;
-    }//end mapImages()
+    }//end mapLinks()
 
 
     /**
@@ -308,7 +295,7 @@ class Parse
         }//end foreach
 
         return $flattened;
-    }//end mapTemplates()
+    }//end mapImages()
 
 
     private function interpolate(string $text, array $vars): ?string
@@ -322,5 +309,18 @@ class Parse
 
         $ret = preg_replace($regex, $reps, $text);
         return $ret ?? $text;
+    }//end mapTemplates()
+
+
+    /**
+     * Fetch the page from API
+     *
+     * @return array
+     */
+    public function fetch(): ?array
+    {
+        $content = $this->api->parse($this->optionsToParameters());
+
+        return $content['parse'] ?? null;
     }//end interpolate()
 }//end class

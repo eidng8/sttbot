@@ -18,13 +18,6 @@ use eidng8\Wiki\Templates\Mission;
 class MissionTest extends TestCase
 {
 
-    protected function setUp()
-    {
-        parent::setUp();
-        Log::forTest();
-    }
-
-
     public function testLoad()
     {
         $json = file_get_contents(
@@ -53,7 +46,7 @@ class MissionTest extends TestCase
         $this->assertInstanceOf(MissionStep::class, $model->steps[3]);
 
         return $actual;
-    }//end testLoad()
+    }
 
 
     public function testCadetLoad()
@@ -82,140 +75,7 @@ class MissionTest extends TestCase
         $this->checkCadetMissionSteps($model);
 
         return $actual;
-    }//end testCadetLoad()
-
-
-    public function testCadetAdvLoad()
-    {
-        $json = file_get_contents(
-            static::DIR_CACHE
-            . '/parse/History_Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
-        );
-        $text = json_decode($json, true)['wikitext']['*'];
-        $actual = Mission::load($text, null, ['advanced' => true]);
-        $this->assertInstanceOf(Mission::class, $actual);
-
-        $model = $actual->get();
-        $this->assertSame('History Interrupted', $model->name);
-        $this->assertSame('History Interrupted', $model->page());
-        $this->assertSame('History Interrupted', $model->uri());
-        $this->assertSame('The United Federation', $model->episode);
-        $this->assertSame(1, $model->index);
-        $this->assertSame(1, $model->type);
-        $this->assertInstanceOf(MissionCost::class, $model->cost);
-        $this->assertInternalType('array', $model->traits);
-        $this->assertNotEmpty($model->traits);
-        $this->assertInternalType('array', $model->steps);
-        $this->assertNotEmpty($model->steps);
-
-        $this->checkCadetAdvMissionSteps($model);
-
-        return $actual;
-    }//end testCadetAdvLoad()
-
-
-    /**
-     * @param Mission $mission
-     *
-     * @depends testLoad
-     */
-    public function testNoCost(Mission $mission)
-    {
-        $model = $mission->get();
-        $cost = $model->cost;
-        $model->cost = null;
-        $this->assertFalse($model->validate());
-        $model->cost = $cost;
-        $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
-                '/Mission \[ Picking the Bones ] has no cost\./'
-            ),
-            'Mission with no cost should trigger warning.'
-        );
-    }//end testNoCost()
-
-
-    /**
-     * @param Mission $mission
-     *
-     * @depends testLoad
-     */
-    public function testNoStep(Mission $mission)
-    {
-        $model = $mission->get();
-        $steps = $model->steps;
-        $model->steps = null;
-        $this->assertFalse($model->validate());
-        $model->steps = $steps;
-        $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
-                '/Mission \[ Picking the Bones ] has no step\./'
-            ),
-            'Mission with no step should trigger warning.'
-        );
-    }//end testNoStep()
-
-
-    /**
-     * @param Mission $mission
-     *
-     * @depends testLoad
-     */
-    public function testEmptyStep(Mission $mission)
-    {
-        $model = $mission->get();
-        $step = $model->steps[0];
-        $model->steps[0] = null;
-        $this->assertFalse($model->validate());
-        $model->steps[0] = $step;
-        $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
-                '/Mission \[ Picking the Bones ] step \( 0 \) is empty\./'
-            ),
-            'Empty step should trigger warning.'
-        );
-    }//end testEmptyStep()
-
-
-    /**
-     * @param Mission $mission
-     *
-     * @depends testLoad
-     */
-    public function testInvalidStep(Mission $mission)
-    {
-        $model = $mission->get();
-        $skills = $model->steps[1]->skills;
-        $model->steps[1]->skills = null;
-        $this->assertFalse($model->validate());
-        $model->steps[1]->skills = $skills;
-        $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
-                '/Mission \[ Picking the Bones ] step \( 1 \) is invalid\./'
-            ),
-            'Invalid step should trigger warning.'
-        );
-    }//end testInvalidStep()
-
-
-    public function testToArray()
-    {
-        $json = file_get_contents(
-            static::DIR_CACHE
-            . '/parse/Picking_the_Bones_4f51e525b22337c60d893d6744a7f579.json'
-        );
-        $text = json_decode($json, true)['wikitext']['*'];
-        $actual = Mission::load($text);
-        $actual = $actual->get()->toArray();
-        $this->assertInternalType('array', $actual);
-        $this->assertInternalType('array', $actual['cost']);
-        $this->assertInternalType('array', $actual['traits']);
-        $this->assertInternalType('array', $actual['steps']);
-        $this->assertInternalType('array', $actual['steps'][0]);
-        $this->assertInternalType('array', $actual['steps'][1]);
-        $this->assertInternalType('array', $actual['steps'][2]);
-        $this->assertInternalType('array', $actual['steps'][3]);
-    }//end testToArray()
+    }//end testLoad()
 
 
     private function checkCadetMissionSteps(MissionModel $model)
@@ -285,7 +145,48 @@ class MissionTest extends TestCase
                 ],
             ]
         );
-    }//end checkCadetMissionSteps()
+    }//end testCadetLoad()
+
+
+    private function checkMissionStep(MissionStep $step, array $val)
+    {
+        $this->assertInstanceOf(MissionStep::class, $step);
+        foreach ($val['skills'] as $idx => $skills) {
+            $this->assertSame($skills, $step->skills[$idx]->toArray());
+        }//end foreach
+        foreach ($val['traits'] as $idx => $traits) {
+            $this->assertSame($traits, $step->traits[$idx]->toArray());
+        }//end foreach
+    }//end testCadetAdvLoad()
+
+
+    public function testCadetAdvLoad()
+    {
+        $json = file_get_contents(
+            static::DIR_CACHE
+            . '/parse/History_Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
+        );
+        $text = json_decode($json, true)['wikitext']['*'];
+        $actual = Mission::load($text, null, ['advanced' => true]);
+        $this->assertInstanceOf(Mission::class, $actual);
+
+        $model = $actual->get();
+        $this->assertSame('History Interrupted', $model->name);
+        $this->assertSame('History Interrupted', $model->page());
+        $this->assertSame('History Interrupted', $model->uri());
+        $this->assertSame('The United Federation', $model->episode);
+        $this->assertSame(1, $model->index);
+        $this->assertSame(1, $model->type);
+        $this->assertInstanceOf(MissionCost::class, $model->cost);
+        $this->assertInternalType('array', $model->traits);
+        $this->assertNotEmpty($model->traits);
+        $this->assertInternalType('array', $model->steps);
+        $this->assertNotEmpty($model->steps);
+
+        $this->checkCadetAdvMissionSteps($model);
+
+        return $actual;
+    }//end testNoCost()
 
 
     private function checkCadetAdvMissionSteps(MissionModel $model)
@@ -355,17 +256,116 @@ class MissionTest extends TestCase
                 ],
             ]
         );
+    }//end testNoStep()
+
+
+    /**
+     * @param Mission $mission
+     *
+     * @depends testLoad
+     */
+    public function testNoCost(Mission $mission)
+    {
+        $model = $mission->get();
+        $cost = $model->cost;
+        $model->cost = null;
+        $this->assertFalse($model->validate());
+        $model->cost = $cost;
+        $this->assertTrue(
+            Log::$testErrorOutput->hasWarningThatMatches(
+                '/Mission \[ Picking the Bones ] has no cost\./'
+            ),
+            'Mission with no cost should trigger warning.'
+        );
+    }//end testEmptyStep()
+
+
+    /**
+     * @param Mission $mission
+     *
+     * @depends testLoad
+     */
+    public function testNoStep(Mission $mission)
+    {
+        $model = $mission->get();
+        $steps = $model->steps;
+        $model->steps = null;
+        $this->assertFalse($model->validate());
+        $model->steps = $steps;
+        $this->assertTrue(
+            Log::$testErrorOutput->hasWarningThatMatches(
+                '/Mission \[ Picking the Bones ] has no step\./'
+            ),
+            'Mission with no step should trigger warning.'
+        );
+    }//end testInvalidStep()
+
+
+    /**
+     * @param Mission $mission
+     *
+     * @depends testLoad
+     */
+    public function testEmptyStep(Mission $mission)
+    {
+        $model = $mission->get();
+        $step = $model->steps[0];
+        $model->steps[0] = null;
+        $this->assertFalse($model->validate());
+        $model->steps[0] = $step;
+        $this->assertTrue(
+            Log::$testErrorOutput->hasWarningThatMatches(
+                '/Mission \[ Picking the Bones ] step \( 0 \) is empty\./'
+            ),
+            'Empty step should trigger warning.'
+        );
+    }//end testToArray()
+
+
+    /**
+     * @param Mission $mission
+     *
+     * @depends testLoad
+     */
+    public function testInvalidStep(Mission $mission)
+    {
+        $model = $mission->get();
+        $skills = $model->steps[1]->skills;
+        $model->steps[1]->skills = null;
+        $this->assertFalse($model->validate());
+        $model->steps[1]->skills = $skills;
+        $this->assertTrue(
+            Log::$testErrorOutput->hasWarningThatMatches(
+                '/Mission \[ Picking the Bones ] step \( 1 \) is invalid\./'
+            ),
+            'Invalid step should trigger warning.'
+        );
+    }//end checkCadetMissionSteps()
+
+
+    public function testToArray()
+    {
+        $json = file_get_contents(
+            static::DIR_CACHE
+            . '/parse/Picking_the_Bones_4f51e525b22337c60d893d6744a7f579.json'
+        );
+        $text = json_decode($json, true)['wikitext']['*'];
+        $actual = Mission::load($text);
+        $actual = $actual->get()->toArray();
+        $this->assertInternalType('array', $actual);
+        $this->assertInternalType('array', $actual['cost']);
+        $this->assertInternalType('array', $actual['traits']);
+        $this->assertInternalType('array', $actual['steps']);
+        $this->assertInternalType('array', $actual['steps'][0]);
+        $this->assertInternalType('array', $actual['steps'][1]);
+        $this->assertInternalType('array', $actual['steps'][2]);
+        $this->assertInternalType('array', $actual['steps'][3]);
     }//end checkCadetAdvMissionSteps()
 
 
-    private function checkMissionStep(MissionStep $step, array $val)
+    protected function setUp()
     {
-        $this->assertInstanceOf(MissionStep::class, $step);
-        foreach ($val['skills'] as $idx => $skills) {
-            $this->assertSame($skills, $step->skills[$idx]->toArray());
-        }//end foreach
-        foreach ($val['traits'] as $idx => $traits) {
-            $this->assertSame($traits, $step->traits[$idx]->toArray());
-        }//end foreach
+        parent::setUp();
+        Log::forTest();
     }//end checkMissionStep()
 }//end class

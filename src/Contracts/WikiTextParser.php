@@ -10,7 +10,6 @@ namespace eidng8\Contracts;
 
 /**
  * Wiki text parser interface.
- *
  * These parsers don't do any transformation (e.g. to HTML). They merely extract
  * portions of the input text. That is, returns are also wiki texts.
  */

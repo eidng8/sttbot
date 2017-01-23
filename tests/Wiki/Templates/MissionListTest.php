@@ -143,46 +143,6 @@ class MissionListTest extends TestCase
     }//end testCadet()
 
 
-    /**
-     * @depends testCreate
-     *
-     * @param MissionList $missions
-     */
-    public function testCadetAdv(MissionList $missions)
-    {
-        $model = $missions->byName(
-            'First Conflict',
-            'Adv: United Federation'
-        );
-        $this->checkCadetBasic($model);
-        $this->assertSame('Adv: United Federation', $model->episode);
-
-        $this->checkCadetAdvStep1($model);
-        $this->checkCadetAdvStep2($model);
-        $this->checkCadetAdvStep3($model);
-        $this->checkCadetAdvStep4($model);
-        $this->checkCadetAdvStep5($model);
-    }//end testCadetAdv()
-
-
-    public function testExport()
-    {
-        $missions = $this->wiki->missions()->export();
-
-        $this->assertInternalType('array', $missions);
-        $this->assertInternalType('array', $missions[0]);
-        $this->assertInternalType('array', $missions[1]);
-
-        $this->assertNotEmpty($missions);
-        $this->assertNotEmpty($missions[0]);
-        $this->assertNotEmpty($missions[1]);
-
-        foreach ($missions[1] as $idx => $mission) {
-            $this->checkExportedMission($mission, $idx);
-        }//end foreach
-    }//end testExport()
-
-
     private function checkCadetBasic(Mission $model)
     {
         $this->assertInstanceOf(Mission::class, $model);
@@ -211,7 +171,7 @@ class MissionListTest extends TestCase
 
         $this->assertInternalType('array', $model->steps);
         $this->assertCount(5, $model->steps);
-    }//end checkCadetBasic()
+    }//end testCadetAdv()
 
 
     private function checkCadetStep1(Mission $model)
@@ -242,7 +202,7 @@ class MissionListTest extends TestCase
             ],
             $step->traits[0]->toArray()
         );
-    }//end testCadetStep1()
+    }//end testExport()
 
 
     private function checkCadetStep2(Mission $model)
@@ -263,7 +223,7 @@ class MissionListTest extends TestCase
         );
         $this->assertCount(1, $step->traits);
         $this->assertNull($step->traits[0]);
-    }//end testCadetStep2()
+    }//end checkCadetBasic()
 
 
     private function checkCadetStep3(Mission $model)
@@ -316,7 +276,7 @@ class MissionListTest extends TestCase
             ],
             $step->traits[1]->toArray()
         );
-    }//end testCadetStep3()
+    }//end testCadetStep1()
 
 
     private function checkCadetStep4(Mission $model)
@@ -355,7 +315,7 @@ class MissionListTest extends TestCase
             ],
             $step->traits[1]->toArray()
         );
-    }//end testCadetStep4()
+    }//end testCadetStep2()
 
 
     private function checkCadetStep5(Mission $model)
@@ -386,7 +346,29 @@ class MissionListTest extends TestCase
             ],
             $step->traits[0]->toArray()
         );
-    }//end testCadetStep5()
+    }//end testCadetStep3()
+
+
+    /**
+     * @depends testCreate
+     *
+     * @param MissionList $missions
+     */
+    public function testCadetAdv(MissionList $missions)
+    {
+        $model = $missions->byName(
+            'First Conflict',
+            'Adv: United Federation'
+        );
+        $this->checkCadetBasic($model);
+        $this->assertSame('Adv: United Federation', $model->episode);
+
+        $this->checkCadetAdvStep1($model);
+        $this->checkCadetAdvStep2($model);
+        $this->checkCadetAdvStep3($model);
+        $this->checkCadetAdvStep4($model);
+        $this->checkCadetAdvStep5($model);
+    }//end testCadetStep4()
 
 
     private function checkCadetAdvStep1(Mission $model)
@@ -417,7 +399,7 @@ class MissionListTest extends TestCase
             ],
             $step->traits[0]->toArray()
         );
-    }//end testCadetAdvStep1()
+    }//end testCadetStep5()
 
 
     private function checkCadetAdvStep2(Mission $model)
@@ -438,7 +420,7 @@ class MissionListTest extends TestCase
         );
         $this->assertCount(1, $step->traits);
         $this->assertNull($step->traits[0]);
-    }//end testCadetAdvStep2()
+    }//end testCadetAdvStep1()
 
 
     private function checkCadetAdvStep3(Mission $model)
@@ -491,7 +473,7 @@ class MissionListTest extends TestCase
             ],
             $step->traits[1]->toArray()
         );
-    }//end testCadetAdvStep3()
+    }//end testCadetAdvStep2()
 
 
     private function checkCadetAdvStep4(Mission $model)
@@ -530,7 +512,7 @@ class MissionListTest extends TestCase
             ],
             $step->traits[1]->toArray()
         );
-    }//end testCadetAdvStep4()
+    }//end testCadetAdvStep3()
 
 
     private function checkCadetAdvStep5(Mission $model)
@@ -561,6 +543,24 @@ class MissionListTest extends TestCase
             ],
             $step->traits[0]->toArray()
         );
+    }//end testCadetAdvStep4()
+
+
+    public function testExport()
+    {
+        $missions = $this->wiki->missions()->export();
+
+        $this->assertInternalType('array', $missions);
+        $this->assertInternalType('array', $missions[0]);
+        $this->assertInternalType('array', $missions[1]);
+
+        $this->assertNotEmpty($missions);
+        $this->assertNotEmpty($missions[0]);
+        $this->assertNotEmpty($missions[1]);
+
+        foreach ($missions[1] as $idx => $mission) {
+            $this->checkExportedMission($mission, $idx);
+        }//end foreach
     }//end testCadetAdvStep5()
 
 

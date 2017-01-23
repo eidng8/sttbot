@@ -1,124 +1,101 @@
 {
   "title": "Tuvix",
   "pageid": 4110,
-  "redirects": [],
+  "redirects": [ ],
   "links": [
     {
       "ns": 0,
       "exists": "",
       "*": "A Briefing with Neelix Video"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Astrometric Chart"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Chef's Hat"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Combadge (DS9)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Compression Rifle"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Cooking with Neelix Book"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Fair Haven Holoprogram"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Feragoit Goulash"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Field Rations"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Insurrection Alpha Holoprogram"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Items"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Kal-Toh"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Orchids"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Palm Beacon"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Pattern Enhancer"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Phaser Type 2"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Security Codes"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Starfleet Security Uniform (VOY)"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tuvix's Uniform"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tuvok's PADD"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tuvok's Rifle"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Tuvok's Tricorder"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Vulcan Tea"
-    },
-    {
+    }, {
       "ns": 0,
       "exists": "",
       "*": "Wrist Tricorder"
@@ -132,10 +109,7 @@
     }
   ],
   "images": [
-    "1star_sm.png",
-    "2star_sm.png",
-    "3star_sm.png",
-    "4star_sm.png",
+    "1star_sm.png", "2star_sm.png", "3star_sm.png", "4star_sm.png",
     "5star_sm.png"
   ],
   "wikitext": {

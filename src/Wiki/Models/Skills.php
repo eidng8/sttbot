@@ -106,24 +106,6 @@ class Skills extends Model
 
 
     /**
-     * Return the skill name
-     *
-     * @param string $skill
-     *
-     * @return null|string
-     */
-    public static function skillName(string $skill): ?string
-    {
-        $skill = strtolower($skill);
-        if (3 != strlen($skill)) {
-            return static::SKILL_NAMES[$skill] ?? null;
-        }
-
-        return in_array($skill, static::SKILLS) ? $skill : null;
-    }//end skillName()
-
-
-    /**
      * Return the skill name array
      *
      * @param string[] $skills
@@ -138,6 +120,24 @@ class Skills extends Model
             },
             $skills
         );
+    }//end skillName()
+
+
+    /**
+     * Return the skill name
+     *
+     * @param string $skill
+     *
+     * @return null|string
+     */
+    public static function skillName(string $skill): ?string
+    {
+        $skill = strtolower($skill);
+        if (3 != strlen($skill)) {
+            return static::SKILL_NAMES[$skill] ?? null;
+        }
+
+        return in_array($skill, static::SKILLS) ? $skill : null;
     }//end skillName()
 
 

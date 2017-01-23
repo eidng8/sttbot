@@ -15,7 +15,6 @@ use eidng8\Wiki\Template;
 
 /**
  * Mission cost template parser
- *
  * @method void set(string $level, int $cost)
  * @method int|void normal(int $cost = null)
  * @method int|void elite(int $cost = null)

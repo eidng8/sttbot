@@ -18,7 +18,6 @@ use eidng8\Wiki\Template;
 
 /**
  * Parse a single mission page
- *
  * @method MissionModel get()
  */
 class Mission extends Template
@@ -29,7 +28,6 @@ class Mission extends Template
 
     /**
      * Mission constructor.
-     *
      * The `advanced` key in the `$options` array denotes if it's adv cadet
      *
      * @param string $wikiText
@@ -419,6 +417,12 @@ class Mission extends Template
     }//end createModel()
 
 
+    public function validateModel(MissionModel $model): bool
+    {
+        return $model->validate();
+    }//end loadReqAndBonusModel()
+
+
     public function loadReqAndBonusModel(Triple $values = null)
     {
         if (empty($values)) {
@@ -429,11 +433,5 @@ class Mission extends Template
         $model->name($values->name());
         $model->set($values->get());
         return $model;
-    }//end loadReqAndBonusModel()
-
-
-    public function validateModel(MissionModel $model): bool
-    {
-        return $model->validate();
     }//end validateModel()
 }//end class

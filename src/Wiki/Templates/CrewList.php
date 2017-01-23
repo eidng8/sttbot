@@ -96,6 +96,28 @@ class CrewList extends Template
 
 
     /**
+     * Retrieves all crew members, in indexed (not associated) array
+     *
+     * @return CrewMember[]
+     */
+    public function get(): array
+    {
+        return $this->crew;
+    }//end parseCrew()
+
+
+    /**
+     * @inheritdoc
+     */
+    public function parse(): array
+    {
+        parent::parse();
+
+        return $this->crew = $this->parseCrew();
+    }//end parseMember()
+
+
+    /**
      * Parse all crew member from the given wiki text
      *
      * @return CrewMember[] Array of parsed crew members
@@ -115,7 +137,7 @@ class CrewList extends Template
         }//end foreach
 
         return $members;
-    }//end parseCrew()
+    }//end fetchPictures()
 
 
     /**
@@ -145,7 +167,7 @@ class CrewList extends Template
         }//end foreach
 
         return $member;
-    }//end parseMember()
+    }//end fetchDetail()
 
 
     /**
@@ -170,7 +192,7 @@ class CrewList extends Template
         }//end foreach
 
         return $crew;
-    }//end fetchPictures()
+    }//end skillList()
 
 
     /**
@@ -193,7 +215,7 @@ class CrewList extends Template
             $tmp[$skill] = $values[$idx];
         }//end foreach
         $crew->skills = new Skills($tmp);
-    }//end fetchDetail()
+    }//end skillValue()
 
 
     /**
@@ -216,7 +238,7 @@ class CrewList extends Template
         }
 
         return array_map('trim', array_map('strtolower', $found[1]));
-    }//end skillList()
+    }//end all()
 
 
     /**
@@ -253,37 +275,23 @@ class CrewList extends Template
         }//end foreach
 
         return $max;
-    }//end skillValue()
-
-
-    /**
-     * Retrieves all crew members, in indexed (not associated) array
-     *
-     * @return CrewMember[]
-     */
-    public function get(): array
-    {
-        return $this->crew;
-    }//end all()
-
-
-    /**
-     * @inheritdoc
-     */
-    public function parse(): array
-    {
-        parent::parse();
-
-        return $this->crew = $this->parseCrew();
     }//end get()
 
 
-    /**
-     * @inheritdoc
-     */
-    protected function regex(): string
+    protected function stats(CrewMember $member)
     {
-        return "/^\\s*\\{\\{{$this->name}.+?}}\\s*$/imsu";
+        foreach ($member->skills as $skill => $val) {
+            if (empty($val)) {
+                continue;
+            }
+
+            $val = max($val);
+            if (empty($this->maxSkills[$skill][$member->stars][1])
+                || $this->maxSkills[$skill][$member->stars][1] < $val
+            ) {
+                $this->maxSkills[$skill][$member->stars] = [$member, $val];
+            }
+        }//end foreach
     }//end byTraits()
 
 
@@ -320,19 +328,6 @@ class CrewList extends Template
 
 
     /**
-     * Iterate through all crew members and call the given function.
-     *
-     * @param callable $func
-     */
-    public function each(callable $func): void
-    {
-        foreach ($this->crew as $name => $member) {
-            call_user_func_array($func, [$member, $name]);
-        }//end foreach
-    }//end regex()
-
-
-    /**
      * Export all crew members as array
      *
      * @return array
@@ -353,6 +348,19 @@ class CrewList extends Template
             }
         );
         return $crew;
+    }//end regex()
+
+
+    /**
+     * Iterate through all crew members and call the given function.
+     *
+     * @param callable $func
+     */
+    public function each(callable $func): void
+    {
+        foreach ($this->crew as $name => $member) {
+            call_user_func_array($func, [$member, $name]);
+        }//end foreach
     }//end export()
 
 
@@ -379,19 +387,11 @@ class CrewList extends Template
     }//end max()
 
 
-    protected function stats(CrewMember $member)
+    /**
+     * @inheritdoc
+     */
+    protected function regex(): string
     {
-        foreach ($member->skills as $skill => $val) {
-            if (empty($val)) {
-                continue;
-            }
-
-            $val = max($val);
-            if (empty($this->maxSkills[$skill][$member->stars][1])
-                || $this->maxSkills[$skill][$member->stars][1] < $val
-            ) {
-                $this->maxSkills[$skill][$member->stars] = [$member, $val];
-            }
-        }//end foreach
+        return "/^\\s*\\{\\{{$this->name}.+?}}\\s*$/imsu";
     }//end stats()
 }//end class

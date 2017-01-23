@@ -35,7 +35,6 @@ class MissionList extends WikiBase
      *
      * @return array|\eidng8\Wiki\Models\Mission[][][]
      * @internal param string $type
-     *
      */
     public function get(string $what = null): array
     {
@@ -60,40 +59,9 @@ class MissionList extends WikiBase
 
 
     /**
-     * Iterate through all missions and call the given function.
-     *
-     * The callback is defined as:
-     * function(Models\Mission $mission, int $index, int $episode, string $type)
-     *
-     * - `$mission` is a mission model instance,
-     * - `$index` is the index number within the episode
-     * - `$episode` is the index of the episode
-     * - `$type` can be either `'epissode'` or `'cadet'`
-     *
-     * @param callable $func
-     */
-    public function each(callable $func): void
-    {
-        foreach ($this->list as $type => $episodes) {
-            foreach ($episodes as $episode => $missions) {
-                foreach ($missions as $index => $mission) {
-                    /* @var Mission $mission */
-                    call_user_func_array(
-                        $func,
-                        [$mission->get(), $index, $episode, $type]
-                    );
-                }//end foreach
-            }//end foreach
-        }//end foreach
-    }//end each()
-
-
-    /**
      * Iterate through all away team missions and call the given function.
-     *
      * The callback is defined as:
      * function(Models\Mission $mission, int $index, int $episode, string $type)
-     *
      * - `$mission` is a mission model instance,
      * - `$index` is the index number within the episode
      * - `$episode` is the index of the episode
@@ -140,7 +108,7 @@ class MissionList extends WikiBase
                     if ($search == strtolower($model->name)
                         && (empty($epSearch)
                             || strtolower($epSearch)
-                               == strtolower($model->episode))
+                            == strtolower($model->episode))
                     ) {
                         return $model;
                     }
@@ -166,7 +134,7 @@ class MissionList extends WikiBase
         $this->parseEpisodes($templates);
         $this->fetchCadetCrew($cadets, $templates['cadet']);
         return $this->list = $templates;
-    }//end get()
+    }//end each()
 
 
     /**
@@ -196,7 +164,7 @@ class MissionList extends WikiBase
         );
 
         return compact('episodes', 'cadet');
-    }//end fetchMissionList()
+    }//end get()
 
 
     /**
@@ -233,28 +201,7 @@ class MissionList extends WikiBase
         }//end foreach
 
         return $matches[1];
-    }//end fetchTemplates()
-
-
-    public function fetchCadetCrew(array $names, array $cadet)
-    {
-        foreach ($cadet as $episode => $missions) {
-            $this->parse->page($names[$episode], 2);
-            preg_match_all(
-                '/{{NamePic\|([^}]+)}}/imsu',
-                $this->parse->get(true)['wikitext']['*'],
-                $text
-            );
-
-            $eligible = $text[1] ?? null;
-            foreach ($missions as $mission) {
-                /* @var Mission $mission */
-                foreach ($mission->get()->steps as $step) {
-                    $step['eligible'] = $eligible;
-                }//end foreach
-            }//end foreach
-        }//end foreach
-    }//end fetchCadetCrew()
+    }//end fetchMissionList()
 
 
     /**
@@ -269,7 +216,7 @@ class MissionList extends WikiBase
                 $episode = $this->parseEpisode($episode);
             }//end foreach
         }//end foreach
-    }//end parseEpisodes()
+    }//end fetchTemplates()
 
 
     /**
@@ -293,7 +240,7 @@ class MissionList extends WikiBase
 
         preg_match('/^=+\[+([^\[\]]+)]+=+/', $episode, $matches);
         return $this->parseMissions($missions, $matches[1] ?? '');
-    }//end parseEpisode()
+    }//end fetchCadetCrew()
 
 
     /**
@@ -320,13 +267,35 @@ class MissionList extends WikiBase
         }//end foreach
 
         return $info;
-    }
+    }//end parseEpisodes()
+
+
+    public function fetchCadetCrew(array $names, array $cadet)
+    {
+        foreach ($cadet as $episode => $missions) {
+            $this->parse->page($names[$episode], 2);
+            preg_match_all(
+                '/{{NamePic\|([^}]+)}}/imsu',
+                $this->parse->get(true)['wikitext']['*'],
+                $text
+            );
+
+            $eligible = $text[1] ?? null;
+            foreach ($missions as $mission) {
+                /* @var Mission $mission */
+                foreach ($mission->get()->steps as $step) {
+                    $step['eligible'] = $eligible;
+                }//end foreach
+            }//end foreach
+        }//end foreach
+    }//end parseEpisode()
 
 
     /**
      * Export all missions as array
-     *
-     * @return array
+
+*
+*@return array
      */
     public function export(): array
     {
@@ -390,5 +359,32 @@ class MissionList extends WikiBase
             }
         );
         return [$episodes, $missions];
+    }
+
+
+    /**
+     * Iterate through all missions and call the given function.
+     * The callback is defined as:
+     * function(Models\Mission $mission, int $index, int $episode, string $type)
+     * - `$mission` is a mission model instance,
+     * - `$index` is the index number within the episode
+     * - `$episode` is the index of the episode
+     * - `$type` can be either `'epissode'` or `'cadet'`
+     *
+     * @param callable $func
+     */
+    public function each(callable $func): void
+    {
+        foreach ($this->list as $type => $episodes) {
+            foreach ($episodes as $episode => $missions) {
+                foreach ($missions as $index => $mission) {
+                    /* @var Mission $mission */
+                    call_user_func_array(
+                        $func,
+                        [$mission->get(), $index, $episode, $type]
+                    );
+                }//end foreach
+            }//end foreach
+        }//end foreach
     }//end export()
 }//end class

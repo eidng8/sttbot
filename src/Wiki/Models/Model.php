@@ -14,19 +14,14 @@ use JsonSerializable;
 abstract class Model implements ArrayAccess, JsonSerializable
 {
 
-    /**
-     * Validate the instance
-     *
-     * @return bool
-     */
-    // abstract public function validate(): bool;
+    public function offsetGet($offset)
+    {
+        if ($this->offsetExists($offset)) {
+            return $this->{strtolower(trim($offset))};
+        }
 
-    /**
-     * Converts the instance to array
-     *
-     * @return array
-     */
-    abstract public function toArray(): array;
+        return null;
+    }
 
 
     public function offsetExists($offset): bool
@@ -35,30 +30,28 @@ abstract class Model implements ArrayAccess, JsonSerializable
     }//end offsetExists()
 
 
-    public function offsetGet($offset)
-    {
-        if ($this->offsetExists($offset)) {
-            return $this->{strtolower(trim($offset))};
-        }
-
-        return null;
-    }//end offsetGet()
-
-
     public function offsetSet($offset, $value)
     {
         $this->{strtolower(trim($offset))} = $value;
-    }//end offsetSet()
+    }//end offsetGet()
 
 
     public function offsetUnset($offset)
     {
         $this->{strtolower(trim($offset))} = null;
-    }//end offsetUnset()
+    }//end offsetSet()
 
 
     public function jsonSerialize(): array
     {
         return $this->toArray();
-    }//end jsonSerialize()
+    }//end offsetUnset()
+
+
+    /**
+     * Converts the instance to array
+     *
+     * @return array
+     */
+    abstract public function toArray(): array;//end jsonSerialize()
 }//end class
