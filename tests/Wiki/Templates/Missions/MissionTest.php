@@ -6,7 +6,7 @@
  * Time: 21:41
  */
 
-namespace eidng8\Tests\Wiki\Templates\Missions\Mission;
+namespace eidng8\Tests\Wiki\Templates\Mission;
 
 use eidng8\Log\Log;
 use eidng8\Tests\TestCase;
