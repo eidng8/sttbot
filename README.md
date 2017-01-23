@@ -11,6 +11,15 @@ GitLab
 
 
 
-# sttbot
+# Star Trek Timelines Wiki Crawler
 Star Trek Timelines data miner. Extracts data from 
 http://startrektimelineswiki.com/ and serves to [stthb](https://github.com/eidng8/stthb)
+
+----------------
+
+This project server a few purpose:
+
+* As the name depicts & the above description says;
+* As a trial of specific MediaWiki wiki-text parser;
+* As a test bed to try out PHP 7.1 features;
+* As a test bed to try out various public services;
