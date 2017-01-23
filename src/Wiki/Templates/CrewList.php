@@ -11,6 +11,7 @@ namespace eidng8\Wiki\Templates;
 use eidng8\Wiki\Api\Parse;
 use eidng8\Wiki\Api\Query;
 use eidng8\Wiki\Models\CrewMember;
+use eidng8\Wiki\Models\Skills;
 use eidng8\Wiki\Template;
 
 /**
@@ -187,9 +188,11 @@ class CrewList extends Template
         $table = $this->parse->table();
         $skills = $this->skillList($table);
         $values = $this->skillValue($table, $skills);
+        $tmp = [];
         foreach ($skills as $idx => $skill) {
-            $crew->skills[$skill] = $values[$idx];
+            $tmp[$skill] = $values[$idx];
         }//end foreach
+        $crew->skills = new Skills($tmp);
     }//end fetchDetail()
 
 
@@ -220,7 +223,6 @@ class CrewList extends Template
      * Parse table and extract skill value
      *
      * @param string $table
-     *
      * @param array  $skills
      *
      * @return array|null
