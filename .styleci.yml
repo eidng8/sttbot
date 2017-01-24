@@ -8,7 +8,6 @@ enabled:
   - no_php4_constructor
   - no_short_echo_tag
   - no_useless_else
-  - no_useless_return
 #  - ordered_class_elements
   - php_unit_construct
   - php_unit_strict
