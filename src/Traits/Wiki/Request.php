@@ -13,14 +13,12 @@ namespace eidng8\Traits\Wiki;
  */
 trait Request
 {
-
     /**
      * Request options
      *
      * @var array
      */
     protected $options;
-
 
     /**
      * Retrieves or set the options to be used in request
@@ -29,7 +27,7 @@ trait Request
      * @param bool  $merge   pass `true` to merge `$options` to existing options
      *
      * @return array if `$options` is omitted, returns current options;
-     * otherwise set or merge the provided options
+     *               otherwise set or merge the provided options
      */
     public function options(array $options = null, bool $merge = false): array
     {
@@ -52,7 +50,6 @@ trait Request
         return $old;
     }//end options()
 
-
     /**
      * Clear all options
      */
@@ -60,7 +57,6 @@ trait Request
     {
         $this->options = [];
     }//end clear()
-
 
     /**
      * Get or set the specified option
@@ -86,7 +82,6 @@ trait Request
         return $old;
     }//end option()
 
-
     /**
      * Checks if the specified option is used
      *
@@ -99,7 +94,6 @@ trait Request
         return $this->options && array_key_exists($option, $this->options);
     }//end has()
 
-
     /**
      * Remove the specified options
      *
@@ -111,7 +105,6 @@ trait Request
             unset($this->options[$option]);
         }
     }//end removeOption()
-
 
     /**
      * Convert options to an array suitable for API request

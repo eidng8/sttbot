@@ -10,5 +10,4 @@ namespace eidng8\Exceptions;
 
 class InvalidTemplateException extends \Exception
 {
-
 }//end class

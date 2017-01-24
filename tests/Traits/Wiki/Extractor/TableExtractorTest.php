@@ -14,12 +14,11 @@ use eidng8\Traits\Wiki\Extractor\TableExtractor;
 
 class TableExtractorTest extends TestCase
 {
-
     use Cache, TableExtractor;
 
 // @codingStandardsIgnoreStart
-    const TEXT
-        = <<<EOT
+    public const TEXT
+        = <<<'EOT'
 {| class="wikitable"
 ! Avatar Icon
 ! Character
@@ -60,7 +59,6 @@ class TableExtractorTest extends TestCase
 |}
 EOT;
 
-
 // @codingStandardsIgnoreEnd
 
     public function testNumTables()
@@ -69,20 +67,17 @@ EOT;
         $this->assertSame(4, $this->numTables());
     }//end testNumTables()
 
-
     public function testNumTablesEmpty()
     {
         $this->foundTables = false;
         $this->assertSame(0, $this->numTables());
     }//end testNumTables()
 
-
     public function testNumTablesBuild()
     {
         $this->foundTables = null;
         $this->assertSame(0, $this->numTables());
     }//end testNumTables()
-
 
     public function testTable()
     {
@@ -97,13 +92,11 @@ EOT;
         $this->assertSame(2, $this->numTables());
     }//end testTable()
 
-
     public function testTables()
     {
         $this->tables(static::TEXT);
         $this->assertSame(static::TEXT, $this->table(0));
     }//end testTables()
-
 
     public function testTableGet()
     {

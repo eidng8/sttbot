@@ -15,21 +15,18 @@ use eidng8\Wiki\Models\Mission as MissionModel;
  */
 class LeveledValues extends Model
 {
-
     /**
      * @var int[]
      */
     protected $values = [];
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function toArray(): array
     {
         return $this->values;
     }//end toArray()
-
 
     /**
      * Get specific difficulty level value
@@ -40,7 +37,6 @@ class LeveledValues extends Model
     {
         return $this->values;
     }//end get()
-
 
     /**
      * Set specific difficulty level value
@@ -53,7 +49,6 @@ class LeveledValues extends Model
     {
         $this->values = $values;
     }//end set()
-
 
     /**
      * Get or set normal level value
@@ -71,7 +66,6 @@ class LeveledValues extends Model
         return $this->values[MissionModel::NORMAL];
     }//end normal()
 
-
     /**
      * Get or set elite level value
      *
@@ -87,7 +81,6 @@ class LeveledValues extends Model
 
         return $this->values[MissionModel::ELITE];
     }//end elite()
-
 
     /**
      * Get or set epic level value

@@ -14,7 +14,6 @@ use eidng8\Wiki\Templates\MissionCost;
 
 class MissionCostTest extends TestCase
 {
-
     public function testTriple()
     {
         $text = '{{currency|CRN}} {{triple| 4 | 4 | 8 }}';
@@ -25,7 +24,6 @@ class MissionCostTest extends TestCase
         $this->assertSame(4, $cost->elite());
         $this->assertSame(8, $cost->epic());
     }//end testTriple()
-
 
     public function testSlashed()
     {
@@ -38,7 +36,6 @@ class MissionCostTest extends TestCase
         $this->assertSame(8, $cost->epic());
     }//end testSlashed()
 
-
     public function testTicket()
     {
         $text = '{{currency|tik}} 1';
@@ -47,7 +44,6 @@ class MissionCostTest extends TestCase
         $this->assertTrue($cost->useTicket());
         $this->assertSame(1, $cost->ticket());
     }//end testTicket()
-
 
     public function testEmpty()
     {

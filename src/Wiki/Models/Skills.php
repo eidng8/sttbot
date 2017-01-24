@@ -13,18 +13,17 @@ namespace eidng8\Wiki\Models;
  */
 class Skills extends Model
 {
-
     /**
      * List of all available skills
      *
      * @var array
      */
-    const SKILLS = ['cmd', 'dip', 'eng', 'med', 'sci', 'sec'];
+    public const SKILLS = ['cmd', 'dip', 'eng', 'med', 'sci', 'sec'];
 
     /**
      * Skill names
      */
-    const SKILL_NAMES
+    public const SKILL_NAMES
         = [
             'command'     => 'cmd',
             'diplomacy'   => 'dip',
@@ -76,7 +75,6 @@ class Skills extends Model
      */
     public $sec;
 
-
     /**
      * Skills constructor.
      *
@@ -91,7 +89,6 @@ class Skills extends Model
         }
     }//end __construct()
 
-
     /**
      * Check if the provided name is actually a skill
      *
@@ -103,7 +100,6 @@ class Skills extends Model
     {
         return in_array(strtolower($name), static::SKILLS);
     }//end isSkill()
-
 
     /**
      * Return the skill name array
@@ -122,7 +118,6 @@ class Skills extends Model
         );
     }//end skillName()
 
-
     /**
      * Return the skill name
      *
@@ -140,9 +135,8 @@ class Skills extends Model
         return in_array($skill, static::SKILLS) ? $skill : null;
     }//end skillName()
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function toArray(): array
     {
@@ -153,9 +147,8 @@ class Skills extends Model
         return array_filter($return);
     }
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function offsetSet($offset, $value)
     {
@@ -165,9 +158,8 @@ class Skills extends Model
         }
     }
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function offsetExists($offset): bool
     {
@@ -175,12 +167,12 @@ class Skills extends Model
         if ($skill) {
             return parent::offsetExists($skill);
         }
+
         return false;
     }
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function offsetGet($offset)
     {
@@ -188,12 +180,12 @@ class Skills extends Model
         if ($skill) {
             return parent::offsetGet($skill);
         }
+
         return null;
     }
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function offsetUnset($offset)
     {

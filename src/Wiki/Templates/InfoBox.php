@@ -17,14 +17,12 @@ use eidng8\Wiki\Template;
  */
 class InfoBox extends Template
 {
-
     public function __construct(
         string $wikiText,
         string $type = Template::MISSION
     ) {
         parent::__construct($wikiText, "Infobox $type");
     }//end __construct()
-
 
     public function parse(): array
     {
@@ -54,7 +52,6 @@ class InfoBox extends Template
 
         return $this->found = $mi;
     }//end parse()
-
 
     public function dehydrate(&$title, &$value): void
     {
@@ -89,12 +86,10 @@ class InfoBox extends Template
         }
     }//end dehydrate()
 
-
     public function name(): string
     {
         return $this->found[static::TITLE];
     }//end name()
-
 
     public function episode(): string
     {
@@ -103,18 +98,15 @@ class InfoBox extends Template
             ?? $this->found[static::CADET_CHALLENGE] ?? null;
     }//end episode()
 
-
     public function sequence(): int
     {
         return $this->found[static::MISSION];
     }//end sequence()
 
-
     public function type(): string
     {
         return $this->found[static::TYPE];
     }//end type()
-
 
     public function cost(): MissionCost
     {

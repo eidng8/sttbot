@@ -14,16 +14,13 @@ use eidng8\Wiki\Models\Mission;
 
 class AnalystTest extends TestCase
 {
-
     private $wiki;
-
 
     public function __construct()
     {
         parent::__construct();
         $this->wiki = $this->newWikiInstance();
     }//end __construct()
-
 
     public function testRateStep()
     {
@@ -51,16 +48,13 @@ class AnalystTest extends TestCase
         $this->assertNotEmpty($step['crew']['critical']);
 
         $this->assertNotEmpty(
-            $analyst->getBestCrew()
-            ['episode'][$idxEpisode][$idxMission][$idxStep]
+            $analyst->getBestCrew()['episode'][$idxEpisode][$idxMission][$idxStep]
         );
         $this->assertSame(
             'Chancellor Gowron',
-            $analyst->getBestCrew()
-            ['episode'][$idxEpisode][$idxMission][$idxStep][5][0]->name
+            $analyst->getBestCrew()['episode'][$idxEpisode][$idxMission][$idxStep][5][0]->name
         );
     }//end testRateStep()
-
 
     public function testRateStepCadet()
     {
@@ -88,16 +82,13 @@ class AnalystTest extends TestCase
         $this->assertNotEmpty($step['crew']['critical']);
 
         $this->assertNotEmpty(
-            $analyst->getBestCrew()
-            ['cadet'][$idxChallenge][$idxMission][$idxStep]
+            $analyst->getBestCrew()['cadet'][$idxChallenge][$idxMission][$idxStep]
         );
         $this->assertSame(
             'Dr Phlox',
-            $analyst->getBestCrew()
-            ['cadet'][$idxChallenge][$idxMission][$idxStep][2][0]->name
+            $analyst->getBestCrew()['cadet'][$idxChallenge][$idxMission][$idxStep][2][0]->name
         );
     }//end testRateStepCadet()
-
 
     /**
      * @return Analyst
@@ -107,9 +98,9 @@ class AnalystTest extends TestCase
         $analyst = new Analyst($this->wiki->missions(), $this->wiki->crew());
         $this->assertInstanceOf(Analyst::class, $analyst);
         $analyst->crossRating();
+
         return $analyst;
     }//end testCrossRating()
-
 
     /**
      * @param Analyst $analyst
@@ -162,7 +153,6 @@ class AnalystTest extends TestCase
         );
     }//end testPassAndCriticalCrewDoNotOverlap()
 
-
     /**
      * @param Analyst $analyst
      *
@@ -174,9 +164,9 @@ class AnalystTest extends TestCase
         $analyst->bestCrew();
         $crew = $analyst->getBestCrew();
         $this->assertNotEmpty($crew);
+
         return $crew;
     }//end testBestCrew()
-
 
     /**
      * @param array $crew
@@ -216,7 +206,6 @@ class AnalystTest extends TestCase
             }//end foreach
         }//end foreach
     }//end testEpisodeCrew()
-
 
     /**
      * @param array $crew

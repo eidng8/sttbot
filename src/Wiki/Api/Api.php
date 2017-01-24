@@ -13,7 +13,6 @@ namespace eidng8\Wiki\Api;
  */
 class Api
 {
-
     /**
      * Cache root directory
      *
@@ -49,11 +48,10 @@ class Api
      */
     protected $expandTemplates;
 
-
     /**
      * Api constructor.
      *
-     * @param Http   $http Http instance
+     * @param Http   $http      Http instance
      * @param string $cacheRoot
      */
     public function __construct(Http $http, string $cacheRoot)
@@ -61,7 +59,6 @@ class Api
         $this->wiki = $http;
         $this->cacheRoot = $cacheRoot;
     }//end __construct()
-
 
     /**
      * Calls the `parse` Wiki API endpoint
@@ -82,7 +79,6 @@ class Api
         return $this->parse;
     }//end parse()
 
-
     /**
      * Calls the `query` Wiki API endpoint
      *
@@ -101,7 +97,6 @@ class Api
 
         return $this->query;
     }//end parse()
-
 
     public function expandTemplates(bool $new = false): ExpandTemplates
     {

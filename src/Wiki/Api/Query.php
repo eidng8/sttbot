@@ -16,7 +16,6 @@ use eidng8\Traits\Wiki\Properties;
  */
 class Query
 {
-
     use Properties, Cache;
 
     /**
@@ -68,7 +67,6 @@ class Query
      */
     protected $content;
 
-
     /**
      * Parse constructor.
      *
@@ -79,7 +77,6 @@ class Query
         $this->api = $api;
         $this->resetOptions();
     }//end __construct()
-
 
     /**
      * Reset to default options
@@ -95,7 +92,6 @@ class Query
         ];
     }//end resetOptions()
 
-
     /**
      * Titles to query
      *
@@ -110,7 +106,6 @@ class Query
 
         $this->option(static::$TITLES, $titles);
     }//end titles()
-
 
     /**
      * Get image info
@@ -148,7 +143,6 @@ class Query
         return $returns;
     }//end thumbnails()
 
-
     /**
      * Send the request
      *
@@ -172,7 +166,6 @@ class Query
 
         return $this->content;
     }//end get()
-
 
     public function fetch()
     {

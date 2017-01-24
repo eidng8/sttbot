@@ -16,7 +16,6 @@ use eidng8\Traits\Wiki\Properties;
  */
 class ExpandTemplates
 {
-
     use Properties, Cache;
 
     /**
@@ -33,7 +32,6 @@ class ExpandTemplates
      */
     protected $content;
 
-
     /**
      * Parse constructor.
      *
@@ -45,7 +43,6 @@ class ExpandTemplates
         $this->resetOptions();
     }//end __construct()
 
-
     /**
      * Reset to default options
      */
@@ -54,7 +51,6 @@ class ExpandTemplates
         $this->options = [static::$PROP => ['wikitext']];
     }//end resetOptions()
 
-
     /**
      * Send the request
      *
@@ -62,7 +58,7 @@ class ExpandTemplates
      * @param bool   $fetch True to fetch new content.
      *
      * @return array|bool|string content returned from API, or `false` if error
-     *                    occurred
+     *                           occurred
      */
     public function get(string $text, bool $fetch = false): ?string
     {
@@ -79,9 +75,9 @@ class ExpandTemplates
         }
 
         $this->content = $this->content['expandtemplates']['wikitext'];
+
         return $this->content;
     }//end get()
-
 
     public function fetch()
     {

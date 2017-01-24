@@ -17,7 +17,6 @@ use eidng8\Wiki\Templates\Mission;
 
 class MissionTest extends TestCase
 {
-
     public function testLoad()
     {
         $json = file_get_contents(
@@ -48,7 +47,6 @@ class MissionTest extends TestCase
         return $actual;
     }
 
-
     public function testCadetLoad()
     {
         $json = file_get_contents(
@@ -76,7 +74,6 @@ class MissionTest extends TestCase
 
         return $actual;
     }//end testLoad()
-
 
     private function checkCadetMissionSteps(MissionModel $model)
     {
@@ -147,7 +144,6 @@ class MissionTest extends TestCase
         );
     }//end testCadetLoad()
 
-
     private function checkMissionStep(MissionStep $step, array $val)
     {
         $this->assertInstanceOf(MissionStep::class, $step);
@@ -158,7 +154,6 @@ class MissionTest extends TestCase
             $this->assertSame($traits, $step->traits[$idx]->toArray());
         }//end foreach
     }//end testCadetAdvLoad()
-
 
     public function testCadetAdvLoad()
     {
@@ -187,7 +182,6 @@ class MissionTest extends TestCase
 
         return $actual;
     }//end testNoCost()
-
 
     private function checkCadetAdvMissionSteps(MissionModel $model)
     {
@@ -258,7 +252,6 @@ class MissionTest extends TestCase
         );
     }//end testNoStep()
 
-
     /**
      * @param Mission $mission
      *
@@ -278,7 +271,6 @@ class MissionTest extends TestCase
             'Mission with no cost should trigger warning.'
         );
     }//end testEmptyStep()
-
 
     /**
      * @param Mission $mission
@@ -300,7 +292,6 @@ class MissionTest extends TestCase
         );
     }//end testInvalidStep()
 
-
     /**
      * @param Mission $mission
      *
@@ -320,7 +311,6 @@ class MissionTest extends TestCase
             'Empty step should trigger warning.'
         );
     }//end testToArray()
-
 
     /**
      * @param Mission $mission
@@ -342,7 +332,6 @@ class MissionTest extends TestCase
         );
     }//end checkCadetMissionSteps()
 
-
     public function testToArray()
     {
         $json = file_get_contents(
@@ -361,7 +350,6 @@ class MissionTest extends TestCase
         $this->assertInternalType('array', $actual['steps'][2]);
         $this->assertInternalType('array', $actual['steps'][3]);
     }//end checkCadetAdvMissionSteps()
-
 
     protected function setUp()
     {

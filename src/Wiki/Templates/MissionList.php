@@ -14,7 +14,6 @@ use eidng8\Wiki\WikiBase;
 
 class MissionList extends WikiBase
 {
-
     /**
      * List of all missions, organized by episodes/cadet
      *
@@ -26,7 +25,6 @@ class MissionList extends WikiBase
      * @var \eidng8\Wiki\Models\Mission[][][]
      */
     protected $models = null;
-
 
     /**
      * Return mission list
@@ -55,7 +53,6 @@ class MissionList extends WikiBase
 
         return empty($what) ? $this->models : $this->models[$what];
     }//end get()
-
 
     /**
      * Iterate through all away team missions and call the given function.
@@ -87,7 +84,6 @@ class MissionList extends WikiBase
         }//end foreach
     }//end each()
 
-
     /**
      * Get mission by name
      *
@@ -117,7 +113,6 @@ class MissionList extends WikiBase
         return null;
     }//end each()
 
-
     /**
      * Fetch all missions from server and process them to models
      *
@@ -132,9 +127,9 @@ class MissionList extends WikiBase
 
         $this->parseEpisodes($templates);
         $this->fetchCadetCrew($cadets, $templates['cadet']);
+
         return $this->list = $templates;
     }//end each()
-
 
     /**
      * Fetch the list through API
@@ -164,7 +159,6 @@ class MissionList extends WikiBase
 
         return compact('episodes', 'cadet');
     }//end get()
-
 
     /**
      * Fetch templates through API
@@ -202,7 +196,6 @@ class MissionList extends WikiBase
         return $matches[1];
     }//end fetchMissionList()
 
-
     /**
      * Parse all episodes
      *
@@ -216,7 +209,6 @@ class MissionList extends WikiBase
             }//end foreach
         }//end foreach
     }//end fetchTemplates()
-
 
     /**
      * Parse a episode wiki text
@@ -232,15 +224,16 @@ class MissionList extends WikiBase
         $missions = array_map(
             function ($mission) {
                 $this->parse->page($mission);
+
                 return $this->parse->get(true)['wikitext']['*'];
             },
             $missions[3]
         );
 
         preg_match('/^=+\[+([^\[\]]+)]+=+/', $episode, $matches);
+
         return $this->parseMissions($missions, $matches[1] ?? '');
     }//end fetchCadetCrew()
-
 
     /**
      * Process missions wiki text
@@ -268,7 +261,6 @@ class MissionList extends WikiBase
         return $info;
     }//end parseEpisodes()
 
-
     public function fetchCadetCrew(array $names, array $cadet)
     {
         foreach ($cadet as $episode => $missions) {
@@ -289,12 +281,11 @@ class MissionList extends WikiBase
         }//end foreach
     }//end parseEpisode()
 
-
     /**
      * Export all missions as array
 
-*
-*@return array
+     *
+     *@return array
      */
     public function export(): array
     {
@@ -305,6 +296,7 @@ class MissionList extends WikiBase
                 $mission = $mission->toArray();
                 if (MissionModel::SPACE_BATTLE === $mission['type']) {
                     $missions[] = $mission;
+
                     return;
                 }
 
@@ -357,9 +349,9 @@ class MissionList extends WikiBase
                 $missions[] = $mission;
             }
         );
+
         return [$episodes, $missions];
     }
-
 
     /**
      * Iterate through all missions and call the given function.

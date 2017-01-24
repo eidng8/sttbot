@@ -17,28 +17,27 @@ use eidng8\Log\Log;
  */
 abstract class Template implements WikiTextParser
 {
+    public const AWAY_TEAM = 'away team';
 
-    const AWAY_TEAM = 'away team';
+    public const CADET_CHALLENGE = 'cadet challenge';
 
-    const CADET_CHALLENGE = 'cadet challenge';
+    public const COST = 'cost';
 
-    const COST = 'cost';
+    public const CREW = 'crew';
 
-    const CREW = 'crew';
+    public const DISTRESS_CALLS = 'distress calls';
 
-    const DISTRESS_CALLS = 'distress calls';
+    public const EPISODE = 'episode';
 
-    const EPISODE = 'episode';
+    public const MISSION = 'mission';
 
-    const MISSION = 'mission';
+    public const SPACE_BATTLE = 'space battle';
 
-    const SPACE_BATTLE = 'space battle';
+    public const TITLE = 'title';
 
-    const TITLE = 'title';
+    public const TRIPLE = '/{{triple\d*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*}}/iu';
 
-    const TRIPLE = '/{{triple\d*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*}}/iu';
-
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
     /**
      * The wiki text to be parsed
@@ -61,7 +60,6 @@ abstract class Template implements WikiTextParser
      */
     protected $found;
 
-
     /**
      * Template constructor.
      *
@@ -81,11 +79,10 @@ abstract class Template implements WikiTextParser
         $this->parse();
     }//end explode()
 
-
     /**
      * Parse the wiki text and returns all extracted templates
      *
-*@return string[]
+     *@return string[]
      */
     public function parse()
     {
@@ -120,7 +117,6 @@ abstract class Template implements WikiTextParser
         return "/^\\s*\\{\\{{$this->name}.+?^\s*}}$/imsu";
     }//end __construct()
 
-
     /**
      * Split the given template string into array
      *
@@ -143,7 +139,6 @@ abstract class Template implements WikiTextParser
 
         return $traits;
     }//end get()
-
 
     /**
      * Create intance according to wiki text
@@ -175,7 +170,6 @@ abstract class Template implements WikiTextParser
         return null;
     }//end parse()
 
-
     /**
      * Returns all found template texts
      *
@@ -185,7 +179,6 @@ abstract class Template implements WikiTextParser
     {
         return $this->found;
     }//end sections()
-
 
     /**
      * Get section

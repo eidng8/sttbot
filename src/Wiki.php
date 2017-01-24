@@ -14,7 +14,6 @@ use eidng8\Wiki\WikiBase;
 
 class Wiki extends WikiBase
 {
-
     /**
      * Crew list
      *
@@ -28,7 +27,6 @@ class Wiki extends WikiBase
      * @var MissionList
      */
     protected $missions;
-
 
     /**
      * get Crew list
@@ -50,7 +48,6 @@ class Wiki extends WikiBase
             = new CrewList($tableText, $this->parse, $this->query);
     }//end crew()
 
-
     /**
      * get Mission list
      *
@@ -69,6 +66,7 @@ class Wiki extends WikiBase
         );
 
         $this->missions->fetch();
+
         return $this->missions;
     }//end missions()
 }//end class

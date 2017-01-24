@@ -15,7 +15,6 @@ use GuzzleHttp\Psr7\Response;
 
 class Base extends TestCase
 {
-
     /**
      * test cache
      *
@@ -30,7 +29,6 @@ class Base extends TestCase
      */
     protected $parse;
 
-
     public static function setUpBeforeClass()
     {
         parent::setUpBeforeClass();
@@ -41,7 +39,6 @@ class Base extends TestCase
             '/parse/Crew_1e8d43d73cc2f92192ca041f6ef6fcc7.json';
         touch(static::$cacheFile);
     }//end testGetCached()
-
 
     protected function setUp(Http $http = null)
     {

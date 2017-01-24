@@ -15,7 +15,6 @@ use Mockery;
 
 class FetchTest extends Base
 {
-
     public function testGetCached()
     {
         $parse = Mockery::mock(
@@ -37,7 +36,6 @@ class FetchTest extends Base
         $this->assertTrue($actual['images']['Changeling_Bashir_head.png']);
         $this->assertSame($parse->get(), $actual);
     }
-
 
     public function testGetFetch()
     {
@@ -83,7 +81,6 @@ class FetchTest extends Base
         rmdir(static::DIR_CACHE . '/not-exist/parse');
         rmdir(static::DIR_CACHE . '/not-exist');
     }//end testGetCached()
-
 
     public function testGetNothing()
     {

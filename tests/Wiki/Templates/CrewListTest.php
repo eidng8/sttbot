@@ -15,16 +15,13 @@ use eidng8\Wiki\Templates\CrewList;
 
 class CrewListTest extends TestCase
 {
-
     private $wiki;
-
 
     public function __construct()
     {
         parent::__construct();
         $this->wiki = $this->newWikiInstance();
     }//end __construct()
-
 
     public function testNew()
     {
@@ -97,7 +94,6 @@ class CrewListTest extends TestCase
         );
     }//end testParse()
 
-
     public function testTuvix()
     {
         $crew = $this->wiki->crew();
@@ -131,7 +127,6 @@ class CrewListTest extends TestCase
         );
     }//end testTuvix()
 
-
     public function testChefNeelix()
     {
         $crew = $this->wiki->crew();
@@ -160,7 +155,6 @@ class CrewListTest extends TestCase
         );
     }//end testChefNeelix()
 
-
     public function testCMOPulaski()
     {
         $crew = $this->wiki->crew();
@@ -186,7 +180,6 @@ class CrewListTest extends TestCase
             $member->traits
         );
     }//end testCMOPulaski()
-
 
     public function testExport()
     {

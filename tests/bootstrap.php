@@ -5,7 +5,6 @@
  * Date: 2016-12-08
  * Time: 22:25
  */
-
 $dir = dirname($filename);
 $cache = "$dir/data/cache";
 

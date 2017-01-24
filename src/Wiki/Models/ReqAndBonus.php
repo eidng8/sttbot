@@ -13,12 +13,10 @@ namespace eidng8\Wiki\Models;
  */
 class ReqAndBonus extends LeveledValues
 {
-
     /**
      * @var string[]
      */
     protected $names;
-
 
     public function validate(): bool
     {
@@ -45,7 +43,6 @@ class ReqAndBonus extends LeveledValues
         return true;
     }//end validate()
 
-
     /**
      * Alias of `name()`
      *
@@ -57,7 +54,6 @@ class ReqAndBonus extends LeveledValues
     {
         return $this->name($names);
     }//end name()
-
 
     /**
      * Get or set names
@@ -74,7 +70,6 @@ class ReqAndBonus extends LeveledValues
 
         return $this->names = $names;
     }//end name()
-
 
     public function toArray(): array
     {

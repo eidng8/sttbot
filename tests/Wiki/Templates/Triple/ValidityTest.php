@@ -11,9 +11,8 @@ namespace eidng8\Tests\Wiki\Templates\Triple;
 use eidng8\Tests\TestCase;
 use eidng8\Wiki\Templates\Triple;
 
-class ValidityTestTest extends TestCase
+class ValidityTest extends TestCase
 {
-
     public function testSkillShortcut()
     {
         $text = '{{triple|dip| 106 | 350 | 805}}';
@@ -25,7 +24,6 @@ class ValidityTestTest extends TestCase
         $this->assertSame(805, $actual->epic());
     }//end testNamed()
 
-
     public function testSkill()
     {
         $text = '{{triple|Diplomacy| 106 | 350 | 805}}';
@@ -36,7 +34,6 @@ class ValidityTestTest extends TestCase
         $this->assertSame(350, $actual->elite());
         $this->assertSame(805, $actual->epic());
     }//end testNamed()
-
 
     public function testMultipleTraits()
     {
@@ -58,7 +55,6 @@ class ValidityTestTest extends TestCase
         $this->assertSame(34, $actual->epic());
     }//end testMultipleNames()
 
-
     public function testIncomplete()
     {
         $text = ' {{triple|Exobiology| 26 | 86| |nobonus=all}}';
@@ -70,7 +66,6 @@ class ValidityTestTest extends TestCase
         $this->assertSame(0, $actual->epic());
     }//end testIncomplete()
 
-
     public function testExtraneousValid()
     {
         $text = '{{currency|CRN}} {{triple| 4 | 4 | 8 }}';
@@ -81,11 +76,10 @@ class ValidityTestTest extends TestCase
         $this->assertSame(8, $actual->epic());
     }//end testExtraneousValid()
 
-
     public function testInvalid()
     {
         $text
-            = <<<EOT
+            = <<<'EOT'
 {{triple
    |nobonus=Saboteur,  Changeling
    |check=Jury Rigger, Crafty}}

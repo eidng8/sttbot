@@ -16,12 +16,10 @@ use eidng8\Wiki\Api\Query;
 
 class ApiTest extends TestCase
 {
-
     public function testConstruct()
     {
         $this->assertNotNull(new Api(new Http('url'), static::DIR_CACHE));
     }//end testConstruct()
-
 
     public function testParse()
     {
@@ -31,7 +29,6 @@ class ApiTest extends TestCase
         );
     }//end testParse()
 
-
     public function testParseForceRecreate()
     {
         $api = new Api(new Http('url'), static::DIR_CACHE);
@@ -40,7 +37,6 @@ class ApiTest extends TestCase
         $this->assertNotSame($inst, $api->parse(true));
     }//end testParseForceRecreate()
 
-
     public function testQuery()
     {
         $this->assertInstanceOf(
@@ -48,7 +44,6 @@ class ApiTest extends TestCase
             (new Api(new Http('url'), static::DIR_CACHE))->query()
         );
     }//end testQuery()
-
 
     public function testQueryForceRecreate()
     {
