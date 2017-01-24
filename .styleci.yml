@@ -26,4 +26,3 @@ enabled:
 disabled:
   - concat_without_spaces
   - phpdoc_summary
-  - unalign_double_arrow
