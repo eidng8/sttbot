@@ -12,6 +12,9 @@ use eidng8\Tests\TestCase;
 use eidng8\Wiki\Templates\InfoBox;
 use eidng8\Wiki\Templates\MissionCost;
 
+/**
+ * InfoBoxTest
+ */
 class InfoBoxTest extends TestCase
 {
     public function testEpisodeMission()

@@ -14,6 +14,9 @@ use eidng8\Wiki\Api\Http;
 use GuzzleHttp\Psr7\Response;
 use Mockery;
 
+/**
+ * ExpandTemplatesTest
+ */
 class ExpandTemplatesTest extends TestCase
 {
     // @codingStandardsIgnoreStart

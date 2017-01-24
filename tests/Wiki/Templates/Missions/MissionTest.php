@@ -15,8 +15,20 @@ use eidng8\Wiki\Models\MissionCost;
 use eidng8\Wiki\Models\MissionStep;
 use eidng8\Wiki\Templates\Mission;
 
+/**
+ * MissionTest
+ */
 class MissionTest extends TestCase
 {
+    protected function setUp()
+    {
+        parent::setUp();
+        Log::forTest();
+    }//end checkMissionStep()
+
+    /**
+     * @return Mission
+     */
     public function testLoad()
     {
         $json = file_get_contents(
@@ -47,6 +59,9 @@ class MissionTest extends TestCase
         return $actual;
     }
 
+    /**
+     * @return Mission
+     */
     public function testCadetLoad()
     {
         $json = file_get_contents(
@@ -75,6 +90,9 @@ class MissionTest extends TestCase
         return $actual;
     }//end testLoad()
 
+    /**
+     * @param MissionModel $model
+     */
     private function checkCadetMissionSteps(MissionModel $model)
     {
         $this->checkMissionStep(
@@ -144,6 +162,10 @@ class MissionTest extends TestCase
         );
     }//end testCadetLoad()
 
+    /**
+     * @param MissionStep $step
+     * @param array       $val
+     */
     private function checkMissionStep(MissionStep $step, array $val)
     {
         $this->assertInstanceOf(MissionStep::class, $step);
@@ -155,6 +177,9 @@ class MissionTest extends TestCase
         }//end foreach
     }//end testCadetAdvLoad()
 
+    /**
+     * @return Mission
+     */
     public function testCadetAdvLoad()
     {
         $json = file_get_contents(
@@ -183,6 +208,9 @@ class MissionTest extends TestCase
         return $actual;
     }//end testNoCost()
 
+    /**
+     * @param MissionModel $model
+     */
     private function checkCadetAdvMissionSteps(MissionModel $model)
     {
         $this->checkMissionStep(
@@ -350,10 +378,4 @@ class MissionTest extends TestCase
         $this->assertInternalType('array', $actual['steps'][2]);
         $this->assertInternalType('array', $actual['steps'][3]);
     }//end checkCadetAdvMissionSteps()
-
-    protected function setUp()
-    {
-        parent::setUp();
-        Log::forTest();
-    }//end checkMissionStep()
 }//end class

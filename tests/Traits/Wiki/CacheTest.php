@@ -11,6 +11,9 @@ namespace eidng8\Tests\Traits\Wiki;
 use eidng8\Tests\TestCase;
 use eidng8\Traits\Wiki\Cache;
 
+/**
+ * CacheTest
+ */
 class CacheTest extends TestCase
 {
     use Cache;
@@ -34,17 +37,12 @@ class CacheTest extends TestCase
         $this->removeFile($this->file);
     }//end testCacheRoot()
 
-    private function removeFile($file, $dir = false)
+    protected function setUp()
     {
-        $path = "{$this->cacheRoot}/$file.json";
-        if (is_file($path)) {
-            unlink($path);
-            if ($dir) {
-                $dirname = dirname($path);
-                rmdir($dirname);
-            }
-        }
-    }//end testSetCacheRoot()
+        parent::setUp();
+        $this->cacheRoot = static::DIR_CACHE;
+        $this->removeFile($this->file, true);
+    }//end testGetCacheNotExist()
 
     public function testGetCacheRoot()
     {
@@ -115,10 +113,21 @@ class CacheTest extends TestCase
         $this->assertSame('just a test', $this->cache($this->file));
     }
 
-    protected function setUp()
+    /**
+     * Removes the specified temporary file
+     *
+     * @param      $file
+     * @param bool $dir
+     */
+    private function removeFile($file, $dir = false)
     {
-        parent::setUp();
-        $this->cacheRoot = static::DIR_CACHE;
-        $this->removeFile($this->file, true);
-    }//end testGetCacheNotExist()
+        $path = "{$this->cacheRoot}/$file.json";
+        if (is_file($path)) {
+            unlink($path);
+            if ($dir) {
+                $dirname = dirname($path);
+                rmdir($dirname);
+            }
+        }
+    }//end testSetCacheRoot()
 }//end class

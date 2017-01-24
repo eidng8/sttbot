@@ -13,6 +13,9 @@ use eidng8\Wiki\Api\Http;
 use eidng8\Wiki\Api\Query;
 use GuzzleHttp\Psr7\Response;
 
+/**
+ * QueryTest
+ */
 class QueryTest extends TestCase
 {
     /**
@@ -34,8 +37,22 @@ class QueryTest extends TestCase
         parent::setUpBeforeClass();
 
         static::$cacheFile = static::DIR_CACHE
-            . '/query/2bc2554e05cf988e81f73d138cc51212.json';
+                             . '/query/2bc2554e05cf988e81f73d138cc51212.json';
         touch(static::$cacheFile);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp(Http $http = null)
+    {
+        parent::setUp();
+
+        if (!$http) {
+            $http = Http::shouldRespond([new Response(200)]);
+        }
+        $this->query = new Query($http);
+        $this->query->cacheRoot(static::DIR_CACHE);
     }
 
     public function testTitles()
@@ -109,15 +126,4 @@ class QueryTest extends TestCase
     {
         $this->assertEmpty($this->query->thumbnails(['nothing']));
     }//end testGetThumbnailsGotNull()
-
-    protected function setUp(Http $http = null)
-    {
-        parent::setUp();
-
-        if (!$http) {
-            $http = Http::shouldRespond([new Response(200)]);
-        }
-        $this->query = new Query($http);
-        $this->query->cacheRoot(static::DIR_CACHE);
-    }
 }//end class

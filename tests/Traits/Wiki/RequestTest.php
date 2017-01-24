@@ -11,6 +11,9 @@ namespace eidng8\Tests\Traits\Wiki;
 use eidng8\Tests\TestCase;
 use eidng8\Traits\Wiki\Request;
 
+/**
+ * RequestTest
+ */
 class RequestTest extends TestCase
 {
     use Request;

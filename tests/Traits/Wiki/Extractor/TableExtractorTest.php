@@ -12,6 +12,9 @@ use eidng8\Tests\TestCase;
 use eidng8\Traits\Wiki\Cache;
 use eidng8\Traits\Wiki\Extractor\TableExtractor;
 
+/**
+ * TableExtractorTest
+ */
 class TableExtractorTest extends TestCase
 {
     use Cache, TableExtractor;

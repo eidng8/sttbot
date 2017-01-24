@@ -11,6 +11,9 @@ namespace eidng8\Tests\Models;
 use eidng8\Tests\TestCase;
 use eidng8\Wiki\Models\CrewMember;
 
+/**
+ * CrewMemberTest
+ */
 class CrewMemberTest extends TestCase
 {
     /**

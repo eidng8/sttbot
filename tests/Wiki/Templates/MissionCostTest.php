@@ -12,6 +12,9 @@ use eidng8\Log\Log;
 use eidng8\Tests\TestCase;
 use eidng8\Wiki\Templates\MissionCost;
 
+/**
+ * MissionCostTest
+ */
 class MissionCostTest extends TestCase
 {
     public function testTriple()

@@ -11,6 +11,9 @@ namespace eidng8\Tests\Wiki\Templates\Triple;
 use eidng8\Tests\TestCase;
 use eidng8\Wiki\Templates\Triple;
 
+/**
+ * ValidityTest
+ */
 class ValidityTest extends TestCase
 {
     public function testSkillShortcut()

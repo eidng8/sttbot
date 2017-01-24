@@ -10,6 +10,9 @@ namespace eidng8\Tests\Wiki\Api\Parse;
 
 use eidng8\Wiki\Api\Parse;
 
+/**
+ * BasicTest
+ */
 class BasicTest extends Base
 {
     public function testFollowRedirects()

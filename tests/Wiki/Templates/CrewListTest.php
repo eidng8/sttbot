@@ -13,10 +13,16 @@ use eidng8\Wiki\Models\CrewMember;
 use eidng8\Wiki\Models\Skills;
 use eidng8\Wiki\Templates\CrewList;
 
+/**
+ * CrewListTest
+ */
 class CrewListTest extends TestCase
 {
     private $wiki;
 
+    /**
+     * CrewListTest constructor.
+     */
     public function __construct()
     {
         parent::__construct();

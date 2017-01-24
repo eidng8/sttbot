@@ -13,6 +13,9 @@ use eidng8\Wiki\Api\Parse;
 use GuzzleHttp\Psr7\Response;
 use Mockery;
 
+/**
+ * FetchTest
+ */
 class FetchTest extends Base
 {
     public function testGetCached()
@@ -21,6 +24,7 @@ class FetchTest extends Base
             Parse::class . '[]',
             [Http::shouldRespond([new Response(200)])]
         );
+        /* @noinspection PhpMethodParametersCountMismatchInspection */
         $parse->shouldNotReceive('fetch');
 
         /* @var Parse $parse */
@@ -59,6 +63,7 @@ class FetchTest extends Base
                 ),
             ]
         );
+        /* @noinspection PhpMethodParametersCountMismatchInspection */
         $parse->shouldReceive('fetch')->passthru();
 
         /* @var Parse $parse */

@@ -14,6 +14,9 @@ use eidng8\Wiki\Api\Http;
 use eidng8\Wiki\Api\Parse;
 use eidng8\Wiki\Api\Query;
 
+/**
+ * ApiTest
+ */
 class ApiTest extends TestCase
 {
     public function testConstruct()

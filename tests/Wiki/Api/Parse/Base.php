@@ -13,6 +13,9 @@ use eidng8\Wiki\Api\Http;
 use eidng8\Wiki\Api\Parse;
 use GuzzleHttp\Psr7\Response;
 
+/**
+ * Parse test base
+ */
 class Base extends TestCase
 {
     /**
@@ -40,6 +43,9 @@ class Base extends TestCase
         touch(static::$cacheFile);
     }//end testGetCached()
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp(Http $http = null)
     {
         parent::setUp();

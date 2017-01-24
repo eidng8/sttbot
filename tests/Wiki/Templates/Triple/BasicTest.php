@@ -11,6 +11,9 @@ namespace eidng8\Tests\Wiki\Templates\Triple;
 use eidng8\Tests\TestCase;
 use eidng8\Wiki\Templates\Triple;
 
+/**
+ * BasicTest
+ */
 class BasicTest extends TestCase
 {
     /**

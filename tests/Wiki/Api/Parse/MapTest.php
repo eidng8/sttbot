@@ -8,6 +8,9 @@
 
 namespace eidng8\Tests\Wiki\Api\Parse;
 
+/**
+ * MapTest
+ */
 class MapTest extends Base
 {
     public function testMapLinks()

@@ -11,6 +11,9 @@ namespace eidng8\Tests\Traits\Wiki;
 use eidng8\Tests\TestCase;
 use eidng8\Traits\Wiki\Properties;
 
+/**
+ * PropertiesTest
+ */
 class PropertiesTest extends TestCase
 {
     use Properties;
