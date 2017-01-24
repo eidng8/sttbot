@@ -14,7 +14,6 @@ use Monolog\Logger;
 
 /**
  * Logger
- *
  * @method static bool debug(string $msg, array $context = [])
  * @method static bool info(string $msg, array $context = [])
  * @method static bool notice(string $msg, array $context = [])
@@ -62,7 +61,6 @@ final class Log
 
     /**
      * Set log level.
-     *
      * Please note that error log isn't affected by this setting.
      *
      * @param int $level
@@ -100,7 +98,6 @@ final class Log
 
     /**
      * Setup test logger.
-     *
      * All outputs are store in {@see $testOutput} and {@see $testErrorOutput}
      */
     public static function forTest()
@@ -115,25 +112,24 @@ final class Log
         );
     }//end forTest()
 
+    public static function useStdio()
+    {
+        static::$output = new Logger('sttbot');
+        static::$output->pushHandler(
+            new StreamHandler('php://output', static::$level)
+        );
+
+        static::$error = new Logger('sttbot');
+        static::$error->pushHandler(
+            new StreamHandler('php://stderr', static::$level)
+        );
+    }//end useStdio()
+
     /**
      * {@inheritdoc}
      */
     public static function __callStatic(string $name, array $arguments): bool
     {
-        if (empty(static::$output)) {
-            static::$output = new Logger('sttbot');
-            static::$output->pushHandler(
-                new StreamHandler('php://output', static::$level)
-            );
-        }
-
-        if (empty(static::$error)) {
-            static::$error = new Logger('sttbot');
-            static::$error->pushHandler(
-                new StreamHandler('php://stderr', static::$level)
-            );
-        }
-
         $stdout = ['debug', 'info', 'notice', 'warn'];
 
         return call_user_func_array(

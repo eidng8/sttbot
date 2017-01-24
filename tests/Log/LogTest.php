@@ -61,6 +61,7 @@ class LogTest extends TestCase
 
     public function testSetLevel()
     {
+        Log::useStdio();
         Log::setLevel(Logger::NOTICE);
         Log::forTest();
 
