@@ -69,7 +69,7 @@ final class Log
 
     public static function setOutputStream($stream)
     {
-        static::$output = new Logger('stthb-output');
+      static::$output = new Logger('sttbot-output');
         static::$output->pushHandler(
             new StreamHandler($stream, static::$level)
         );
@@ -78,7 +78,7 @@ final class Log
 
     public static function setErrorStream($stream)
     {
-        static::$error = new Logger('stthb-error');
+      static::$error = new Logger('sttbot-error');
         static::$error->pushHandler(
             new StreamHandler($stream, static::$level)
         );
@@ -88,11 +88,11 @@ final class Log
     public static function forTest()
     {
         static::$output = new Logger(
-            'stthb-output',
+          'sttbot-output',
             [static::$testOutput = new TestHandler()]
         );
         static::$error = new Logger(
-            'stthb-error',
+          'sttbot-error',
             [static::$testErrorOutput = new TestHandler()]
         );
     }//end forTest()
@@ -101,14 +101,14 @@ final class Log
     public static function __callStatic(string $name, array $arguments): bool
     {
         if (empty(static::$output)) {
-            static::$output = new Logger('stthb');
+          static::$output = new Logger('sttbot');
             static::$output->pushHandler(
                 new StreamHandler('php://output', static::$level)
             );
         }
 
         if (empty(static::$error)) {
-            static::$error = new Logger('stthb');
+          static::$error = new Logger('sttbot');
             static::$error->pushHandler(
                 new StreamHandler('php://stderr', static::$level)
             );
