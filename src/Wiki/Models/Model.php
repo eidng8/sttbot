@@ -53,5 +53,5 @@ abstract class Model implements ArrayAccess, JsonSerializable
      *
      * @return array
      */
-    abstract public function toArray(): array;//end jsonSerialize()
+    abstract public function toArray(): array;
 }//end class
