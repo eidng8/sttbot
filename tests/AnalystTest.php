@@ -8,6 +8,7 @@
 
 namespace eidng8\Tests;
 
+use eidng8\Log\Log;
 use eidng8\Wiki\Analyst;
 use eidng8\Wiki\Models\CrewMember;
 use eidng8\Wiki\Models\Mission;
@@ -54,11 +55,13 @@ class AnalystTest extends TestCase
         $this->assertNotEmpty($step['crew']['critical']);
 
         $this->assertNotEmpty(
-            $analyst->getBestCrew()['episode'][$idxEpisode][$idxMission][$idxStep]
+            $analyst->getBestCrew(
+            )['episode'][$idxEpisode][$idxMission][$idxStep]
         );
         $this->assertSame(
             'Chancellor Gowron',
-            $analyst->getBestCrew()['episode'][$idxEpisode][$idxMission][$idxStep][5][0]->name
+            $analyst->getBestCrew(
+            )['episode'][$idxEpisode][$idxMission][$idxStep][5][0]->name
         );
     }//end testRateStep()
 
@@ -88,11 +91,13 @@ class AnalystTest extends TestCase
         $this->assertNotEmpty($step['crew']['critical']);
 
         $this->assertNotEmpty(
-            $analyst->getBestCrew()['cadet'][$idxChallenge][$idxMission][$idxStep]
+            $analyst->getBestCrew(
+            )['cadet'][$idxChallenge][$idxMission][$idxStep]
         );
         $this->assertSame(
             'Dr Phlox',
-            $analyst->getBestCrew()['cadet'][$idxChallenge][$idxMission][$idxStep][2][0]->name
+            $analyst->getBestCrew(
+            )['cadet'][$idxChallenge][$idxMission][$idxStep][2][0]->name
         );
     }//end testRateStepCadet()
 
@@ -101,6 +106,7 @@ class AnalystTest extends TestCase
      */
     public function testCrossRating()
     {
+        Log::forTest();
         $analyst = new Analyst($this->wiki->missions(), $this->wiki->crew());
         $this->assertInstanceOf(Analyst::class, $analyst);
         $analyst->crossRating();

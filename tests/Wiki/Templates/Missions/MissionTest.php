@@ -293,7 +293,7 @@ class MissionTest extends TestCase
         $this->assertFalse($model->validate());
         $model->cost = $cost;
         $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
+            Log::$testOutput->hasWarningThatMatches(
                 '/Mission \[ Picking the Bones ] has no cost\./'
             ),
             'Mission with no cost should trigger warning.'
@@ -313,7 +313,7 @@ class MissionTest extends TestCase
         $this->assertFalse($model->validate());
         $model->steps = $steps;
         $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
+            Log::$testOutput->hasWarningThatMatches(
                 '/Mission \[ Picking the Bones ] has no step\./'
             ),
             'Mission with no step should trigger warning.'
@@ -333,7 +333,7 @@ class MissionTest extends TestCase
         $this->assertFalse($model->validate());
         $model->steps[0] = $step;
         $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
+            Log::$testOutput->hasWarningThatMatches(
                 '/Mission \[ Picking the Bones ] step \( 0 \) is empty\./'
             ),
             'Empty step should trigger warning.'
@@ -353,7 +353,7 @@ class MissionTest extends TestCase
         $this->assertFalse($model->validate());
         $model->steps[1]->skills = $skills;
         $this->assertTrue(
-            Log::$testErrorOutput->hasWarningThatMatches(
+            Log::$testOutput->hasWarningThatMatches(
                 '/Mission \[ Picking the Bones ] step \( 1 \) is invalid\./'
             ),
             'Invalid step should trigger warning.'

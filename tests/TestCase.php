@@ -8,9 +8,11 @@
 
 namespace eidng8\Tests;
 
+use eidng8\Log\Log;
 use eidng8\Wiki;
 use eidng8\Wiki\Api\Api;
 use eidng8\Wiki\Api\Http;
+use Monolog\Logger;
 use PHPUnit_Framework_TestCase;
 
 /**
@@ -54,6 +56,7 @@ class TestCase extends PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
+        Log::setLevel(Logger::DEBUG);
     }
 
     public function tearDown()

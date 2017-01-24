@@ -53,8 +53,8 @@ class MissionCostTest extends TestCase
         Log::forTest();
         $this->assertNull(MissionCost::load(''));
         $this->assertTrue(
-            Log::$testErrorOutput->hasNoticeThatMatches('/Empty template/'),
-            'Empty mission cost template should raise warning.'
+            Log::$testOutput->hasNoticeThatMatches('/Empty template/'),
+            'Empty mission cost template should raise notice.'
         );
     }//end testEmpty()
 }//end class
