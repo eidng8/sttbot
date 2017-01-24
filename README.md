@@ -5,7 +5,7 @@ StyleCI
 [![StyleCI](https://styleci.io/repos/79508314/shield?branch=master)](https://styleci.io/repos/79508314)
 
 CodeCov
-[![Codecov branch](https://img.shields.io/codecov/c/github/eidng8/sttbot/master.svg?style=flat-square)](https://codecov.io/gh/eidng8/sttbot)
+[![codecov](https://codecov.io/gh/eidng8/sttbot/branch/master/graph/badge.svg)](https://codecov.io/gh/eidng8/sttbot)
 
 GitLab
 [![build status](https://gitlab.com/stthb/sttbot/badges/master/build.svg)](https://gitlab.com/stthb/sttbot/commits/master)
