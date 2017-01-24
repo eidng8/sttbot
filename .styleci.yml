@@ -7,7 +7,6 @@ enabled:
   - no_blank_lines_after_return
   - no_php4_constructor
   - no_short_echo_tag
-  - no_unreachable_default_argument_value
   - no_useless_else
   - no_useless_return
 #  - ordered_class_elements
