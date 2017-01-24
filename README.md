@@ -8,6 +8,9 @@ GitLab
 [![build status](https://gitlab.com/stthb/sttbot/badges/master/build.svg)](https://gitlab.com/stthb/sttbot/commits/master)
 [![coverage report](https://gitlab.com/stthb/sttbot/badges/master/coverage.svg)](https://gitlab.com/stthb/sttbot/commits/master)
 
+VersionEye
+[![Dependency Status](https://www.versioneye.com/user/projects/5886d78db194d40039c906e6/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5886d78db194d40039c906e6)
+
 Code Climate
 [![Test Coverage](https://codeclimate.com/github/eidng8/sttbot/badges/coverage.svg)](https://codeclimate.com/github/eidng8/sttbot/coverage)
 [![Issue Count](https://codeclimate.com/github/eidng8/sttbot/badges/issue_count.svg)](https://codeclimate.com/github/eidng8/sttbot)
