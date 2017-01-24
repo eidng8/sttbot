@@ -20,3 +20,4 @@ disabled:
   - concat_without_spaces
   - phpdoc_summary
   - method_separation
+  - simplified_null_return
