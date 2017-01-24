@@ -143,13 +143,6 @@ abstract class Template implements WikiTextParser
         } catch (EmptyTemplateException $ex) {
             Log::notice('Empty template', [static::class, $ex, $wikiText]);
         }
-        // catch (\Exception $ex) {
-        //     Log::warn(
-        //         "Failed to parse template: {$ex->getMessage()}",
-        //         [static::class, $ex, $wikiText]
-        //     );
-        //     return null;
-        // }
 
         return null;
     }//end parse()
