@@ -17,9 +17,9 @@ http://startrektimelineswiki.com/ and serves to [stthb](https://github.com/eidng
 
 ----------------
 
-This project server a few purpose:
+This project serves a few purpose:
 
 * As the name depicts & the above description says;
 * As a trial of specific MediaWiki wiki-text parser;
-* As a test bed to try out PHP 7.1 features;
+* As a test bed to try out PHP 7.1 features & tools;
 * As a test bed to try out various public services;
