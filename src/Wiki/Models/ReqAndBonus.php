@@ -18,6 +18,9 @@ class ReqAndBonus extends LeveledValues
      */
     protected $names;
 
+    /**
+     * @return bool
+     */
     public function validate(): bool
     {
         if (empty($this->names) || !is_array($this->names)) {
@@ -71,6 +74,9 @@ class ReqAndBonus extends LeveledValues
         return $this->names = $names;
     }//end name()
 
+    /**
+     * @return array
+     */
     public function toArray(): array
     {
         return [

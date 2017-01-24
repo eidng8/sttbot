@@ -11,8 +11,14 @@ namespace eidng8\Wiki\Models;
 use ArrayAccess;
 use JsonSerializable;
 
+/**
+ * Model base class
+ */
 abstract class Model implements ArrayAccess, JsonSerializable
 {
+    /**
+     * {@inheritdoc}
+     */
     public function offsetGet($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -22,21 +28,33 @@ abstract class Model implements ArrayAccess, JsonSerializable
         return null;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetExists($offset): bool
     {
         return property_exists($this, strtolower(trim($offset)));
     }//end offsetExists()
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetSet($offset, $value)
     {
         $this->{strtolower(trim($offset))} = $value;
     }//end offsetGet()
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetUnset($offset)
     {
         $this->{strtolower(trim($offset))} = null;
     }//end offsetSet()
 
+    /**
+     * {@inheritdoc}
+     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

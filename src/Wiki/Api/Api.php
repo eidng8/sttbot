@@ -61,7 +61,7 @@ class Api
     }//end __construct()
 
     /**
-     * Calls the `parse` Wiki API endpoint
+     * Creates the `parse` Wiki API endpoint
      *
      * @param bool $new `true` to create a new {@link \eidng8\Wiki\Api\Parse}
      *                  instance
@@ -80,7 +80,7 @@ class Api
     }//end parse()
 
     /**
-     * Calls the `query` Wiki API endpoint
+     * Creates the `query` Wiki API endpoint
      *
      * @param bool $new `true` to create a new {@link \eidng8\Wiki\Api\Query}
      *                  instance
@@ -98,6 +98,14 @@ class Api
         return $this->query;
     }//end parse()
 
+    /**
+     * Creates the `expandtemplates` Wiki API endpoint
+     *
+     * @param bool $new `true` to create a new {@link \eidng8\Wiki\Api\Query}
+     *                  instance
+     *
+     * @return ExpandTemplates
+     */
     public function expandTemplates(bool $new = false): ExpandTemplates
     {
         if ($new || !$this->expandTemplates) {

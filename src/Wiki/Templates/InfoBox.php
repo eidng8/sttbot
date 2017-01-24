@@ -17,6 +17,12 @@ use eidng8\Wiki\Template;
  */
 class InfoBox extends Template
 {
+    /**
+     * InfoBox constructor.
+     *
+     * @param string $wikiText
+     * @param string $type
+     */
     public function __construct(
         string $wikiText,
         string $type = Template::MISSION
@@ -24,15 +30,18 @@ class InfoBox extends Template
         parent::__construct($wikiText, "Infobox $type");
     }//end __construct()
 
+    /**
+     * {@inheritdoc}
+     */
     public function parse(): array
     {
         parent::parse();
-        $mi = [];
+        $mission = [];
 
         // extract title
         preg_match('/Box title\s*=\s*([^\[]+)/iu', $this->found[0], $title);
         $title = trim(strip_tags($title[1]));
-        $mi['title'] = $title;
+        $mission['title'] = $title;
 
         // extract all items
         preg_match_all('/Row \d (.+?)\s= (.+?)$/imsu', $this->found[0], $info);
@@ -47,12 +56,18 @@ class InfoBox extends Template
             }
 
             $this->dehydrate($title, $val);
-            $mi[$title] = $val;
+            $mission[$title] = $val;
         }//end foreach
 
-        return $this->found = $mi;
+        return $this->found = $mission;
     }//end parse()
 
+    /**
+     * Normalize data
+     *
+     * @param $title
+     * @param $value
+     */
     public function dehydrate(&$title, &$value): void
     {
         $trim = "{}[] \t\r\n\xb\0";
@@ -86,28 +101,63 @@ class InfoBox extends Template
         }
     }//end dehydrate()
 
-    public function name(): string
+    /**
+     * Returns the title
+     *
+     * @return string
+     */
+    public function title(): string
     {
         return $this->found[static::TITLE];
     }//end name()
 
+    /**
+     * Returns the title
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return $this->title();
+    }//end name()
+
+    /**
+     * Returns the episode name
+     *
+     * @return string
+     */
     public function episode(): string
     {
         return $this->found[static::EPISODE]
-            ?? $this->found[static::DISTRESS_CALLS]
-            ?? $this->found[static::CADET_CHALLENGE] ?? null;
+               ?? $this->found[static::DISTRESS_CALLS]
+                  ?? $this->found[static::CADET_CHALLENGE] ?? null;
     }//end episode()
 
+    /**
+     * Returns the mission sequence index number
+     *
+     * @return int
+     */
     public function sequence(): int
     {
         return $this->found[static::MISSION];
     }//end sequence()
 
+    /**
+     * Returns mission type
+     *
+     * @return string
+     */
     public function type(): string
     {
         return $this->found[static::TYPE];
     }//end type()
 
+    /**
+     * Returns mission cost
+     *
+     * @return MissionCost
+     */
     public function cost(): MissionCost
     {
         return $this->found[static::COST];

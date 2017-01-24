@@ -12,6 +12,9 @@ use eidng8\Wiki\Models\Mission as MissionModel;
 use eidng8\Wiki\Models\Skills;
 use eidng8\Wiki\WikiBase;
 
+/**
+ * Parse all missions
+ */
 class MissionList extends WikiBase
 {
     /**
@@ -87,23 +90,24 @@ class MissionList extends WikiBase
     /**
      * Get mission by name
      *
-     * @param string $name
+     * @param string $name   Name of the mission, case insensitive
+     * @param string $epName Name of episode, case insensitive
      *
-     * @return MissionModel
+     * @return MissionModel|null
      */
     public function byName(string $name, string $epName = null): ?MissionModel
     {
         $search = trim(strtolower($name));
         $epSearch = trim(strtolower($epName));
-        foreach ($this->list as $type => $episodes) {
-            foreach ($episodes as $episode => $missions) {
-                foreach ($missions as $index => $mission) {
+        foreach ($this->list as $episodes) {
+            foreach ($episodes as $missions) {
+                foreach ($missions as $mission) {
                     /* @var Mission $mission */
                     $model = $mission->get();
                     if ($search == strtolower($model->name)
                         && (empty($epSearch)
                             || strtolower($epSearch)
-                            == strtolower($model->episode))
+                               == strtolower($model->episode))
                     ) {
                         return $model;
                     }
@@ -261,6 +265,12 @@ class MissionList extends WikiBase
         return $info;
     }//end parseEpisodes()
 
+    /**
+     * Fetch all cadet mission eligible crew
+     *
+     * @param array $names
+     * @param array $cadet
+     */
     public function fetchCadetCrew(array $names, array $cadet)
     {
         foreach ($cadet as $episode => $missions) {
@@ -283,9 +293,8 @@ class MissionList extends WikiBase
 
     /**
      * Export all missions as array
-
      *
-     *@return array
+     * @return array
      */
     public function export(): array
     {

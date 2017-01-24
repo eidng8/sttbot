@@ -11,6 +11,9 @@ namespace eidng8\Wiki\Models;
 use eidng8\Contracts\Hyperlink;
 use eidng8\Log\Log;
 
+/**
+ * Mission model
+ */
 class Mission extends Model implements Hyperlink
 {
     /**
@@ -86,6 +89,9 @@ class Mission extends Model implements Hyperlink
      */
     public $steps;
 
+    /**
+     * @return bool
+     */
     public function validate(): bool
     {
         $result = true;

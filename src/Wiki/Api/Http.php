@@ -13,6 +13,9 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\RequestOptions;
 
+/**
+ * Http service class
+ */
 final class Http
 {
     /**
@@ -22,6 +25,11 @@ final class Http
      */
     private $guzzle;
 
+    /**
+     * Http constructor.
+     *
+     * @param string $uri
+     */
     public function __construct(string $uri)
     {
         $this->createClient($uri);

@@ -267,6 +267,15 @@ class CrewList extends Template
         return $max;
     }//end get()
 
+    /**
+     * Calculates various statistics
+     *
+     * Currently there's only the max skill value here. This is the pivot point
+     * where more statistics were added later. This will be the entry point of
+     * all those methods by then.
+     *
+     * @param CrewMember $member
+     */
     protected function stats(CrewMember $member)
     {
         foreach ($member->skills as $skill => $val) {

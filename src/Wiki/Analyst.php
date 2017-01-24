@@ -37,6 +37,12 @@ final class Analyst
      */
     private $bestCrew = [];
 
+    /**
+     * Analyst constructor.
+     *
+     * @param MissionList $missions
+     * @param CrewList    $crew
+     */
     public function __construct(MissionList $missions, CrewList $crew)
     {
         $this->missions = $missions;
@@ -67,7 +73,7 @@ final class Analyst
         /* @noinspection PhpUnusedParameterInspection */
         $this->missions->eachAway(
             function (Mission $mission, $index, $episode, string $type) {
-                foreach ($mission->steps as $idx => $step) {
+                foreach ($mission->steps as $step) {
                     $this->rateStep($step, $type);
                 }//end foreach
             }
@@ -276,7 +282,7 @@ final class Analyst
                     // we don't need to care about if they have bonus traits or not
                     $max = max($member->skills[$skill]);
                     if (($lock || empty($prev[$member->stars][2])
-                            || !$prev[$member->stars][2])
+                         || !$prev[$member->stars][2])
                         && $max > $prev[$member->stars][1]
                     ) {
                         $prev[$member->stars] = [$member, $max, $lock];

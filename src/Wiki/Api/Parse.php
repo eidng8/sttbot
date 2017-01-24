@@ -185,6 +185,9 @@ class Parse
         $this->option(static::$TITLE, $title);
     }//end text()
 
+    /**
+     * {@inheritdoc}
+     */
     public function properties(
         array $properties = ['wikitext', 'templates', 'links', 'images']
     ): array {
@@ -196,7 +199,7 @@ class Parse
      *
      * @param bool $fetch True to fetch new content.
      *
-     * @return string content returned from API
+     * @return array content returned from API
      */
     public function get(bool $fetch = false): ?array
     {
@@ -204,11 +207,11 @@ class Parse
             return $this->content;
         }
 
-        $file = 'parse/'
-            . $this->cacheFileName(
-                $this->option(static::$PAGE),
-                $this->optionsToParameters()
-            );
+        $file = $this->cacheFileName(
+            $this->option(static::$PAGE),
+            $this->optionsToParameters()
+        );
+        $file = "parse/$file";
         $this->content = $this->cache($file, [$this, 'fetch']);
 
         if (empty($this->content)) {
@@ -284,6 +287,14 @@ class Parse
         return $flattened;
     }//end mapImages()
 
+    /**
+     * Interpolate variables embedded in templates
+     *
+     * @param string $text
+     * @param array  $vars
+     *
+     * @return null|string
+     */
     private function interpolate(string $text, array $vars): ?string
     {
         $regex = [];

@@ -8,6 +8,9 @@
 
 namespace eidng8\Exceptions;
 
+/**
+ * Invalid Wiki template exception
+ */
 class InvalidTemplateException extends \Exception
 {
 }//end class

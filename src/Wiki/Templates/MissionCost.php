@@ -94,6 +94,9 @@ class MissionCost extends Template
         return $this->model;
     }//end get()
 
+    /**
+     * {@inheritdoc}
+     */
     public function __call($name, $arguments)
     {
         return call_user_func_array([$this->model, $name], $arguments);

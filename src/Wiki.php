@@ -12,6 +12,9 @@ use eidng8\Wiki\Templates\CrewList;
 use eidng8\Wiki\Templates\MissionList;
 use eidng8\Wiki\WikiBase;
 
+/**
+ * Wiki service class
+ */
 class Wiki extends WikiBase
 {
     /**

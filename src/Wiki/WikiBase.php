@@ -38,6 +38,13 @@ abstract class WikiBase
      */
     protected $expandTemplates;
 
+    /**
+     * WikiBase constructor.
+     *
+     * @param Parse           $parse
+     * @param Query           $query
+     * @param ExpandTemplates $expandTemplates
+     */
     public function __construct(
         Parse $parse,
         Query $query,

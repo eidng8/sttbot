@@ -79,6 +79,11 @@ class ExpandTemplates
         return $this->content;
     }//end get()
 
+    /**
+     * Calls the API endpoint
+     *
+     * @return mixed
+     */
     public function fetch()
     {
         return $this->api->expandTemplates($this->optionsToParameters());

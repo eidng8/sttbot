@@ -42,6 +42,9 @@ class Mission extends Template
         parent::__construct($wikiText, $name, $options);
     }//end __construct()
 
+    /**
+     * {@inheritdoc}
+     */
     public function parse(): MissionModel
     {
         $this->found = [];
@@ -272,6 +275,15 @@ class Mission extends Template
         return $props;
     }//end parseStep()
 
+    /**
+     * Parse mission step properties
+     *
+     * @param string $key
+     * @param string $values
+     * @param string $advValues
+     *
+     * @return array|Triple|mixed|null
+     */
     public function parseStepProp(
         string $key,
         string $values,
@@ -410,11 +422,21 @@ class Mission extends Template
         return $model;
     }//end createModel()
 
+    /**
+     * @param MissionModel $model
+     *
+     * @return bool
+     */
     public function validateModel(MissionModel $model): bool
     {
         return $model->validate();
     }//end loadReqAndBonusModel()
 
+    /**
+     * @param Triple|null $values
+     *
+     * @return ReqAndBonus|null
+     */
     public function loadReqAndBonusModel(Triple $values = null)
     {
         if (empty($values)) {

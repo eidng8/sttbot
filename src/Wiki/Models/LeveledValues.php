@@ -41,9 +41,7 @@ class LeveledValues extends Model
     /**
      * Set specific difficulty level value
      *
-     * @param int[] $value
-     *
-     * @return void
+     * @param int[] $values
      */
     public function set(array $values): void
     {

@@ -125,7 +125,7 @@ class CrewMember extends Model implements Hyperlink
     /**
      * Checks if crew member can unlock the given mission step
      *
-     *@param MissionStep $step
+     * @param MissionStep $step
      *
      * @return bool
      */
@@ -164,10 +164,10 @@ class CrewMember extends Model implements Hyperlink
      * Checks if crew member can pass the given cadet mission step.
      * "pass" means 100% success (greed color box).
      *
-     *@param MissionStep $step
-     * @param bool $critical
+     * @param MissionStep $step
+     * @param bool        $critical
      *
-     *@return bool
+     * @return bool
      */
     public function canPassCadet(MissionStep $step, bool $critical = false)
     {
@@ -218,7 +218,7 @@ class CrewMember extends Model implements Hyperlink
             $value = $value[1];
 
             return $value + $this->traitBonus($step, $idx)
-                >= $skill->epic() * ($critical ? 1.25 : 1);
+                   >= $skill->epic() * ($critical ? 1.25 : 1);
         }//end foreach
 
         return false;
@@ -229,7 +229,7 @@ class CrewMember extends Model implements Hyperlink
      *
      * @param string $skill
      *
-     *@return bool
+     * @return bool
      */
     public function hasSkill(string $skill): bool
     {
@@ -242,7 +242,7 @@ class CrewMember extends Model implements Hyperlink
      * @param MissionStep $step
      * @param int         $idx
      *
-     *@return int
+     * @return int
      */
     public function traitBonus(MissionStep $step, int $idx)
     {
@@ -437,9 +437,8 @@ class CrewMember extends Model implements Hyperlink
 
     /**
      * Get cross rating
-
      *
-     *@return int
+     * @return int
      */
     public function getRating(): int
     {
@@ -466,16 +465,32 @@ class CrewMember extends Model implements Hyperlink
         $this->rating += $increment;
     }//end addPassMissionStep()
 
+    /**
+     * Add the mission step to the crew member's 'pass' {@see $missions} array
+     *
+     * @param MissionStep $step
+     */
     public function addPassMissionStep(MissionStep $step): void
     {
         $this->missions['pass'][] = $step;
     }//end addCriticalMissionStep()
 
+    /**
+     * Add the mission step to the crew member's 'critical' {@see $missions}
+     * array
+     *
+     * @param MissionStep $step
+     */
     public function addCriticalMissionStep(MissionStep $step): void
     {
         $this->missions['critical'][] = $step;
     }//end addUnlockMissionStep()
 
+    /**
+     * Add the mission step to the crew member's 'unlock' {@see $missions} array
+     *
+     * @param MissionStep $step
+     */
     public function addUnlockMissionStep(MissionStep $step): void
     {
         $this->missions['unlock'][] = $step;

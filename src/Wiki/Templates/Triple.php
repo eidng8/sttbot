@@ -18,6 +18,13 @@ use eidng8\Wiki\Template;
  */
 class Triple extends Template
 {
+    /**
+     * Creates an empty instance with given names
+     *
+     * @param array|null $names
+     *
+     * @return Triple
+     */
     public static function empty(array $names = null): Triple
     {
         $ns = '';
@@ -28,6 +35,9 @@ class Triple extends Template
         return new static("{{triple{$ns}|0|0|0}}");
     }//end empty()
 
+    /**
+     * {@inheritdoc}
+     */
     public function parse(): array
     {
         $this->name = [];
@@ -157,6 +167,9 @@ class Triple extends Template
         return $this->found[2];
     }//end epic()
 
+    /**
+     * @return bool
+     */
     public function isEmpty(): bool
     {
         return empty(array_filter($this->found));
