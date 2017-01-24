@@ -1,4 +1,4 @@
-Circle CI
+CircleCI
 [![CircleCI](https://circleci.com/gh/eidng8/sttbot.svg?style=svg)](https://circleci.com/gh/eidng8/sttbot)
 
 Code Climate
@@ -9,6 +9,8 @@ GitLab
 [![build status](https://gitlab.com/stthb/sttbot/badges/master/build.svg)](https://gitlab.com/stthb/sttbot/commits/master)
 [![coverage report](https://gitlab.com/stthb/sttbot/badges/master/coverage.svg)](https://gitlab.com/stthb/sttbot/commits/master)
 
+StyleCI
+[![StyleCI](https://styleci.io/repos/79508314/shield?branch=master)](https://styleci.io/repos/79508314)
 
 
 # Star Trek Timelines Wiki Crawler
