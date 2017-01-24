@@ -14,7 +14,6 @@ enabled:
   - phpdoc_add_missing_param_annotation
   - pow_to_exponentiation
   - random_api_migration
-  - short_array_syntax
 
 disabled:
   - concat_without_spaces
