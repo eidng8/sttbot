@@ -1,20 +1,24 @@
-preset: recommended
-
 enabled:
-  - concat_with_spaces
-  - const_visibility_required
-  - ereg_to_preg
-  - no_blank_lines_after_return
-  - no_php4_constructor
-  - no_short_echo_tag
-  - no_useless_else
-#  - ordered_class_elements
-  - php_unit_construct
-  - php_unit_strict
-  - phpdoc_add_missing_param_annotation
-  - pow_to_exponentiation
-  - random_api_migration
-
-disabled:
+  - binary_operator_spaces
+  - blank_line_after_opening_tag
+  - blank_line_before_return
+  - cast_spaces
   - concat_without_spaces
-  - phpdoc_summary
+  - declare_equal_normalize
+  - function_typehint_space
+  - hash_to_slash_comment
+  - heredoc_to_nowdoc
+  - include
+  - method_argument_space
+  - method_separation
+  - method_visibility_required
+  - native_function_casing
+  - no_alias_functions
+  - no_blank_lines_after_class_opening
+  - no_blank_lines_after_throw
+  - no_blank_lines_between_imports
+  - no_blank_lines_between_traits
+  - no_closing_tag
+  - no_empty_phpdoc
+  - no_empty_statement
+  
