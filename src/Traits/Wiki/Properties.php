@@ -13,7 +13,6 @@ namespace eidng8\Traits\Wiki;
  */
 trait Properties
 {
-
     use Request;
 
     /**
@@ -51,7 +50,6 @@ trait Properties
      */
     protected static $PROP_IMAGES = 'images';
 
-
     /**
      * Retrieves or sets properties to request
      *
@@ -59,7 +57,7 @@ trait Properties
      *                          in the request, or the properties to request
      *
      * @return array returns properties that will be used in the request if
-     * `$properties` is omitted; otherwise returns nothing
+     *               `$properties` is omitted; otherwise returns nothing
      */
     public function properties(array $properties = null): array
     {
@@ -72,7 +70,6 @@ trait Properties
 
         return $old;
     }//end properties()
-
 
     /**
      * Checks if the given property is set
@@ -91,7 +88,6 @@ trait Properties
                 && array_search($property, $prop) !== false);
     }//end has()
 
-
     /**
      * Add a new property
      *
@@ -108,7 +104,6 @@ trait Properties
         $props[] = $property;
         $this->option(static::$PROP, $props);
     }//end addProperty()
-
 
     /**
      * Remove the given property

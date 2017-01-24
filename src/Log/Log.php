@@ -14,6 +14,7 @@ use Monolog\Logger;
 
 /**
  * Logger
+ *
  * @method static bool debug(string $msg, array $context = [])
  * @method static bool info(string $msg, array $context = [])
  * @method static bool notice(string $msg, array $context = [])
@@ -24,7 +25,6 @@ use Monolog\Logger;
  */
 final class Log
 {
-
     /**
      * Unit test standard output content
      *
@@ -116,7 +116,7 @@ final class Log
     }//end forTest()
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function __callStatic(string $name, array $arguments): bool
     {

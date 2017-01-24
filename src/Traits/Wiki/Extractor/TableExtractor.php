@@ -13,7 +13,6 @@ namespace eidng8\Traits\Wiki\Extractor;
  */
 trait TableExtractor
 {
-
     /**
      * Wiki text to be processed
      *
@@ -28,7 +27,6 @@ trait TableExtractor
      */
     protected $foundTables = [];
 
-
     /**
      * Number of tables extracted
      *
@@ -38,7 +36,6 @@ trait TableExtractor
     {
         return $this->tablesExtracted() ? count($this->foundTables) : 0;
     }//end tables()
-
 
     /**
      * Check if there is any extracted table
@@ -58,7 +55,6 @@ trait TableExtractor
         return true;
     }//end numTables()
 
-
     /**
      * Extracts all tables
      *
@@ -77,7 +73,6 @@ trait TableExtractor
             $this->foundTables = $this->foundTables[1];
         }
     }//end table()
-
 
     /**
      * Retrieves raw wiki text of the table specified by index

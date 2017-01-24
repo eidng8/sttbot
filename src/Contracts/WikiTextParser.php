@@ -15,7 +15,6 @@ namespace eidng8\Contracts;
  */
 interface WikiTextParser
 {
-
     /**
      * Parse given wiki texts
      *

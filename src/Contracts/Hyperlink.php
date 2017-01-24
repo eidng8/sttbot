@@ -13,14 +13,12 @@ namespace eidng8\Contracts;
  */
 interface Hyperlink
 {
-
     /**
      * URI of the resource, related to site root, without leading slash
      *
      * @return string
      */
     public function uri(): string;
-
 
     /**
      * Page name of the resource

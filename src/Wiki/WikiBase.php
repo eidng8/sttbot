@@ -17,7 +17,6 @@ use eidng8\Wiki\Api\Query;
  */
 abstract class WikiBase
 {
-
     /**
      * Parse API instance
      *
@@ -38,7 +37,6 @@ abstract class WikiBase
      * @var ExpandTemplates
      */
     protected $expandTemplates;
-
 
     public function __construct(
         Parse $parse,

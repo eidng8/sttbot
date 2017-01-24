@@ -17,9 +17,7 @@ use eidng8\Wiki\Templates\MissionList;
 
 class MissionListTest extends TestCase
 {
-
     private $wiki;
-
 
     public function __construct()
     {
@@ -56,9 +54,9 @@ class MissionListTest extends TestCase
             $api->expandTemplates()
         );
         $this->assertNotEmpty($missions->fetch());
+
         return $missions;
     }//end testCreate()
-
 
     /**
      * @depends testCreate
@@ -95,7 +93,6 @@ class MissionListTest extends TestCase
         );
     }//end testGetHasLock()
 
-
     /**
      * @depends testCreate
      *
@@ -120,7 +117,6 @@ class MissionListTest extends TestCase
         );
     }//end testNameShouldNotBeTemplate()
 
-
     /**
      * @depends testCreate
      *
@@ -141,7 +137,6 @@ class MissionListTest extends TestCase
         $this->checkCadetStep4($model);
         $this->checkCadetStep5($model);
     }//end testCadet()
-
 
     private function checkCadetBasic(Mission $model)
     {
@@ -173,7 +168,6 @@ class MissionListTest extends TestCase
         $this->assertCount(5, $model->steps);
     }//end testCadetAdv()
 
-
     private function checkCadetStep1(Mission $model)
     {
         $step = $model->steps[0];
@@ -204,7 +198,6 @@ class MissionListTest extends TestCase
         );
     }//end testExport()
 
-
     private function checkCadetStep2(Mission $model)
     {
         $step = $model->steps[1];
@@ -224,7 +217,6 @@ class MissionListTest extends TestCase
         $this->assertCount(1, $step->traits);
         $this->assertNull($step->traits[0]);
     }//end checkCadetBasic()
-
 
     private function checkCadetStep3(Mission $model)
     {
@@ -278,7 +270,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetStep1()
 
-
     private function checkCadetStep4(Mission $model)
     {
         $step = $model->steps[3];
@@ -317,7 +308,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetStep2()
 
-
     private function checkCadetStep5(Mission $model)
     {
         $step = $model->steps[4];
@@ -348,7 +338,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetStep3()
 
-
     /**
      * @depends testCreate
      *
@@ -369,7 +358,6 @@ class MissionListTest extends TestCase
         $this->checkCadetAdvStep4($model);
         $this->checkCadetAdvStep5($model);
     }//end testCadetStep4()
-
 
     private function checkCadetAdvStep1(Mission $model)
     {
@@ -401,7 +389,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetStep5()
 
-
     private function checkCadetAdvStep2(Mission $model)
     {
         $step = $model->steps[1];
@@ -421,7 +408,6 @@ class MissionListTest extends TestCase
         $this->assertCount(1, $step->traits);
         $this->assertNull($step->traits[0]);
     }//end testCadetAdvStep1()
-
 
     private function checkCadetAdvStep3(Mission $model)
     {
@@ -475,7 +461,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetAdvStep2()
 
-
     private function checkCadetAdvStep4(Mission $model)
     {
         $step = $model->steps[3];
@@ -514,7 +499,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetAdvStep3()
 
-
     private function checkCadetAdvStep5(Mission $model)
     {
         $step = $model->steps[4];
@@ -545,7 +529,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetAdvStep4()
 
-
     public function testExport()
     {
         $missions = $this->wiki->missions()->export();
@@ -562,7 +545,6 @@ class MissionListTest extends TestCase
             $this->checkExportedMission($mission, $idx);
         }//end foreach
     }//end testCadetAdvStep5()
-
 
     private function checkExportedMission(array $mission, int $idx)
     {
@@ -581,7 +563,6 @@ class MissionListTest extends TestCase
         $this->checkExportedMissionSteps($mission);
     }//end checkExportedMission()
 
-
     private function checkExportedMissionName(array $mission, int $idx)
     {
         $this->assertArrayHasKey('name', $mission);
@@ -595,7 +576,6 @@ class MissionListTest extends TestCase
             "Mission[$idx] 'name' should not be empty"
         );
     }//end checkExportedMissionName()
-
 
     private function checkExportedMissionType(array $mission)
     {
@@ -616,7 +596,6 @@ class MissionListTest extends TestCase
             "$mission[name] 'type' should be <= " . Mission::SPACE_BATTLE
         );
     }//end checkExportedMissionType()
-
 
     private function checkExportedMissionCost(array $mission)
     {
@@ -647,7 +626,6 @@ class MissionListTest extends TestCase
             );
         }//end foreach
     }//end checkExportedMissionCost()
-
 
     private function checkExportedMissionRequirements(array $mission)
     {

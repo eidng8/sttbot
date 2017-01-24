@@ -13,7 +13,6 @@ namespace eidng8\Wiki\Models;
  */
 class MissionCost extends LeveledValues
 {
-
     protected $chroniton = false;
 
     protected $ticket = false;
@@ -33,6 +32,7 @@ class MissionCost extends LeveledValues
         }
 
         $this->values = [$cost];
+
         return $this->values[0];
     }//end ticket()
 
@@ -70,9 +70,8 @@ class MissionCost extends LeveledValues
         return $this->ticket = $use;
     }//end useTicket()
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function toArray(): array
     {

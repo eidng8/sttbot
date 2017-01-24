@@ -12,7 +12,6 @@ use eidng8\Wiki\Api\Parse;
 
 class BasicTest extends Base
 {
-
     public function testFollowRedirects()
     {
         $this->parse->followRedirects();
@@ -22,7 +21,6 @@ class BasicTest extends Base
         $this->parse->followRedirects(true);
         $this->assertTrue($this->parse->hasOption(Parse::$REDIRECTS));
     }//end testFollowRedirects()
-
 
     public function testToc()
     {
@@ -34,13 +32,11 @@ class BasicTest extends Base
         $this->assertTrue($this->parse->hasOption(Parse::$DISABLETOC));
     }//end testToc()
 
-
     public function testPage()
     {
         $this->parse->page('some page');
         $this->assertSame('some page', $this->parse->option(Parse::$PAGE));
     }//end testPage()
-
 
     /**
      * @expectedException \RuntimeException
@@ -52,13 +48,11 @@ class BasicTest extends Base
         $this->parse->page('some page');
     }//end testPageException()
 
-
     public function testSection()
     {
         $this->parse->section(1);
         $this->assertSame(1, $this->parse->option(Parse::$SECTION));
     }//end testSection()
-
 
     public function testText()
     {
@@ -66,7 +60,6 @@ class BasicTest extends Base
         $this->assertSame('some text', $this->parse->option(Parse::$TEXT));
         $this->assertSame('a title', $this->parse->option(Parse::$TITLE));
     }//end testText()
-
 
     /**
      * @expectedException \RuntimeException
@@ -77,7 +70,6 @@ class BasicTest extends Base
         $this->parse->page('a page');
         $this->parse->text('some text', 'a title');
     }//end testTextException()
-
 
     public function testProperties()
     {

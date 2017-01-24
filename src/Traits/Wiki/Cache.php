@@ -14,14 +14,11 @@ define(
     JSON_PRESERVE_ZERO_FRACTION
 );
 
-
-
 /**
  * File cache of API requests
  */
 trait Cache
 {
-
     /**
      * Directory to store cache files
      *
@@ -36,7 +33,6 @@ trait Cache
      */
     protected $ttl = 3600 * 24;
 
-
     /**
      * Get or set the cache directory
      *
@@ -44,7 +40,7 @@ trait Cache
      *                     string to set the cache directory
      *
      * @return string Returns current cache directory if `$root` parameter is
-     * null; otherwise returns nothing
+     *                null; otherwise returns nothing
      */
     public function cacheRoot($root = null): string
     {
@@ -58,20 +54,19 @@ trait Cache
         return $old;
     }//end cacheRoot()
 
-
     /**
      * Retrieves the specified cache content; if it's not cached, then calls
      * the `$fetch` to retrieve content, cache and returns it.
      *
-     * @param string   $file    the cache file to be retrieved or written
-     * @param callable $fetch   omit to retrieve the cached content, or set to
-     *                          the new content to be written to cache
+     * @param string   $file  the cache file to be retrieved or written
+     * @param callable $fetch omit to retrieve the cached content, or set to
+     *                        the new content to be written to cache
      *
      * @return mixed|false|null
-     * * `false` if `$fetch` is not provided and cache is not found
-     * * `null` if `$fetch` is provided and `$fetch` returns empty content
-     * * otherwise return cached or `$fetch`ed content
-     * .
+     *                          * `false` if `$fetch` is not provided and cache is not found
+     *                          * `null` if `$fetch` is provided and `$fetch` returns empty content
+     *                          * otherwise return cached or `$fetch`ed content
+     *                          .
      */
     public function cache(string $file, callable $fetch = null)
     {
@@ -96,7 +91,6 @@ trait Cache
         return $content;
     }//end cache()
 
-
     /**
      * Reads the specified cache
      *
@@ -115,7 +109,6 @@ trait Cache
         return json_decode($content, true);
     }//end cacheCheckDir()
 
-
     /**
      * Check if the specified cache exists and is valid
      *
@@ -127,7 +120,6 @@ trait Cache
     {
         return is_file($path) && filemtime($path) + $this->ttl > time();
     }//end cacheRead()
-
 
     /**
      * Make sure the specified cache directory exists
@@ -141,7 +133,6 @@ trait Cache
             mkdir($dir, 0755, true);
         }
     }//end cacheCheck()
-
 
     /**
      * Write the given content to cache
@@ -161,7 +152,6 @@ trait Cache
             )
         );
     }//end cacheWrite()
-
 
     /**
      * Generate a file name for the given page

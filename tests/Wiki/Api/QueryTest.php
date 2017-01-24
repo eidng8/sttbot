@@ -15,7 +15,6 @@ use GuzzleHttp\Psr7\Response;
 
 class QueryTest extends TestCase
 {
-
     /**
      * test cache
      *
@@ -30,7 +29,6 @@ class QueryTest extends TestCase
      */
     private $query;
 
-
     public static function setUpBeforeClass()
     {
         parent::setUpBeforeClass();
@@ -40,14 +38,12 @@ class QueryTest extends TestCase
         touch(static::$cacheFile);
     }
 
-
     public function testTitles()
     {
         $this->query->titles([]);
         $this->query->titles(['title']);
         $this->assertSame(['title'], $this->query->option(Query::$TITLES));
     }//end testTitles()
-
 
     public function testThumbnails()
     {
@@ -104,18 +100,15 @@ class QueryTest extends TestCase
         $this->assertSame($this->query->get(), $this->query->get());
     }//end testThumbnails()
 
-
     public function testThumbnailsWithEmptyTitle()
     {
         $this->assertSame([], $this->query->thumbnails([]));
     }//end testThumbnailsEmpty()
 
-
     public function testThumbnailsGotNull()
     {
         $this->assertEmpty($this->query->thumbnails(['nothing']));
     }//end testGetThumbnailsGotNull()
-
 
     protected function setUp(Http $http = null)
     {

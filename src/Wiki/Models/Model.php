@@ -13,7 +13,6 @@ use JsonSerializable;
 
 abstract class Model implements ArrayAccess, JsonSerializable
 {
-
     public function offsetGet($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -23,30 +22,25 @@ abstract class Model implements ArrayAccess, JsonSerializable
         return null;
     }
 
-
     public function offsetExists($offset): bool
     {
         return property_exists($this, strtolower(trim($offset)));
     }//end offsetExists()
-
 
     public function offsetSet($offset, $value)
     {
         $this->{strtolower(trim($offset))} = $value;
     }//end offsetGet()
 
-
     public function offsetUnset($offset)
     {
         $this->{strtolower(trim($offset))} = null;
     }//end offsetSet()
 
-
     public function jsonSerialize(): array
     {
         return $this->toArray();
     }//end offsetUnset()
-
 
     /**
      * Converts the instance to array

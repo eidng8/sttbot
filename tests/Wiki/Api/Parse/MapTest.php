@@ -8,9 +8,8 @@
 
 namespace eidng8\Tests\Wiki\Api\Parse;
 
-class BaseTest extends Base
+class MapTest extends Base
 {
-
     public function testMapLinks()
     {
         $this->assertSame(
@@ -24,25 +23,23 @@ class BaseTest extends Base
         );
     }//end testMapLinks()
 
-
     public function testMapImages()
     {
         $this->assertSame(
             [
-                "Credits_sm.png"   => true,
-                "Dilithium_sm.png" => true,
-                "CMD.png"          => true,
+                'Credits_sm.png'   => true,
+                'Dilithium_sm.png' => true,
+                'CMD.png'          => true,
             ],
             $this->parse->mapImages(
                 [
-                    "Credits_sm.png",
-                    "Dilithium_sm.png",
-                    "CMD.png",
+                    'Credits_sm.png',
+                    'Dilithium_sm.png',
+                    'CMD.png',
                 ]
             )
         );
     }//end testmapImages()
-
 
     public function testMapTemplates()
     {

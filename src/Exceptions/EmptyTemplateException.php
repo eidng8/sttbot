@@ -10,5 +10,4 @@ namespace eidng8\Exceptions;
 
 class EmptyTemplateException extends \Exception
 {
-
 }//end class

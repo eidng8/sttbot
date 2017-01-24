@@ -15,7 +15,6 @@ use GuzzleHttp\RequestOptions;
 
 final class Http
 {
-
     /**
      * Guzzle Client instance
      *
@@ -23,12 +22,10 @@ final class Http
      */
     private $guzzle;
 
-
     public function __construct(string $uri)
     {
         $this->createClient($uri);
     }//end createMock()
-
 
     /**
      * Create Guzzle client
@@ -53,7 +50,6 @@ final class Http
         $this->guzzle = new Client($opts);
     }//end __construct()
 
-
     /**
      * Creates a mocked client that will return the given responses.
      *
@@ -71,7 +67,6 @@ final class Http
         return $instance;
     }//end createClient()
 
-
     /**
      * Wiki parse API
      *
@@ -85,7 +80,6 @@ final class Http
 
         return $this->get($params);
     }//end get()
-
 
     /**
      * HTTP GET
@@ -103,7 +97,6 @@ final class Http
         return json_decode($res, true);
     }//end parse()
 
-
     /**
      * Wiki query API
      *
@@ -117,7 +110,6 @@ final class Http
 
         return $this->get($params);
     }//end parse()
-
 
     /**
      * Wiki expand templates API

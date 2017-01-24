@@ -19,7 +19,6 @@ use eidng8\Wiki\Template;
  */
 class CrewList extends Template
 {
-
     /**
      * Maximum skills statistics
      *
@@ -83,7 +82,6 @@ class CrewList extends Template
         parent::__construct($wikiText, 'MPCrewList');
     }//end __construct()
 
-
     /**
      * Total number of available members
      *
@@ -93,7 +91,6 @@ class CrewList extends Template
     {
         return count($this->crew);
     }//end count()
-
 
     /**
      * Retrieves all crew members, in indexed (not associated) array
@@ -105,9 +102,8 @@ class CrewList extends Template
         return $this->crew;
     }//end parseCrew()
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function parse(): array
     {
@@ -115,7 +111,6 @@ class CrewList extends Template
 
         return $this->crew = $this->parseCrew();
     }//end parseMember()
-
 
     /**
      * Parse all crew member from the given wiki text
@@ -138,7 +133,6 @@ class CrewList extends Template
 
         return $members;
     }//end fetchPictures()
-
 
     /**
      * Parse one crew member
@@ -169,7 +163,6 @@ class CrewList extends Template
         return $member;
     }//end fetchDetail()
 
-
     /**
      * Get all crew member picture url
      *
@@ -194,7 +187,6 @@ class CrewList extends Template
         return $crew;
     }//end skillList()
 
-
     /**
      * Fetch crew member detail information
      *
@@ -217,7 +209,6 @@ class CrewList extends Template
         $crew->skills = new Skills($tmp);
     }//end skillValue()
 
-
     /**
      * Parse table header and extract skill list
      *
@@ -239,7 +230,6 @@ class CrewList extends Template
 
         return array_map('trim', array_map('strtolower', $found[1]));
     }//end all()
-
 
     /**
      * Parse table and extract skill value
@@ -277,7 +267,6 @@ class CrewList extends Template
         return $max;
     }//end get()
 
-
     protected function stats(CrewMember $member)
     {
         foreach ($member->skills as $skill => $val) {
@@ -294,7 +283,6 @@ class CrewList extends Template
         }//end foreach
     }//end byTraits()
 
-
     /**
      * Retrieve a crew member by name
      *
@@ -306,7 +294,6 @@ class CrewList extends Template
     {
         return empty($this->crew[$name]) ? null : $this->crew[$name];
     }//end parse()
-
 
     /**
      * Find all crew that possess given traits
@@ -325,7 +312,6 @@ class CrewList extends Template
         }//end foreach
         return $crew;
     }//end each()
-
 
     /**
      * Export all crew members as array
@@ -347,9 +333,9 @@ class CrewList extends Template
                 $crew[] = $member;
             }
         );
+
         return $crew;
     }//end regex()
-
 
     /**
      * Iterate through all crew members and call the given function.
@@ -363,7 +349,6 @@ class CrewList extends Template
         }//end foreach
     }//end export()
 
-
     /**
      * @param string $skill
      *
@@ -373,7 +358,6 @@ class CrewList extends Template
     {
         return $this->maxSkills[$skill];
     }//end max()
-
 
     /**
      * @param string $skill
@@ -386,9 +370,8 @@ class CrewList extends Template
         return $this->maxSkills[$skill][max(1, min($stars, 5))];
     }//end max()
 
-
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function regex(): string
     {

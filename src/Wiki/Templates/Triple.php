@@ -18,7 +18,6 @@ use eidng8\Wiki\Template;
  */
 class Triple extends Template
 {
-
     public static function empty(array $names = null): Triple
     {
         $ns = '';
@@ -28,7 +27,6 @@ class Triple extends Template
 
         return new static("{{triple{$ns}|0|0|0}}");
     }//end empty()
-
 
     public function parse(): array
     {
@@ -101,7 +99,6 @@ class Triple extends Template
         */
     }//end parse()
 
-
     /**
      * Subjects this triple refer to
      *
@@ -111,7 +108,6 @@ class Triple extends Template
     {
         return $this->name;
     }//end subjects()
-
 
     /**
      * Normal difficulty level
@@ -125,9 +121,9 @@ class Triple extends Template
         if (is_numeric($value)) {
             $this->found[0] = $value;
         }
+
         return $this->found[0];
     }//end normal()
-
 
     /**
      * Elite difficulty level
@@ -141,9 +137,9 @@ class Triple extends Template
         if (is_numeric($value)) {
             $this->found[1] = $value;
         }
+
         return $this->found[1];
     }//end elite()
-
 
     /**
      * Epic difficulty level
@@ -157,9 +153,9 @@ class Triple extends Template
         if (is_numeric($value)) {
             $this->found[2] = $value;
         }
+
         return $this->found[2];
     }//end epic()
-
 
     public function isEmpty(): bool
     {
