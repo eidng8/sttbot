@@ -1,7 +1,6 @@
 preset: recommended
 
 enabled:
-  - alpha_ordered_imports
   - concat_with_spaces
   - const_visibility_required
   - ereg_to_preg
