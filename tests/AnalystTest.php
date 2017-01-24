@@ -16,6 +16,9 @@ class AnalystTest extends TestCase
 {
     private $wiki;
 
+    /**
+     * AnalystTest constructor.
+     */
     public function __construct()
     {
         parent::__construct();
