@@ -5,7 +5,6 @@ enabled:
   - const_visibility_required
   - ereg_to_preg
   - no_blank_lines_after_return
-  - no_multiline_whitespace_before_semicolons
   - no_php4_constructor
   - no_short_bool_cast
   - no_short_echo_tag
