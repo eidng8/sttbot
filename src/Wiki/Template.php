@@ -92,22 +92,6 @@ abstract class Template implements WikiTextParser
     }//end extractNames()
 
     /**
-     * Get a list of all names of a given level
-     *
-     * @param int    $level
-     * @param string $text
-     *
-     * @return string[]
-     */
-    // public static function extractNames(int $level, string $text): array
-    // {
-    //     $regex = str_repeat('=', $level);
-    //     $regex = "/$regex\\[\\[[^\\]]+]]$regex/imsu";
-    //     preg_match_all($regex, $text, $found);
-    //     return $found;
-    // }//end load()
-
-    /**
      * Regular expression to use when extracting wiki text template
      *
      * @return string
