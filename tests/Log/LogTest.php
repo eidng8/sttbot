@@ -53,6 +53,12 @@ class LogTest extends TestCase
      */
     private $cxt = ['this' => 'test'];
 
+    public static function tearDownAfterClass()
+    {
+        parent::tearDownAfterClass();
+        Log::setLevel(Logger::DEBUG);
+    }
+
     public function testSetLevel()
     {
         Log::setLevel(Logger::NOTICE);
