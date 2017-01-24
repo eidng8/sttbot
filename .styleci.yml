@@ -1,4 +1,23 @@
+preset: recommended
+
 enabled:
+  - concat_with_spaces
+  - const_visibility_required
+  - ereg_to_preg
+  - no_blank_lines_after_return
+  - no_php4_constructor
+  - no_short_echo_tag
+  - no_useless_else
+#  - ordered_class_elements
+  - php_unit_construct
+  - php_unit_strict
+  - phpdoc_add_missing_param_annotation
+  - pow_to_exponentiation
+  - random_api_migration
+
+disabled:
+  - concat_without_spaces
+  - phpdoc_summary
   - binary_operator_spaces
   - blank_line_after_opening_tag
   - blank_line_before_return
@@ -21,4 +40,3 @@ enabled:
   - no_closing_tag
   - no_empty_phpdoc
   - no_empty_statement
-  
