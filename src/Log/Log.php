@@ -134,7 +134,7 @@ final class Log
             );
         }
 
-        $stdout = ['debug', 'info', 'notice', 'warning'];
+        $stdout = ['debug', 'info', 'notice', 'warn'];
 
         return call_user_func_array(
             [
