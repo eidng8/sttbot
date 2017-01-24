@@ -1,10 +1,30 @@
 preset: recommended
 
 enabled:
+  - align_double_arrow
+  - alpha_ordered_imports
   - concat_with_spaces
-  - no_empty_comment
+  - const_visibility_required
+  - ereg_to_preg
+  - no_blank_lines_after_return
+  - no_blank_lines_between_traits
+  - no_multiline_whitespace_before_semicolons
+  - no_php4_constructor
+  - no_short_bool_cast
+  - no_short_echo_tag
+  - no_unreachable_default_argument_value
+  - no_useless_else
+  - no_useless_return
+#  - ordered_class_elements
+  - php_unit_construct
+  - php_unit_strict
   - phpdoc_add_missing_param_annotation
+  - pow_to_exponentiation
+  - random_api_migration
+  - short_array_syntax
 
 disabled:
   - concat_without_spaces
   - phpdoc_summary
+  - silenced_deprecation_error
+  - unalign_double_arrow
