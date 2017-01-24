@@ -10,6 +10,7 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
     - mkdir -p build/logs
     - phpunit --coverage-clover $CIRCLE_TEST_REPORTS/phpunit/clover.xml --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
-    # - 'sed -ie "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME#<file name=\1#" $CIRCLE_TEST_REPORTS/phpunit/clover.xml'
-    - ./vendor/bin/test-reporter --coverage-report $CIRCLE_TEST_REPORTS/phpunit/clover.xml
+    - phpunit --coverage-clover build/logs/clover.xml
+    - 'sed -ie "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME#<file name=\1#" $CIRCLE_TEST_REPORTS/phpunit/clover.xml'
+    - ./vendor/bin/test-reporter --coverage-report build/logs/clover.xml
     - bash <(curl -s https://codecov.io/bash) -f $CIRCLE_TEST_REPORTS/phpunit/clover.xmle
