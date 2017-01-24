@@ -12,6 +12,9 @@ use eidng8\Wiki\Analyst;
 use eidng8\Wiki\Models\CrewMember;
 use eidng8\Wiki\Models\Mission;
 
+/**
+ * AnalystTest
+ */
 class AnalystTest extends TestCase
 {
     private $wiki;

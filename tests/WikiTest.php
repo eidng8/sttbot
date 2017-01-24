@@ -13,6 +13,9 @@ use eidng8\Wiki\Models\Mission;
 use eidng8\Wiki\Templates\CrewList;
 use eidng8\Wiki\Templates\MissionList;
 
+/**
+ * WikiTest
+ */
 class WikiTest extends TestCase
 {
     public function testCrew()

@@ -11,8 +11,12 @@ namespace eidng8\Tests;
 use eidng8\Wiki;
 use eidng8\Wiki\Api\Api;
 use eidng8\Wiki\Api\Http;
+use PHPUnit_Framework_TestCase;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+/**
+ * TestCase
+ */
+class TestCase extends PHPUnit_Framework_TestCase
 {
     /**
      * Unit test cache directory
@@ -44,18 +48,13 @@ class TestCase extends \PHPUnit_Framework_TestCase
 
     protected static $streamError;
 
+    /**
+     * {@inheritdoc}
+     */
     public function __construct($name = null, array $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
     }
-
-    // public static function setUpBeforeClass()
-    // {
-    //     parent::setUpBeforeClass();
-    //
-    //     // Log::setErrorStream('php://output');
-    //     Log::setErrorStream(static::$streamError = stream_context_create());
-    // }
 
     public function tearDown()
     {
@@ -63,6 +62,9 @@ class TestCase extends \PHPUnit_Framework_TestCase
         \Mockery::close();
     }//end tearDown()
 
+    /**
+     * @return Wiki
+     */
     protected function newWikiInstance(): Wiki
     {
         $api = $this->newApiInstance();
@@ -70,6 +72,9 @@ class TestCase extends \PHPUnit_Framework_TestCase
         return new Wiki($api->parse(), $api->query(), $api->expandTemplates());
     }//end newApiInstance()
 
+    /**
+     * @return Api
+     */
     protected function newApiInstance(): Api
     {
         return new Api(
