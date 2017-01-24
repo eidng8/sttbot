@@ -107,11 +107,11 @@ final class Log
     {
         static::$output = new Logger(
             'sttbot-output',
-            [static::$testOutput = new TestHandler()]
+            [static::$testOutput = new TestHandler(static::$level)]
         );
         static::$error = new Logger(
             'sttbot-error',
-            [static::$testErrorOutput = new TestHandler()]
+            [static::$testErrorOutput = new TestHandler(Logger::ERROR)]
         );
     }//end forTest()
 
@@ -134,7 +134,7 @@ final class Log
             );
         }
 
-        $stdout = ['debug', 'info'];
+        $stdout = ['debug', 'info', 'notice', 'warning'];
 
         return call_user_func_array(
             [
