@@ -208,7 +208,7 @@ final class Analyst
 
         if (!empty($step->getCrew()['unlock'])) {
             // if any alternative is locked, find best member to unlock it
-            foreach ($step->locks as $idx => $lock) {
+            foreach ($step->locks as $lock) {
                 if (empty($lock)) {
                     continue;
                 }

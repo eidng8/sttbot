@@ -85,7 +85,7 @@ class MissionList extends WikiBase
                 }//end foreach
             }//end foreach
         }//end foreach
-    }//end each()
+    }//end eachAway()
 
     /**
      * Get mission by name
@@ -107,7 +107,7 @@ class MissionList extends WikiBase
                     if ($search == strtolower($model->name)
                         && (empty($epSearch)
                             || strtolower($epSearch)
-                               == strtolower($model->episode))
+                            == strtolower($model->episode))
                     ) {
                         return $model;
                     }
@@ -115,7 +115,7 @@ class MissionList extends WikiBase
             }//end foreach
         }//end foreach
         return null;
-    }//end each()
+    }//end byName()
 
     /**
      * Fetch all missions from server and process them to models
@@ -133,6 +133,79 @@ class MissionList extends WikiBase
         $this->fetchCadetCrew($cadets, $templates['cadet']);
 
         return $this->list = $templates;
+    }//end fetch()
+
+    /**
+     * Export all missions as array
+     *
+     * @return array
+     */
+    public function export(): array
+    {
+        $epi = 0;
+        $episodes = [];
+        $missions = [];
+        $this->each(
+            function (MissionModel $mission) use (
+                &$episodes,
+                &$missions,
+                &$epi
+            ) {
+                $mission = $mission->toArray();
+
+                // extract episode list
+                if ($mission['episode'] != end($episodes)) {
+                    $episodes[] = $mission['episode'];
+                    $epi = count($episodes) - 1;
+                }
+                $mission['episode'] = $epi;
+
+                // remove redundant data
+                unset(
+                    $mission['page'],
+                    $mission['index'],
+                    $mission['locks'],
+                    $mission['traits']
+                );
+
+                if (MissionModel::SPACE_BATTLE === $mission['type']) {
+                    $missions[] = $mission;
+                    return;
+                }
+
+                // flatten steps array
+                $this->flattenSteps($mission);
+                $missions[] = $mission;
+            }
+        );
+
+        return [$episodes, $missions];
+    }//end export()
+
+    /**
+     * Iterate through all missions and call the given function.
+     * The callback is defined as:
+     * function(Models\Mission $mission, int $index, int $episode, string $type)
+     * - `$mission` is a mission model instance,
+     * - `$index` is the index number within the episode
+     * - `$episode` is the index of the episode
+     * - `$type` can be either `'epissode'` or `'cadet'`
+     *
+     * @param callable $func
+     */
+    public function each(callable $func): void
+    {
+        foreach ($this->list as $type => $episodes) {
+            foreach ($episodes as $episode => $missions) {
+                foreach ($missions as $index => $mission) {
+                    /* @var Mission $mission */
+                    call_user_func_array(
+                        $func,
+                        [$mission->get(), $index, $episode, $type]
+                    );
+                }//end foreach
+            }//end foreach
+        }//end foreach
     }//end each()
 
     /**
@@ -140,7 +213,7 @@ class MissionList extends WikiBase
      *
      * @return string[][]
      */
-    public function fetchMissionList(): array
+    private function fetchMissionList(): array
     {
         $this->parse->resetOptions();
         $this->parse->page('Missions');
@@ -162,7 +235,7 @@ class MissionList extends WikiBase
         );
 
         return compact('episodes', 'cadet');
-    }//end get()
+    }//end fetchMissionList()
 
     /**
      * Fetch templates through API
@@ -171,7 +244,7 @@ class MissionList extends WikiBase
      *
      * @return array string[]
      */
-    public function fetchTemplates(array $matches): array
+    private function fetchTemplates(array $matches): array
     {
         $text = $this->expandTemplates->get(implode('', $matches[0]), true);
         $starts = [];
@@ -198,21 +271,21 @@ class MissionList extends WikiBase
         }//end foreach
 
         return $matches[1];
-    }//end fetchMissionList()
+    }//end fetchTemplates()
 
     /**
      * Parse all episodes
      *
      * @param array $episodes
      */
-    public function parseEpisodes(&$episodes): void
+    private function parseEpisodes(&$episodes): void
     {
         foreach ($episodes as &$items) {
             foreach ($items as &$episode) {
                 $episode = $this->parseEpisode($episode);
             }//end foreach
         }//end foreach
-    }//end fetchTemplates()
+    }//end parseEpisodes()
 
     /**
      * Parse a episode wiki text
@@ -221,7 +294,7 @@ class MissionList extends WikiBase
      *
      * @return Mission[]
      */
-    public function parseEpisode(string $episode): array
+    private function parseEpisode(string $episode): array
     {
         $regex = '/\'\'\'Mission (\d+)(\w?)\'\'\'[^\[]+\[\[([^\]]+)]]/iu';
         preg_match_all($regex, $episode, $missions);
@@ -237,7 +310,7 @@ class MissionList extends WikiBase
         preg_match('/^=+\[+([^\[\]]+)]+=+/', $episode, $matches);
 
         return $this->parseMissions($missions, $matches[1] ?? '');
-    }//end fetchCadetCrew()
+    }//end parseEpisode()
 
     /**
      * Process missions wiki text
@@ -247,7 +320,7 @@ class MissionList extends WikiBase
      *
      * @return array|Mission[]
      */
-    public function parseMissions(array $missions, string $episode): array
+    private function parseMissions(array $missions, string $episode): array
     {
         $info = [];
         $adv = 'adv:' == strtolower(substr($episode, 0, 4));
@@ -263,7 +336,7 @@ class MissionList extends WikiBase
         }//end foreach
 
         return $info;
-    }//end parseEpisodes()
+    }//end parseMissions()
 
     /**
      * Fetch all cadet mission eligible crew
@@ -271,7 +344,7 @@ class MissionList extends WikiBase
      * @param array $names
      * @param array $cadet
      */
-    public function fetchCadetCrew(array $names, array $cadet)
+    private function fetchCadetCrew(array $names, array $cadet)
     {
         foreach ($cadet as $episode => $missions) {
             $this->parse->page($names[$episode], 2);
@@ -289,102 +362,44 @@ class MissionList extends WikiBase
                 }//end foreach
             }//end foreach
         }//end foreach
-    }//end parseEpisode()
+    }//end fetchCadetCrew()
 
     /**
-     * Export all missions as array
+     * Flatten mission steps array
      *
-     * @return array
+     * @param array $mission
      */
-    public function export(): array
+    private function flattenSteps(array &$mission): void
     {
-        $episodes = [];
-        $missions = [];
-        $this->each(
-            function (MissionModel $mission) use (&$episodes, &$missions) {
-                $mission = $mission->toArray();
-                if (MissionModel::SPACE_BATTLE === $mission['type']) {
-                    $missions[] = $mission;
-
-                    return;
-                }
-
-                // extract episode list
-                if ($mission['episode'] != end($episodes)) {
-                    $episodes[] = $mission['episode'];
-                }
-
-                // remove redundant data
-                unset(
-                    $mission['page'],
-                    $mission['episode'],
-                    $mission['index'],
-                    $mission['locks'],
-                    $mission['traits']
-                );
-
-                // flatten steps array
-                foreach ($mission['steps'] as &$step) {
-                    if (empty($step['locks'])) {
-                        unset($step['locks']);
-                    }
-
-                    // flatten skills array
-                    $skills = [];
-                    foreach ($step['skills'] as $skill) {
-                        $skills = array_merge(
-                            $skills,
-                            Skills::skillNames($skill['names'])
-                        );
-                        if (!empty($skill['values'])) {
-                            $mission['requirement'] = $skill['values'];
-                        }
-                    }//end foreach
-                    $step['skills'] = $skills;
-
-                    // flatten traits array
-                    $traits = [];
-                    foreach ($step['traits'] as $trait) {
-                        if (!empty($trait['names'])) {
-                            $traits = array_merge($traits, $trait['names']);
-                        }
-                        if (!empty($trait['values'])) {
-                            $mission['bonus'] = $trait['values'];
-                        }
-                    }//end foreach
-                    $step['traits'] = $traits;
-                }//end foreach
-
-                $missions[] = $mission;
+        foreach ($mission['steps'] as &$step) {
+            if (empty($step['locks'])) {
+                unset($step['locks']);
             }
-        );
 
-        return [$episodes, $missions];
-    }
-
-    /**
-     * Iterate through all missions and call the given function.
-     * The callback is defined as:
-     * function(Models\Mission $mission, int $index, int $episode, string $type)
-     * - `$mission` is a mission model instance,
-     * - `$index` is the index number within the episode
-     * - `$episode` is the index of the episode
-     * - `$type` can be either `'epissode'` or `'cadet'`
-     *
-     * @param callable $func
-     */
-    public function each(callable $func): void
-    {
-        foreach ($this->list as $type => $episodes) {
-            foreach ($episodes as $episode => $missions) {
-                foreach ($missions as $index => $mission) {
-                    /* @var Mission $mission */
-                    call_user_func_array(
-                        $func,
-                        [$mission->get(), $index, $episode, $type]
-                    );
-                }//end foreach
+            // flatten skills array
+            $skills = [];
+            foreach ($step['skills'] as $skill) {
+                $skills = array_merge(
+                    $skills,
+                    Skills::skillNames($skill['names'])
+                );
+                if (!empty($skill['values'])) {
+                    $mission['requirement'] = $skill['values'];
+                }
             }//end foreach
+            $step['skills'] = $skills;
+
+            // flatten traits array
+            $traits = [];
+            foreach ($step['traits'] as $trait) {
+                if (!empty($trait['names'])) {
+                    $traits[] = $trait['names'];
+                }
+                if (!empty($trait['values'])) {
+                    $mission['bonus'] = $trait['values'];
+                }
+            }//end foreach
+            $step['traits'] = $traits;
         }//end foreach
-    }//end export()
+    }//end flattenSteps()
 }//end class
