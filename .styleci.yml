@@ -26,5 +26,4 @@ enabled:
 disabled:
   - concat_without_spaces
   - phpdoc_summary
-  - silenced_deprecation_error
   - unalign_double_arrow
