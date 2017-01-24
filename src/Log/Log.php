@@ -13,7 +13,7 @@ use Monolog\Handler\TestHandler;
 use Monolog\Logger;
 
 /**
- * Class Log
+ * Logger
  * @method static bool debug(string $msg, array $context = [])
  * @method static bool info(string $msg, array $context = [])
  * @method static bool notice(string $msg, array $context = [])
@@ -123,107 +123,4 @@ final class Log
             $arguments
         );
     }
-
-
-    /**
-     * Set log level
-     *
-     * @param int $level
-     */
-    // public static function level(int $level = Logger::WARNING)
-    // {
-    //     static::$level = $level;
-    // }//end level()
-
-    /**
-     * Get a logger instance
-     *
-     * @return LoggerChannels
-     */
-    // public static function logger(): LoggerChannels
-    // {
-    //     if (empty(static::logger())) {
-    //         static::$logger = new LoggerChannels(static::$level);
-    //     }
-    //
-    //     return static::logger();
-    // }//end logger()
-
-    /**
-     * Log an info
-     *
-     * @param  string $msg     The log message
-     * @param  array  $context The log context
-     *
-     * @return bool Whether the record has been processed
-     */
-    // public static function info(string $msg, array $context = null): bool
-    // {
-    //     return static::logger()->info($msg, $context);
-    // }//end info()
-
-    /**
-     * Log a warning message
-     *
-     * @param  string $msg     The log message
-     * @param  array  $context The log context
-     *
-     * @return bool Whether the record has been processed
-     */
-    // public static function warn(string $msg, array $context = null): bool
-    // {
-    //     return static::logger()->warn($msg, $context);
-    // }//end warn()
-
-    /**
-     * Log a error message
-     *
-     * @param  string $msg     The log message
-     * @param  array  $context The log context
-     *
-     * @return bool Whether the record has been processed
-     */
-    // public static function error(string $msg, array $context = null): bool
-    // {
-    //     return static::logger()->error($msg, $context);
-    // }//end error()
-
-    /**
-     * Log a aler message
-     *
-     * @param  string $msg     The log message
-     * @param  array  $context The log context
-     *
-     * @return bool Whether the record has been processed
-     */
-    // public static function alert(string $msg, array $context = null): bool
-    // {
-    //     return static::logger()->alert($msg, $context);
-    // }//end alert()
-
-    /**
-     * Log a critical error message
-     *
-     * @param  string $msg     The log message
-     * @param  array  $context The log context
-     *
-     * @return bool Whether the record has been processed
-     */
-    // public static function critical(string $msg, array $context = null): bool
-    // {
-    //     return static::logger()->critical($msg, $context);
-    // }//end critical()
-
-    /**
-     * Log a debug message
-     *
-     * @param  string $msg     The log message
-     * @param  array  $context The log context
-     *
-     * @return bool Whether the record has been processed
-     */
-    // public static function debug(string $msg, array $context = null): bool
-    // {
-    //     return static::logger()->debug($msg, $context);
-    // }//end debug()
 }//end class
