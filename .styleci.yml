@@ -22,7 +22,6 @@ disabled:
   - blank_line_after_opening_tag
   - blank_line_before_return
   - cast_spaces
-  - concat_without_spaces
   - declare_equal_normalize
   - function_typehint_space
   - hash_to_slash_comment
