@@ -34,7 +34,6 @@ class MissionList extends WikiBase
      * @param string $what
      *
      * @return array|\eidng8\Wiki\Models\Mission[][][]
-     * @internal param string $type
      */
     public function get(string $what = null): array
     {
