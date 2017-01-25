@@ -2,7 +2,7 @@
   "name": "eidng8/sttbot",
   "description": "Star Trek Timelines Wiki Scraper",
   "type": "project",
-  "license": "CC-BY-SA-3.0",
+  "license": "CC-BY-SA-4.0",
   "autoload": {
     "psr-4": {
       "eidng8\\": "src/",
