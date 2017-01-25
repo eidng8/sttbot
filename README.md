@@ -20,6 +20,12 @@ Code Climate
 
 
 # Star Trek Timelines Wiki Crawler
+[![CircleCI](https://img.shields.io/circleci/project/github/eidng8/sttbot.svg?style=flat-square)](https://circleci.com/gh/eidng8/sttbot)
+[![Code Climate](https://img.shields.io/codeclimate/github/eidng8/sttbot.svg?style=flat-square)](https://codeclimate.com/github/eidng8/sttbot)
+[![Code Climate](https://img.shields.io/codeclimate/coverage/github/eidng8/sttbot.svg?style=flat-square)](https://codeclimate.com/github/eidng8/sttbot/coverage)
+[![VersionEye](https://img.shields.io/versioneye/d/user/projects/5886d78db194d40039c906e6.svg?style=flat-square)](https://www.versioneye.com/user/projects/5886d78db194d40039c906e6)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
+
 Star Trek Timelines data miner. Extracts data from 
 http://startrektimelineswiki.com/ and serves to [stthb](https://github.com/eidng8/stthb)
 
