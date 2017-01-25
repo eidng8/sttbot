@@ -43,27 +43,6 @@ class CrewList extends Template
      */
     protected $query;
 
-    /*
-        public static function explode($text): array
-        {
-            $traits = explode('|', $text);
-            $traits = array_map(
-                function ($val) {
-                    if (preg_match('/<!--.*-->/', $val)) {
-                        return false;
-                    }
-
-                    return trim($val);
-                },
-                $traits
-            );
-
-            $traits = array_values(array_filter($traits));
-
-            return $traits;
-        }//end explode()
-    */
-
     /**
      * CrewList constructor.
      *
