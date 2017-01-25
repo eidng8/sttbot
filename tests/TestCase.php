@@ -57,6 +57,7 @@ class TestCase extends PHPUnit_Framework_TestCase
     {
         parent::__construct($name, $data, $dataName);
         Log::setLevel(Logger::DEBUG);
+        Log::forTest();
     }
 
     public function tearDown()

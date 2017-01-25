@@ -41,6 +41,7 @@ class LogTest extends TestCase
     {
         parent::tearDownAfterClass();
         Log::setLevel(Logger::DEBUG);
+        Log::forTest();
     }
 
     public function testSetLevel()
