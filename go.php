@@ -35,7 +35,10 @@ try {
     eidng8\Log\Log::err($ex->getMessage());
 }
 
-function init($args)
+/**
+ * @param array $args CLI arguments
+ */
+function init(array $args = null)
 {
     if (!empty($args[1])) {
         $verbosity = substr_count($args[1], 'v');
@@ -49,4 +52,8 @@ function init($args)
     }
 
     eidng8\Log\Log::useStdio();
+
+    if (!is_dir(__DIR__ . '/www')) {
+        mkdir(__DIR__ . '/www', 0644);
+    }
 }
