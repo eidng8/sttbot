@@ -10,8 +10,6 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
     - mkdir -p build/logs
     - phpunit --coverage-clover $CIRCLE_TEST_REPORTS/phpunit/clover.xml --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
-    - phpunit --coverage-clover build/logs/clover.xml
     - 'sed -ie "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME#<file name=\1#" $CIRCLE_TEST_REPORTS/phpunit/clover.xml'
-      # test repo token
-    - CODECLIMATE_REPO_TOKEN="1da661ef334966cec135c49162c64f65bc6f621fc6e7f20e190e616238d0a94d" ./vendor/bin/test-reporter --coverage-report build/logs/clover.xml
+    - ./vendor/bin/test-reporter --coverage-report $CIRCLE_TEST_REPORTS/phpunit/clover.xml
     - bash <(curl -s https://codecov.io/bash) -f $CIRCLE_TEST_REPORTS/phpunit/clover.xmle
