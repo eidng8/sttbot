@@ -8,6 +8,8 @@
 
 namespace eidng8\Traits\Wiki;
 
+use eidng8\Log\Log;
+
 define(
     'JSON_OPTIONS',
     JSON_NUMERIC_CHECK | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE |
@@ -58,35 +60,44 @@ trait Cache
      * Retrieves the specified cache content; if it's not cached, then calls
      * the `$fetch` to retrieve content, cache and returns it.
      *
+     * The return values means:
+     *  * `false` if `$fetch` is not provided and cache is not found;
+     *  * `null` if `$fetch` is provided and `$fetch` returns empty content;
+     *  * otherwise return cached or `$fetch`ed content.
+     *
      * @param string   $file  the cache file to be retrieved or written
      * @param callable $fetch omit to retrieve the cached content, or set to
      *                        the new content to be written to cache
      *
      * @return mixed|false|null
-     *                          * `false` if `$fetch` is not provided and cache is not found
-     *                          * `null` if `$fetch` is provided and `$fetch` returns empty content
-     *                          * otherwise return cached or `$fetch`ed content
-     *                          .
      */
     public function cache(string $file, callable $fetch = null)
     {
         $path = "{$this->cacheRoot}/$file.json";
+        Log::info("get file $file");
+
         $cached = $this->cacheRead($path);
         if ($cached) {
+            Log::debug('cache hit', ['file' => $file]);
             return $cached;
         }
 
         if (null === $fetch) {
+            Log::debug('no fetcher', ['file' => $file]);
             return false;
         }
 
         $this->cacheCheckDir($path);
 
+        Log::debug('attempting to fetch from network...', ['file' => $file]);
         if (empty($content = $fetch())) {
+            Log::debug('fetch failed', ['file' => $file]);
             return null;
         }
 
+        Log::debug('file fetched', ['file' => $file]);
         $this->cacheWrite($path, $content);
+        Log::debug('cache saved', ['file' => $file]);
 
         return $content;
     }//end cache()
@@ -164,6 +175,6 @@ trait Cache
     public function cacheFileName(string $page, array $options): string
     {
         return preg_replace('#[\s<>:"/\|?*]#', '_', $page)
-            . '_' . md5(serialize($options));
+               . '_' . md5(serialize($options));
     }//end fileName()
 }//end trait
