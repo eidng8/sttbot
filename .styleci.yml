@@ -15,6 +15,7 @@ enabled:
   - random_api_migration
 
 disabled:
+  - blank_line_before_return
   - cast_spaces
   - concat_without_spaces
   - phpdoc_summary
