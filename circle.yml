@@ -11,6 +11,8 @@ test:
     - mkdir -p build/logs
     - phpunit --coverage-clover $CIRCLE_TEST_REPORTS/phpunit/clover.xml --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
     - phpunit --coverage-clover build/logs/clover.xml
+    - 'echo $CIRCLE_TEST_REPORTS'
+    - 'echo "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME#<file name=\1#"'
     - 'sed -ie "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME#<file name=\1#" $CIRCLE_TEST_REPORTS/phpunit/clover.xml'
     - ./vendor/bin/test-reporter --coverage-report clover-touched.xml
     - bash <(curl -s https://codecov.io/bash) -f $CIRCLE_TEST_REPORTS/phpunit/clover.xmle
