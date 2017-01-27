@@ -106,19 +106,19 @@ class LogTest extends TestCase
         );
     }//end testSetOutputStream()
 
-    public function testSetErrorStream()
-    {
-        $stream = fopen('php://memory', 'r+');
-        Log::setLevel(Logger::ALERT);
-        Log::setErrorStream($stream);
-        Log::err($this->msg, $this->cxt);
-        rewind($stream);
-        $actual = stream_get_contents($stream);
-        fclose($stream);
-        $this->assertNotFalse(
-            strstr($actual, 'sttbot-error.ERROR: test msg {"this":"test"} []')
-        );
-    }//end testSetErrorStream()
+//    public function testSetErrorStream()
+//    {
+//        $stream = fopen('php://memory', 'r+');
+//        Log::setLevel(Logger::ALERT);
+//        Log::setErrorStream($stream);
+//        Log::err($this->msg, $this->cxt);
+//        rewind($stream);
+//        $actual = stream_get_contents($stream);
+//        fclose($stream);
+//        $this->assertNotFalse(
+//            strstr($actual, 'sttbot-error.ERROR: test msg {"this":"test"} []')
+//        );
+//    }//end testSetErrorStream()
 
     /**
      * @param array $record
