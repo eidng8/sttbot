@@ -1,6 +1,9 @@
 CircleCI
 [![CircleCI](https://circleci.com/gh/eidng8/sttbot.svg?style=svg)](https://circleci.com/gh/eidng8/sttbot)
 
+TravisCI
+[![Build Status](https://travis-ci.org/eidng8/sttbot.svg?branch=master)](https://travis-ci.org/eidng8/sttbot)
+
 StyleCI
 [![StyleCI](https://styleci.io/repos/79508314/shield?branch=master)](https://styleci.io/repos/79508314)
 
