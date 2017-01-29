@@ -1,6 +1,6 @@
 language: php
 php: 7.1
-install: composer install --no-progress
+install: composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader --prefer-stable
 
 cache:
   directories:
