@@ -7,9 +7,6 @@ TravisCI
 StyleCI
 [![StyleCI](https://styleci.io/repos/79508314/shield?branch=master)](https://styleci.io/repos/79508314)
 
-CodeCov
-[![codecov](https://codecov.io/gh/eidng8/sttbot/branch/master/graph/badge.svg)](https://codecov.io/gh/eidng8/sttbot)
-
 GitLab
 [![build status](https://gitlab.com/stthb/sttbot/badges/master/build.svg)](https://gitlab.com/stthb/sttbot/commits/master)
 [![coverage report](https://gitlab.com/stthb/sttbot/badges/master/coverage.svg)](https://gitlab.com/stthb/sttbot/commits/master)
@@ -40,3 +37,11 @@ This project serves a few purpose:
 * As a trial of specific MediaWiki wiki-text parser;
 * As a test bed to try out PHP 7.1 features & tools;
 * As a test bed to try out various public services;
+
+
+-------------------
+DISABLED
+
+
+CodeCov
+[![codecov](https://codecov.io/gh/eidng8/sttbot/branch/master/graph/badge.svg)](https://codecov.io/gh/eidng8/sttbot)

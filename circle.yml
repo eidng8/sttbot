@@ -10,4 +10,4 @@ test:
     - phpunit --coverage-clover $CIRCLE_TEST_REPORTS/phpunit/clover.xml --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
     - 'sed -ie "s#<file name=\(.\)$HOME/$CIRCLE_PROJECT_REPONAME/#<file name=\1#" $CIRCLE_TEST_REPORTS/phpunit/clover.xml'
     - ./vendor/bin/test-reporter --coverage-report $CIRCLE_TEST_REPORTS/phpunit/clover.xml
-    - bash <(curl -s https://codecov.io/bash) -f $CIRCLE_TEST_REPORTS/phpunit/clover.xmle
+    # - bash <(curl -s https://codecov.io/bash) -f $CIRCLE_TEST_REPORTS/phpunit/clover.xmle
