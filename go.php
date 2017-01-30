@@ -24,6 +24,7 @@ try {
     $analyst->bestCrew();
 
     $export = [
+        'version'  => time(),
         'missions' => $analyst->getMissions()->export(),
         'crew'     => $analyst->getCrew()->export(),
     ];
