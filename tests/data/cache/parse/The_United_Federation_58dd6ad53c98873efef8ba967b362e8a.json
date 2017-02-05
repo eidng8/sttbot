@@ -1,325 +1,404 @@
 {
   "title": "The United Federation",
   "pageid": 5103,
-  "redirects": [ ],
+  "redirects": [],
   "links": [
     {
       "ns": 0,
       "exists": "",
       "*": "Cadet Nog"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Diplomacy"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Engineering"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Security"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Cadet Sito Jaxa"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Command"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Dabo Girl Leeta"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Dr Phlox"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Science"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Medicine"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ensign Ro"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ensign Seska"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "First Maje Haron"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Glinn Damar"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "KDF Alexander"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lt Commander Data"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lt Naomi Wildman"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Major Kira"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Nurse Kes"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Persis"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Recovering Spock"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Security Chief Worf"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Seven in Blue"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Technician Rom"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Telek R'Mor"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ensign Pazlar"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "A Certain Formality"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Android"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Astrophysicist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Augment"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Bajoran"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Bartender"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Bartender Quark"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Borg"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Cadet Challenge"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Cardassian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Chef Neelix"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Chief Engineer Torres"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Civilian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Commander Spock"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Counselor Troi"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Crafty"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Crewman Tarses"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Cyberneticist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Denobulan"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Desert Ezri Dax"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Doctor"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Duelist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Elaysian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ensign Tuvok"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ex Astris, Scientia"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Exobiology"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Federation"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ferengi"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Gambler"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Human"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Investigator Odo"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Jury Rigger"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Kazon"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Klingon"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ktarian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lt Jadzia Dax"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Maverick"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Merchant"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Nurse"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Obsidian Order"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ocampa"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Pilot"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Prodigy"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Promoted Sisko"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Resourceful"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Romantic"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Romulan"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Starfleet"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Survivalist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Tactician"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Teenager Nog"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Undercover Operative"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Veteran"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Vulcan"
@@ -330,35 +409,62 @@
       "ns": 10,
       "exists": "",
       "*": "Template:NamePic"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:Stars"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:SP"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:Skill"
     }
   ],
   "images": [
-    "1star_sm.png", "Chef_Neelix_head.png", "Chief_Engineer_Torres_head.png",
-    "Commander_Spock_head.png", "Counselor_Troi_head.png",
-    "Crewman_Tarses_head.png", "Desert_Ezri_Dax_head.png",
-    "Ensign_Tuvok_head.png", "Investigator_Odo_head.png",
-    "Lt_Jadzia_Dax_head.png", "Teenager_Nog_head.png",
-    "Bartender_Quark_head.png", "Cadet_Nog_head.png", "2star_sm.png", "DIP.png",
-    "ENG.png", "SEC.png", "Cadet_Sito_Jaxa_head.png", "CMD.png",
-    "Dabo_Girl_Leeta_head.png", "Dr_Phlox_head.png", "SCI.png", "MED.png",
-    "Ensign_Ro_head.png", "Ensign_Seska_head.png", "First_Maje_Haron_head.png",
-    "Glinn_Damar_head.png", "KDF_Alexander_head.png",
-    "Lt_Commander_Data_head.png", "Lt_Naomi_Wildman_head.png",
-    "Major_Kira_head.png", "Nurse_Kes_head.png", "Persis_head.png",
-    "Recovering_Spock_head.png", "Security_Chief_Worf_head.png",
-    "Seven_in_Blue_head.png", "Technician_Rom_head.png", "Telek_R'Mor_head.png",
+    "1star_sm.png",
+    "Chef_Neelix_head.png",
+    "Chief_Engineer_Torres_head.png",
+    "Commander_Spock_head.png",
+    "Counselor_Troi_head.png",
+    "Crewman_Tarses_head.png",
+    "Desert_Ezri_Dax_head.png",
+    "Ensign_Tuvok_head.png",
+    "Investigator_Odo_head.png",
+    "Lt_Jadzia_Dax_head.png",
+    "Teenager_Nog_head.png",
+    "Bartender_Quark_head.png",
+    "Cadet_Nog_head.png",
+    "2star_sm.png",
+    "DIP.png",
+    "ENG.png",
+    "SEC.png",
+    "Cadet_Sito_Jaxa_head.png",
+    "CMD.png",
+    "Dabo_Girl_Leeta_head.png",
+    "Dr_Phlox_head.png",
+    "SCI.png",
+    "MED.png",
+    "Ensign_Ro_head.png",
+    "Ensign_Seska_head.png",
+    "First_Maje_Haron_head.png",
+    "Glinn_Damar_head.png",
+    "KDF_Alexander_head.png",
+    "Lt_Commander_Data_head.png",
+    "Lt_Naomi_Wildman_head.png",
+    "Major_Kira_head.png",
+    "Nurse_Kes_head.png",
+    "Persis_head.png",
+    "Recovering_Spock_head.png",
+    "Security_Chief_Worf_head.png",
+    "Seven_in_Blue_head.png",
+    "Technician_Rom_head.png",
+    "Telek_R'Mor_head.png",
     "Ensign_Pazlar_head.png"
   ],
   "wikitext": {

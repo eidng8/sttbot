@@ -1,21 +1,24 @@
 {
   "title": "Captain Sulu",
   "pageid": 10686,
-  "redirects": [ ],
+  "redirects": [],
   "links": [
     {
       "ns": 0,
       "exists": "",
       "*": "Command"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Diplomacy"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Security"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Skills"
@@ -26,19 +29,28 @@
       "ns": 10,
       "exists": "",
       "*": "Template:Skill"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:Stars"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:SP"
     }
   ],
   "images": [
-    "CMD.png", "DIP.png", "SEC.png", "1star_sm.png", "3darkstar_sm.png",
-    "2star_sm.png", "2darkstar_sm.png", "3star_sm.png", "1darkstar_sm.png",
+    "CMD.png",
+    "DIP.png",
+    "SEC.png",
+    "1star_sm.png",
+    "3darkstar_sm.png",
+    "2star_sm.png",
+    "2darkstar_sm.png",
+    "3star_sm.png",
+    "1darkstar_sm.png",
     "4star_sm.png"
   ],
   "wikitext": {

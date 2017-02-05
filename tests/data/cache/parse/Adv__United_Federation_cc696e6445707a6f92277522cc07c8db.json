@@ -1,461 +1,574 @@
 {
   "title": "Adv: United Federation",
   "pageid": 13271,
-  "redirects": [ ],
+  "redirects": [],
   "links": [
     {
       "ns": 0,
       "exists": "",
       "*": "Acting Nagus Brunt"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Command"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Diplomacy"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Security"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ambassador Neelix"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Engineering"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "B'Etor Duras"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Captain Dathon"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Commander Kang"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Commander Kor"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Commander Kruge"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Constable Odo"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Deanna Troi"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Medicine"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Doctor Selar"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Donik"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Dr. Reyga"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Science"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ensign Mendon"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ensign Vorik"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "First Maje Culluh"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Gilora Rejal"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Hugh"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Idrin"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Keevan"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Klingon Dukat"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Koloth"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lieutenant Saavik"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lursa Duras"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lwaxana Troi"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Maquis Takeover Torres"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Mara"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Mora Pol"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Morn"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Security Chief Tuvok"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Senator Cretak"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Sniper Ezri Dax"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Subcommander T'Pol"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Surgeon Phlox"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Tailor Garak"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Temporal Shift Kes"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "The Viceroy"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Third Remata'Klan"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Vedek Winn Adami"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ambassador"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Astrophysicist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Bajoran"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Benzite"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Betazoid"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Borg"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Botanist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Brutal"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Cardassian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Changeling"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Chef"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Civilian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Clone"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Communicator"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Constable"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Counselor"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Courier"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Crafty"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Cultural Figure"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Denobulan"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Diplomat"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Doctor"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Dominion"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Duelist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Empath"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Exobiology"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Federation"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ferengi"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Gambler"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "High Command"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Hirogen"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Human"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Hunter"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Innovator"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Interrogator"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Investigator"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Jemhadar"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Jury Rigger"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Kazon"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Klingon"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lord"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Lurian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Maquis"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Marksman"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Maverick"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Mylean"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Nurse"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Ocampa"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Prodigy"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Reman"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Resourceful"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Romantic"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Romulan"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Scoundrel"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Smuggler"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Spiritual"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Starfleet"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Survivalist"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Tactician"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Tailor"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Talaxian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Tamarian"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Telepath"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Trill"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Undercover Operative"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Vedek"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Veteran"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Villain"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Vorta"
-    }, {
+    },
+    {
       "ns": 0,
       "exists": "",
       "*": "Vulcan"
@@ -466,33 +579,62 @@
       "ns": 10,
       "exists": "",
       "*": "Template:NamePic"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:SP"
-    }, {
+    },
+    {
       "ns": 10,
       "exists": "",
       "*": "Template:Skill"
     }
   ],
   "images": [
-    "Acting_Nagus_Brunt_head.png", "CMD.png", "DIP.png", "SEC.png",
-    "Ambassador_Neelix_head.png", "ENG.png", "B'Etor_Duras_head.png",
-    "Captain_Dathon_head.png", "Commander_Kang_head.png",
-    "Commander_Kor_head.png", "Commander_Kruge_head.png",
-    "Constable_Odo_head.png", "Deanna_Troi_head.png", "MED.png",
-    "Doctor_Selar_head.png", "Donik_head.png", "Dr._Reyga_head.png", "SCI.png",
-    "Ensign_Mendon_head.png", "Ensign_Vorik_head.png",
-    "First_Maje_Culluh_head.png", "Gilora_Rejal_head.png", "Hugh_head.png",
-    "Idrin_head.png", "Keevan_head.png", "Klingon_Dukat_head.png",
-    "Koloth_head.png", "Lieutenant_Saavik_head.png", "Lursa_Duras_head.png",
-    "Lwaxana_Troi_head.png", "Maquis_Takeover_Torres_head.png", "Mara_head.png",
-    "Mora_Pol_head.png", "Morn_head.png", "Security_Chief_Tuvok_head.png",
-    "Senator_Cretak_head.png", "Sniper_Ezri_Dax_head.png",
-    "Subcommander_T'Pol_head.png", "Surgeon_Phlox_head.png",
-    "Tailor_Garak_head.png", "Temporal_Shift_Kes_head.png",
-    "The_Viceroy_head.png", "Third_Remata'Klan_head.png",
+    "Acting_Nagus_Brunt_head.png",
+    "CMD.png",
+    "DIP.png",
+    "SEC.png",
+    "Ambassador_Neelix_head.png",
+    "ENG.png",
+    "B'Etor_Duras_head.png",
+    "Captain_Dathon_head.png",
+    "Commander_Kang_head.png",
+    "Commander_Kor_head.png",
+    "Commander_Kruge_head.png",
+    "Constable_Odo_head.png",
+    "Deanna_Troi_head.png",
+    "MED.png",
+    "Doctor_Selar_head.png",
+    "Donik_head.png",
+    "Dr._Reyga_head.png",
+    "SCI.png",
+    "Ensign_Mendon_head.png",
+    "Ensign_Vorik_head.png",
+    "First_Maje_Culluh_head.png",
+    "Gilora_Rejal_head.png",
+    "Hugh_head.png",
+    "Idrin_head.png",
+    "Keevan_head.png",
+    "Klingon_Dukat_head.png",
+    "Koloth_head.png",
+    "Lieutenant_Saavik_head.png",
+    "Lursa_Duras_head.png",
+    "Lwaxana_Troi_head.png",
+    "Maquis_Takeover_Torres_head.png",
+    "Mara_head.png",
+    "Mora_Pol_head.png",
+    "Morn_head.png",
+    "Security_Chief_Tuvok_head.png",
+    "Senator_Cretak_head.png",
+    "Sniper_Ezri_Dax_head.png",
+    "Subcommander_T'Pol_head.png",
+    "Surgeon_Phlox_head.png",
+    "Tailor_Garak_head.png",
+    "Temporal_Shift_Kes_head.png",
+    "The_Viceroy_head.png",
+    "Third_Remata'Klan_head.png",
     "Vedek_Winn_Adami_head.png"
   ],
   "wikitext": {
