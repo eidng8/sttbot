@@ -51,14 +51,24 @@ final class Analyst
     }//end __construct()
 
     /**
-     * Best crew combination
-     *
-     * @return CrewMember[][][]
+     * Find the best crew combination, must be called after
+     * `computeCrossRating()`
      */
-    public function getBestCrew(): array
+    public function computeBestCrew(): void
     {
-        return $this->bestCrew;
-    }//end rateStep()
+        $start = microtime(true);
+
+        $this->missions->eachAway(
+            function (Mission $mission, $index, $episode, string $type) {
+                foreach ($mission->steps as $idx => $step) {
+                    $this->stepBestCrew($step, $idx, $index, $episode, $type);
+                }//end foreach
+            }
+        );
+
+        $elapsed = microtime(true) - $start;
+        Log::info("best crew calculated in {$elapsed}s");
+    }
 
     /**
      * Calculate & rates each crew according to their usefulness in missions,
@@ -66,7 +76,7 @@ final class Analyst
      *
      * @return void
      */
-    public function crossRating(): void
+    public function computeCrossRating(): void
     {
         $start = microtime(true);
 
@@ -82,6 +92,32 @@ final class Analyst
         $elapsed = microtime(true) - $start;
         Log::info("cross rating calculated in {$elapsed}s");
     }//end getBestCrew()
+
+    /**
+     * Best crew combination
+     *
+     * @return CrewMember[][][]
+     */
+    public function getBestCrew(): array
+    {
+        return $this->bestCrew;
+    }//end rateStep()
+
+    /**
+     * @return CrewList
+     */
+    public function getCrew(): CrewList
+    {
+        return $this->crew;
+    }//end rateCadetCrew()
+
+    /**
+     * @return MissionList
+     */
+    public function getMissions(): MissionList
+    {
+        return $this->missions;
+    }//end rateMissionCrew()
 
     /**
      * Calculates crew rating to the given step
@@ -105,81 +141,7 @@ final class Analyst
             }
         );
         // assert(is_array($step['crew']));
-    }//end crossRating()
-
-    /**
-     * Calculates a crew member's rating to the given cadet challenge step
-     *
-     * @param MissionStep $step
-     * @param CrewMember  $member
-     *
-     * @return void
-     */
-    private function rateCadetCrew(MissionStep $step, CrewMember $member)
-    {
-        if ($member->canCriticalCadet($step)) {
-            $member->incRating(2);
-            $step->addCriticalCrew($member);
-        } elseif ($member->canPassCadet($step)) {
-            $member->incRating();
-            $step->addPassCrew($member);
-        }
-
-        // as of 2016-12-18, there is no locked cadet mission steps
-        // if ($member->canUnlockCadet($step)) {
-        //     $member->incRating();
-        //     $step->addUnlockCrew($member);
-        // }
-    }//end bestCrew()
-
-    /**
-     * Calculates a crew member's rating to the given step
-     *
-     * @param MissionStep $step
-     * @param CrewMember  $member
-     *
-     * @return void
-     */
-    private function rateCrew(MissionStep $step, CrewMember $member): void
-    {
-        if ($member->canCritical($step)) {
-            $member->incRating(2);
-            $step->addCriticalCrew($member);
-            $member->addCriticalMissionStep($step);
-            // $this->updateCriticalCrew($step, $member);
-            // unlock check is only meaningful when a member can critical
-            // the step; after all, locks don't block mission pass through,
-            // they just block 3 star rating
-            if ($member->canUnlock($step)) {
-                $member->incRating();
-                $step->addUnlockCrew($member);
-                $member->addUnlockMissionStep($step);
-            }
-        } elseif ($member->canPass($step)) {
-            $member->incRating();
-            $step->addPassCrew($member);
-            $member->addPassMissionStep($step);
-        }
-    }
-
-    /**
-     * Find the best crew combination, must be called after `crossRating()`
-     */
-    public function bestCrew(): void
-    {
-        $start = microtime(true);
-
-        $this->missions->eachAway(
-            function (Mission $mission, $index, $episode, string $type) {
-                foreach ($mission->steps as $idx => $step) {
-                    $this->stepBestCrew($step, $idx, $index, $episode, $type);
-                }//end foreach
-            }
-        );
-
-        $elapsed = microtime(true) - $start;
-        Log::info("best crew calculated in {$elapsed}s");
-    }
+    }//end computeCrossRating()
 
     /**
      * Find the best crew combination of the given step
@@ -282,7 +244,7 @@ final class Analyst
                     // we don't need to care about if they have bonus traits or not
                     $max = max($member->skills[$skill]);
                     if (($lock || empty($prev[$member->stars][2])
-                         || !$prev[$member->stars][2])
+                            || !$prev[$member->stars][2])
                         && $max > $prev[$member->stars][1]
                     ) {
                         $prev[$member->stars] = [$member, $max, $lock];
@@ -297,18 +259,57 @@ final class Analyst
     }//end best()
 
     /**
-     * @return MissionList
+     * Calculates a crew member's rating to the given cadet challenge step
+     *
+     * @param MissionStep $step
+     * @param CrewMember  $member
+     *
+     * @return void
      */
-    public function getMissions(): MissionList
+    private function rateCadetCrew(MissionStep $step, CrewMember $member)
     {
-        return $this->missions;
-    }//end rateMissionCrew()
+        if ($member->canCriticalCadet($step)) {
+            $member->incRating(2);
+            $step->addCriticalCrew($member);
+        } elseif ($member->canPassCadet($step)) {
+            $member->incRating();
+            $step->addPassCrew($member);
+        }
+
+        // as of 2016-12-18, there is no locked cadet mission steps
+        // if ($member->canUnlockCadet($step)) {
+        //     $member->incRating();
+        //     $step->addUnlockCrew($member);
+        // }
+    }//end computeBestCrew()
 
     /**
-     * @return CrewList
+     * Calculates a crew member's rating to the given step
+     *
+     * @param MissionStep $step
+     * @param CrewMember  $member
+     *
+     * @return void
      */
-    public function getCrew(): CrewList
+    private function rateCrew(MissionStep $step, CrewMember $member): void
     {
-        return $this->crew;
-    }//end rateCadetCrew()
+        if ($member->canCritical($step)) {
+            $member->incRating(2);
+            $step->addCriticalCrew($member);
+            $member->addCriticalMissionStep($step);
+            // $this->updateCriticalCrew($step, $member);
+            // unlock check is only meaningful when a member can critical
+            // the step; after all, locks don't block mission pass through,
+            // they just block 3 star rating
+            if ($member->canUnlock($step)) {
+                $member->incRating();
+                $step->addUnlockCrew($member);
+                $member->addUnlockMissionStep($step);
+            }
+        } elseif ($member->canPass($step)) {
+            $member->incRating();
+            $step->addPassCrew($member);
+            $member->addPassMissionStep($step);
+        }
+    }
 }//end class

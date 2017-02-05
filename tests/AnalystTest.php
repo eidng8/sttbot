@@ -109,7 +109,7 @@ class AnalystTest extends TestCase
         Log::forTest();
         $analyst = new Analyst($this->wiki->missions(), $this->wiki->crew());
         $this->assertInstanceOf(Analyst::class, $analyst);
-        $analyst->crossRating();
+        $analyst->computeCrossRating();
 
         return $analyst;
     }//end testCrossRating()
@@ -173,7 +173,7 @@ class AnalystTest extends TestCase
      */
     public function testBestCrew(Analyst $analyst)
     {
-        $analyst->bestCrew();
+        $analyst->computeBestCrew();
         $crew = $analyst->getBestCrew();
         $this->assertNotEmpty($crew);
 

@@ -20,8 +20,8 @@ try {
     );
 
     $analyst = new eidng8\Wiki\Analyst($wiki->missions(), $wiki->crew());
-    $analyst->crossRating();
-    $analyst->bestCrew();
+    $analyst->computeCrossRating();
+    $analyst->computeBestCrew();
 
     $export = [
         'version'  => time(),
