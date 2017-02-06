@@ -103,9 +103,10 @@ class Wiki extends WikiBase
     public function export(): array
     {
         $export = [
-            'version'  => time(),
-            'missions' => $this->analyst->getMissions()->export(),
-            'crew'     => $this->analyst->getCrew()->export(),
+            'version'     => VERSION,
+            'generatedAt' => time(),
+            'missions'    => $this->analyst->getMissions()->export(),
+            'crew'        => $this->analyst->getCrew()->export(),
         ];
 
         $missionIndices = $this->missionIndex($export);

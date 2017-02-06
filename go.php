@@ -6,7 +6,22 @@ $crewIndices = null;
 $missionIndices = null;
 
 try {
-    init($argv);
+    if (!empty($argv[1])) {
+        $verbosity = substr_count($argv[1], 'v');
+        $levels = [
+            Monolog\Logger::WARNING,
+            Monolog\Logger::NOTICE,
+            Monolog\Logger::INFO,
+            Monolog\Logger::DEBUG,
+        ];
+        eidng8\Log\Log::setLevel($levels[$verbosity]);
+    }
+
+    eidng8\Log\Log::useStdio();
+
+    if (!is_dir(__DIR__ . '/www')) {
+        mkdir(__DIR__ . '/www', 0644);
+    }
 
     $api_url = 'http://startrektimelineswiki.com/w/api.php';
     $api = new eidng8\Wiki\Api\Api(
