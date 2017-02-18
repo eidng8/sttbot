@@ -126,16 +126,21 @@ class CrewList extends Template
         array_shift($lines);
         $member = new CrewMember();
 
-        $member->traits = array_map(
-            'strtolower',
-            static::explode(array_pop($lines))
+        $member->traits = array_values(
+            array_map(
+                'mb_strtolower',
+                array_filter(
+                    array_map('trim', static::explode(array_pop($lines)))
+                )
+            )
         );
 
         foreach ($lines as $line) {
-            list($prop, $val) = array_map(
+            $aaa = array_map(
                 'trim',
                 explode('=', substr($line, 2))
             );
+            list($prop, $val) = $aaa;
             $member[$prop] = $val;
         }//end foreach
 
@@ -169,13 +174,13 @@ class CrewList extends Template
     /**
      * Fetch crew member detail information
      *
-     * @param CrewMember $crew
+     * @param CrewMember $member
      */
-    public function fetchDetail(CrewMember $crew): void
+    public function fetchDetail(CrewMember $member): void
     {
         $this->parse->resetOptions();
         // Tuvix has an extra section on how to get it.
-        $this->parse->page($crew->name, 'Tuvix' == $crew->name ? 3 : 2);
+        $this->parse->page($member->name, 'Tuvix' == $member->name ? 3 : 2);
         $this->parse->get(true);
         $this->parse->tables();
         $table = $this->parse->table();
@@ -185,7 +190,7 @@ class CrewList extends Template
         foreach ($skills as $idx => $skill) {
             $tmp[$skill] = $values[$idx];
         }//end foreach
-        $crew->skills = new Skills($tmp);
+        $member->skills = new Skills($tmp);
     }//end skillValue()
 
     /**
@@ -237,6 +242,11 @@ class CrewList extends Template
                     $value = explode('|', trim($value));
                     $low = (int)$value[0] + (int)$value[1];
                     $high = (int)$value[0] + (int)$value[2];
+                    if ($low > $high) {
+                        $tmp = $low;
+                        $low = $high;
+                        $high = $tmp;
+                    }
                     $max[$idx][0] = max($max[$idx][0], $low);
                     $max[$idx][1] = max($max[$idx][1], $high);
                 }//end foreach
@@ -278,7 +288,7 @@ class CrewList extends Template
      *
      * @return CrewMember
      */
-    public function byName($name): CrewMember
+    public function byName($name): ?CrewMember
     {
         return empty($this->crew[$name]) ? null : $this->crew[$name];
     }//end parse()
@@ -290,7 +300,7 @@ class CrewList extends Template
      *
      * @return array
      */
-    public function byTraits(array $traits): array
+    public function byTraits(array $traits): ?array
     {
         $crew = [];
         foreach ($this->crew as $member) {

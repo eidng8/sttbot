@@ -113,10 +113,7 @@ class MissionListTest extends TestCase
      */
     public function testCadet(MissionList $missions)
     {
-        $model = $missions->byName(
-            'First Conflict',
-            'The United Federation'
-        );
+        $model = $missions->byName('First Conflict', 'The United Federation');
         $this->checkCadetBasic($model);
         $this->assertSame('The United Federation', $model->episode);
 
@@ -126,6 +123,41 @@ class MissionListTest extends TestCase
         $this->checkCadetStep4($model);
         $this->checkCadetStep5($model);
     }//end testCadet()
+
+    /**
+     * @depends testCreate
+     *
+     * @param MissionList $missions
+     */
+    public function testCadetAdv(MissionList $missions)
+    {
+        $model = $missions->byName('First Conflict', 'Adv: United Federation');
+        $this->checkCadetBasic($model);
+        $this->assertSame('Adv: United Federation', $model->episode);
+
+        $this->checkCadetAdvStep1($model);
+        $this->checkCadetAdvStep2($model);
+        $this->checkCadetAdvStep3($model);
+        $this->checkCadetAdvStep4($model);
+        $this->checkCadetAdvStep5($model);
+    }//end testCadetStep4()
+
+    public function testExport()
+    {
+        $missions = $this->wiki->missions()->export();
+
+        $this->assertInternalType('array', $missions);
+        $this->assertInternalType('array', $missions[0]);
+        $this->assertInternalType('array', $missions[1]);
+
+        $this->assertNotEmpty($missions);
+        $this->assertNotEmpty($missions[0]);
+        $this->assertNotEmpty($missions[1]);
+
+        foreach ($missions[1] as $idx => $mission) {
+            $this->checkExportedMission($mission, $idx);
+        }//end foreach
+    }//end testCadetAdvStep5()
 
     /**
      * @param Mission $model
@@ -346,27 +378,6 @@ class MissionListTest extends TestCase
     }//end testCadetStep3()
 
     /**
-     * @depends testCreate
-     *
-     * @param MissionList $missions
-     */
-    public function testCadetAdv(MissionList $missions)
-    {
-        $model = $missions->byName(
-            'First Conflict',
-            'Adv: United Federation'
-        );
-        $this->checkCadetBasic($model);
-        $this->assertSame('Adv: United Federation', $model->episode);
-
-        $this->checkCadetAdvStep1($model);
-        $this->checkCadetAdvStep2($model);
-        $this->checkCadetAdvStep3($model);
-        $this->checkCadetAdvStep4($model);
-        $this->checkCadetAdvStep5($model);
-    }//end testCadetStep4()
-
-    /**
      * @param Mission $model
      */
     private function checkCadetAdvStep1(Mission $model)
@@ -551,23 +562,6 @@ class MissionListTest extends TestCase
         );
     }//end testCadetAdvStep4()
 
-    public function testExport()
-    {
-        $missions = $this->wiki->missions()->export();
-
-        $this->assertInternalType('array', $missions);
-        $this->assertInternalType('array', $missions[0]);
-        $this->assertInternalType('array', $missions[1]);
-
-        $this->assertNotEmpty($missions);
-        $this->assertNotEmpty($missions[0]);
-        $this->assertNotEmpty($missions[1]);
-
-        foreach ($missions[1] as $idx => $mission) {
-            $this->checkExportedMission($mission, $idx);
-        }//end foreach
-    }//end testCadetAdvStep5()
-
     /**
      * @param array $mission
      * @param int   $idx
@@ -582,9 +576,6 @@ class MissionListTest extends TestCase
         if (Mission::AWAY_TEAM !== $mission['type']) {
             return;
         }
-
-        $this->checkExportedMissionRequirements($mission);
-        // $this->checkExportedMissionBonus($mission);
 
         $this->checkExportedMissionSteps($mission);
     }//end checkExportedMission()
@@ -649,6 +640,16 @@ class MissionListTest extends TestCase
             $mission['cost'],
             "$mission[name] 'cost' should not be empty"
         );
+
+        // cadet missions has only 1 cost, others have 3
+        if (count($mission['cost']) > 1) {
+            $this->assertSame(
+                3,
+                count($mission['cost']),
+                "$mission[name] should have same count 3 costs"
+            );
+        }
+
         foreach ($mission['cost'] as $idx => $cost) {
             $this->assertInternalType(
                 'integer',
@@ -662,48 +663,6 @@ class MissionListTest extends TestCase
             );
         }//end foreach
     }//end checkExportedMissionCost()
-
-    /**
-     * @param array $mission
-     */
-    private function checkExportedMissionRequirements(array $mission)
-    {
-        $this->assertArrayHasKey(
-            'requirement',
-            $mission,
-            "$mission[name] should has 'requirement'"
-        );
-        $this->assertInternalType(
-            'array',
-            $mission['requirement'],
-            "$mission[name] 'requirement' should be array"
-        );
-        $this->assertNotEmpty(
-            $mission['requirement'],
-            "$mission[name] 'requirement' should not be empty"
-        );
-        foreach ($mission['requirement'] as $idx => $requirement) {
-            $this->assertInternalType(
-                'integer',
-                $requirement,
-                "$mission[name] 'requirement[$idx]' should be integer"
-            );
-            $this->assertGreaterThan(
-                0,
-                $requirement,
-                "$mission[name] 'requirement[$idx]' should be greater than 0"
-            );
-        }//end foreach
-
-        // cadet missions has only 1 cost
-        if (count($mission['cost']) > 1) {
-            $this->assertSame(
-                count($mission['cost']),
-                count($mission['requirement']),
-                "$mission[name] cost & requirement should have same count"
-            );
-        }
-    }//end checkExportedMissionRequirements()
 
     /**
      * @param array $mission
@@ -744,24 +703,8 @@ class MissionListTest extends TestCase
                 $step['skills'],
                 "$mission[name] 'step[$idx]' should has skills"
             );
-            // $this->assertInternalType(
-            //     'array',
-            //     $step['traits'],
-            //     "$mission[name] 'step[$idx]' traits should be array"
-            // );
-            // $this->assertNotEmpty(
-            //     $step['traits'],
-            //     "$mission[name] 'step[$idx]' should has traits"
-            // );
-            // $this->assertInternalType(
-            //     'array',
-            //     $step['locks'],
-            //     "$mission[name] 'step[$idx]' locks should be array"
-            // );
-            // $this->assertNotEmpty(
-            //     $step['locks'],
-            //     "$mission[name] 'step[$idx]' should has locks"
-            // );
+
+            $this->checkExportedStepRequirements($step, $idx, $mission['name']);
 
             foreach ($step['skills'] as $sidx => $skill) {
                 $this->assertInternalType(
@@ -776,4 +719,44 @@ class MissionListTest extends TestCase
             }//end foreach
         }//end foreach
     }//end checkExportedMissionSteps()
+
+    /**
+     * @param array  $step
+     * @param int    $idx
+     * @param string $mission
+     */
+    private function checkExportedStepRequirements(
+        array $step,
+        int $idx,
+        string $mission
+    ) {
+        $this->assertArrayHasKey(
+            'req',
+            $step,
+            "$mission step[$idx] should has 'req'"
+        );
+        $this->assertInternalType(
+            'array',
+            $step['req'],
+            "$mission step[$idx] requirement should be array"
+        );
+        $this->assertNotEmpty(
+            $step['req'],
+            "$mission step[$idx] requirement should not be empty"
+        );
+        foreach ($step['req'] as $idx => $requirement) {
+            foreach ($requirement as $req) {
+                $this->assertInternalType(
+                    'integer',
+                    $req,
+                    "$mission step[$idx] requirement[$idx] should be integer"
+                );
+                $this->assertGreaterThan(
+                    0,
+                    $req,
+                    "$mission step[$idx] requirement[$idx] should be greater than 0"
+                );
+            }//end foreach
+        }//end foreach
+    }//end checkExportedStepRequirements()
 }//end class

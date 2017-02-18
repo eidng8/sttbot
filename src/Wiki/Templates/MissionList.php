@@ -378,25 +378,23 @@ class MissionList extends WikiBase
 
             // flatten skills array
             $skills = [];
-            foreach ($step['skills'] as $skill) {
+            foreach ($step['skills'] as $idx => $skill) {
                 $skills = array_merge(
                     $skills,
                     Skills::skillNames($skill['names'])
                 );
                 if (!empty($skill['values'])) {
-                    $mission['requirement'] = $skill['values'];
+                    $step['req'][$idx] = $skill['values'];
                 }
             }//end foreach
             $step['skills'] = $skills;
 
             // flatten traits array
             $traits = [];
-            foreach ($step['traits'] as $trait) {
-                if (!empty($trait['names'])) {
-                    $traits[] = $trait['names'];
-                }
+            foreach ($step['traits'] as $idx => $trait) {
+                $traits[$idx] = $trait['names'] ?? null;
                 if (!empty($trait['values'])) {
-                    $mission['bonus'] = $trait['values'];
+                    $step['bonus'][$idx] = $trait['values'];
                 }
             }//end foreach
             $step['traits'] = $traits;

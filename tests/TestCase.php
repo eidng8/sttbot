@@ -86,4 +86,11 @@ class TestCase extends PHPUnit_Framework_TestCase
             static::DIR_CACHE
         );
     }//end newApiInstance()
+
+    protected function checkArrayKeys(array $expected, array $exported)
+    {
+        $keys = array_keys($exported);
+        sort($keys);
+        $this->assertSame($keys, $expected);
+    }//end checkArrayKeys()
 }//enc class
