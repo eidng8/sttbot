@@ -1,7 +1,18 @@
 language: php
 php: 7.1
-install: composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
 
 cache:
   directories:
     - vendor
+
+before_script:
+  - phpenv config-rm xdebug.ini
+
+install:
+ - composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
+
+script:
+  - php ./go.php
+  - rm -fr ./tests/data/cache/*
+  - cp -R ./cache/ ./tests/data/cache/
+  - phpunit -d memory_limit=512m --no-coverage

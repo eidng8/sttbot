@@ -868,6 +868,11 @@
     {
       "ns": 10,
       "exists": "",
+      "*": "Template:--"
+    },
+    {
+      "ns": 10,
+      "exists": "",
       "*": "Template:DropTest/3"
     },
     {
@@ -904,11 +909,6 @@
       "ns": 10,
       "exists": "",
       "*": "Template:DropTest/Garak's Gamble/3"
-    },
-    {
-      "ns": 10,
-      "exists": "",
-      "*": "Template:--"
     },
     {
       "ns": 10,

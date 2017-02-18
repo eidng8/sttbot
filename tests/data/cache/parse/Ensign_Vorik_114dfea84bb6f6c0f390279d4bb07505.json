@@ -58,11 +58,8 @@
   ],
   "images": [
     "ENG.png",
-    "1star_sm.png",
-    "2darkstar_sm.png",
-    "2star_sm.png",
-    "1darkstar_sm.png",
-    "3star_sm.png",
+    "StarItem.png",
+    "1star_deprecated.png",
     "CMD.png",
     "DIP.png",
     "SEC.png",

@@ -897,18 +897,13 @@
     {
       "ns": 10,
       "exists": "",
-      "*": "Template:DropTest/2"
-    },
-    {
-      "ns": 10,
-      "exists": "",
       "*": "Template:MissionsNav"
     }
   ],
   "images": [
     "SB-Cardassian_Galor_Cruiser.png",
     "Chronitonsbg.png",
-    "3star_sm.png",
+    "StarItem.png",
     "Normal_64.png",
     "Elite_64.png",
     "Epic_64.png",

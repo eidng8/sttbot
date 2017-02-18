@@ -9,12 +9,12 @@
 namespace eidng8;
 
 use eidng8\Wiki\Analyst;
-use eidng8\Wiki\Models\Mission;
+use eidng8\Wiki\Exporter;
 use eidng8\Wiki\Templates\CrewList;
 use eidng8\Wiki\Templates\MissionList;
 use eidng8\Wiki\WikiBase;
 
-define('VERSION', 1);
+define('STTBOT_VERSION', 1);
 
 /**
  * Wiki service class
@@ -102,94 +102,6 @@ class Wiki extends WikiBase
      */
     public function export(): array
     {
-        $export = [
-            'version'     => VERSION,
-            'generatedAt' => time(),
-            'missions'    => $this->analyst->getMissions()->export(),
-            'crew'        => $this->analyst->getCrew()->export(),
-        ];
-
-        $missionIndices = $this->missionIndex($export);
-        $crewIndices = $this->crewIndex($export);
-        $this->missionStats(
-            $this->analyst->getMissions(),
-            $missionIndices,
-            $crewIndices,
-            $export
-        );
-
-        return $export;
+        return (new Exporter($this->analyst))->export();
     }//end export()
-
-    /**
-     * @param MissionList $missions
-     * @param array       $missionIndices
-     * @param array       $crewIndices
-     * @param array       $data
-     */
-    private function missionStats(
-        MissionList $missions,
-        array $missionIndices,
-        array $crewIndices,
-        array &$data
-    ): void {
-        $missions->each(function (Mission $mission) use (
-            &$data,
-            $missionIndices,
-            $crewIndices
-        ) {
-            if (empty($mission->steps)) {
-                return;
-            }
-            $midx = $missionIndices[$mission->name];
-            foreach ($mission->steps as $idx => $step) {
-                if (!empty($step['crew']['critical'])) {
-                    foreach ($step['crew']['critical'] as $member) {
-                        $data['missions'][1][$midx]['steps'][$idx]['crew']['critical'][]
-                            = $crewIndices[$member->name];
-                    }//end foreach
-                }
-                if (!empty($step['crew']['pass'])) {
-                    foreach ($step['crew']['pass'] as $member) {
-                        $data['missions'][1][$midx]['steps'][$idx]['crew']['pass'][]
-                            = $crewIndices[$member->name];
-                    }//end foreach
-                }
-                if (!empty($step['crew']['unlock'])) {
-                    foreach ($step['crew']['unlock'] as $member) {
-                        $data['missions'][1][$midx]['steps'][$idx]['crew']['unlock'][]
-                            = $crewIndices[$member->name];
-                    }//end foreach
-                }
-            }//end foreach
-        });
-    }//end missionStats()
-
-    /**
-     * @param array $data
-     *
-     * @return array
-     */
-    private function missionIndex(array $data): array
-    {
-        $indices = [];
-        foreach ($data['missions'][1] as $idx => $mission) {
-            $indices[$mission['name']] = $idx;
-        }//end foreach
-        return $indices;
-    }//end missionIndex()
-
-    /**
-     * @param array $data
-     *
-     * @return array
-     */
-    private function crewIndex(array $data): array
-    {
-        $indices = [];
-        foreach ($data['crew'] as $idx => $member) {
-            $indices[$member['name']] = $idx;
-        }//end foreach
-        return $indices;
-    }//end crewIndex()
 }//end class

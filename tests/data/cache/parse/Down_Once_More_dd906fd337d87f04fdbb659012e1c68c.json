@@ -19,11 +19,6 @@
       "*": "Template:DropTest/Down Once More/3"
     },
     {
-      "ns": 10,
-      "exists": "",
-      "*": "Template:DropTest"
-    },
-    {
       "ns": 0,
       "exists": "",
       "*": "Tickets"

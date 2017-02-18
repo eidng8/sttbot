@@ -64,49 +64,6 @@ class QueryTest extends TestCase
 
     public function testThumbnails()
     {
-        // $mock = Mockery::mock(
-        //     Query::class . '[option,get,properties]',
-        //     [Mockery::mock(Wikimate::class)]
-        // );
-        // $mock->shouldReceive('properties')->once();
-        // $mock->shouldReceive('option')->once()
-        //      ->with(
-        //          Query::$TITLES,
-        //          [
-        //              'File:a head.png',
-        //              'File:b head.png',
-        //              'File:c head.png',
-        //          ]
-        //      )
-        //      ->passthru();
-        // $mock->shouldReceive('get')->once()->withNoArgs()
-        //      ->andReturn(
-        //          [
-        //              [
-        //                  'title'     => 'File:a head.png',
-        //                  'imageinfo' => [['thumburl' => 'au']],
-        //              ],
-        //              [
-        //                  'title'     => 'File:b head.png',
-        //                  'imageinfo' => [['thumburl' => 'bu']],
-        //              ],
-        //              [
-        //                  'title'     => 'File:c head.png',
-        //                  'imageinfo' => [['thumburl' => 'cu']],
-        //              ],
-        //          ]
-        //      );
-        //
-        // /* @var Query $mock */
-        // $this->assertSame(
-        //     [
-        //         'a' => 'au',
-        //         'b' => 'bu',
-        //         'c' => 'cu',
-        //     ],
-        //     $mock->thumbnails(['a', 'b', 'c'])
-        // );
-
         $actual = $this->query->thumbnails(
             ['"Dark Ages" McCoy', 'Changeling Bashir']
         );

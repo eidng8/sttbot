@@ -77,6 +77,51 @@
           }
         ]
       },
+      "14074": {
+        "pageid": 14074,
+        "ns": 6,
+        "title": "File:Captain Nog head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/c/ce/Captain_Nog_head.png/97px-Captain_Nog_head.png",
+            "thumbwidth": 97,
+            "thumbheight": 100,
+            "url": "http://startrektimelineswiki.com/w/images/c/ce/Captain_Nog_head.png",
+            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Nog_head.png"
+          }
+        ]
+      },
+      "13175": {
+        "pageid": 13175,
+        "ns": 6,
+        "title": "File:Captain Pike head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/3/38/Captain_Pike_head.png/100px-Captain_Pike_head.png",
+            "thumbwidth": 100,
+            "thumbheight": 100,
+            "url": "http://startrektimelineswiki.com/w/images/3/38/Captain_Pike_head.png",
+            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Pike_head.png"
+          }
+        ]
+      },
+      "2933": {
+        "pageid": 2933,
+        "ns": 6,
+        "title": "File:Captain Proton Paris head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/4/46/Captain_Proton_Paris_head.png/100px-Captain_Proton_Paris_head.png",
+            "thumbwidth": 100,
+            "thumbheight": 100,
+            "url": "http://startrektimelineswiki.com/w/images/4/46/Captain_Proton_Paris_head.png",
+            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Proton_Paris_head.png"
+          }
+        ]
+      },
       "7601": {
         "pageid": 7601,
         "ns": 6,
@@ -131,7 +176,7 @@
           {
             "thumburl": "http://startrektimelineswiki.com/w/images/thumb/a/ae/Captain_Sulu_head.png/100px-Captain_Sulu_head.png",
             "thumbwidth": 100,
-            "thumbheight": 99,
+            "thumbheight": 100,
             "url": "http://startrektimelineswiki.com/w/images/a/ae/Captain_Sulu_head.png",
             "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Sulu_head.png"
           }
@@ -704,51 +749,6 @@
             "thumbheight": 100,
             "url": "http://startrektimelineswiki.com/w/images/9/90/Crewman_Tarses_head.png",
             "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Crewman_Tarses_head.png"
-          }
-        ]
-      },
-      "6899": {
-        "pageid": 6899,
-        "ns": 6,
-        "title": "File:Dabo Girl Leeta head.png",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/c/c5/Dabo_Girl_Leeta_head.png/100px-Dabo_Girl_Leeta_head.png",
-            "thumbwidth": 100,
-            "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/c/c5/Dabo_Girl_Leeta_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Dabo_Girl_Leeta_head.png"
-          }
-        ]
-      },
-      "13195": {
-        "pageid": 13195,
-        "ns": 6,
-        "title": "File:Danara Pel head.png",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/c/cf/Danara_Pel_head.png/100px-Danara_Pel_head.png",
-            "thumbwidth": 100,
-            "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/c/cf/Danara_Pel_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Danara_Pel_head.png"
-          }
-        ]
-      },
-      "14301": {
-        "pageid": 14301,
-        "ns": 6,
-        "title": "File:Dancing Uhura head.png",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/9/94/Dancing_Uhura_head.png/100px-Dancing_Uhura_head.png",
-            "thumbwidth": 100,
-            "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/9/94/Dancing_Uhura_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Dancing_Uhura_head.png"
           }
         ]
       }

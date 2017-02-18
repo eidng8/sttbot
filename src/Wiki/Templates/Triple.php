@@ -62,7 +62,7 @@ class Triple extends Template
             } elseif (!empty($this->found)) {
                 break;
             } else {
-                $this->name[] = mb_strtolower($part);
+                $this->name[] = trim(mb_strtolower($part));
             }
         }//end foreach
 

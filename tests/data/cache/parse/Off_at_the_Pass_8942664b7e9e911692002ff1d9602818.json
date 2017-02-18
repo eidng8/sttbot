@@ -15,7 +15,13 @@
     },
     {
       "ns": 10,
+      "exists": "",
       "*": "Template:DropTest/Off at the Pass/3"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:DropTest"
     },
     {
       "ns": 0,
@@ -1103,6 +1109,16 @@
       "ns": 10,
       "exists": "",
       "*": "Template:DropTest/Off at the Pass/2"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:DropTest/Off at the Pass/3"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:DropTest/2"
     },
     {
       "ns": 10,

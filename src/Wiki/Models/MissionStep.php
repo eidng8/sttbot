@@ -71,11 +71,23 @@ class MissionStep extends Model
             }//end foreach
         }
 
-        return [
+        $return = [
             'skills' => $skills,
             'traits' => $traits,
             'locks'  => $this->locks,
         ];
+
+        if (!empty($this->crew)) {
+            $crew = [];
+            foreach ($this->crew as $key => $list) {
+                foreach ($list as $member) {
+                    $crew[$key][] = $member->toArray();
+                }//end foreach
+            }//end foreach
+            $return['crew'] = $crew;
+        }
+
+        return $return;
     }
 
     /**

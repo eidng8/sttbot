@@ -523,12 +523,12 @@
     {
       "ns": 10,
       "exists": "",
-      "*": "Template:DropTest/2"
+      "*": "Template:DropTest/First Conflict/2"
     },
     {
       "ns": 10,
       "exists": "",
-      "*": "Template:DropTest/First Conflict/2"
+      "*": "Template:DropTest/2"
     },
     {
       "ns": 10,

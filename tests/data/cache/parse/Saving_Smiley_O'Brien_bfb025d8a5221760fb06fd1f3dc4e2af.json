@@ -15,7 +15,13 @@
     },
     {
       "ns": 10,
+      "exists": "",
       "*": "Template:DropTest/Saving Smiley O'Brien/3"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:DropTest"
     },
     {
       "ns": 0,
@@ -1073,6 +1079,16 @@
       "ns": 10,
       "exists": "",
       "*": "Template:DropTest/Saving Smiley O'Brien/2"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:DropTest/Saving Smiley O'Brien/3"
+    },
+    {
+      "ns": 10,
+      "exists": "",
+      "*": "Template:DropTest/2"
     },
     {
       "ns": 10,

@@ -272,6 +272,21 @@
           }
         ]
       },
+      "14455": {
+        "pageid": 14455,
+        "ns": 6,
+        "title": "File:Ambassador Troi head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/1/16/Ambassador_Troi_head.png/100px-Ambassador_Troi_head.png",
+            "thumbwidth": 100,
+            "thumbheight": 100,
+            "url": "http://startrektimelineswiki.com/w/images/1/16/Ambassador_Troi_head.png",
+            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Ambassador_Troi_head.png"
+          }
+        ]
+      },
       "9572": {
         "pageid": 9572,
         "ns": 6,
@@ -632,6 +647,21 @@
           }
         ]
       },
+      "14436": {
+        "pageid": 14436,
+        "ns": 6,
+        "title": "File:Captain John Harriman head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/8/89/Captain_John_Harriman_head.png/100px-Captain_John_Harriman_head.png",
+            "thumbwidth": 100,
+            "thumbheight": 96,
+            "url": "http://startrektimelineswiki.com/w/images/8/89/Captain_John_Harriman_head.png",
+            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_John_Harriman_head.png"
+          }
+        ]
+      },
       "9545": {
         "pageid": 9545,
         "ns": 6,
@@ -692,48 +722,18 @@
           }
         ]
       },
-      "14074": {
-        "pageid": 14074,
+      "14405": {
+        "pageid": 14405,
         "ns": 6,
-        "title": "File:Captain Nog head.png",
+        "title": "File:Captain Morgan Bateson head.png",
         "imagerepository": "local",
         "imageinfo": [
           {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/c/ce/Captain_Nog_head.png/97px-Captain_Nog_head.png",
-            "thumbwidth": 97,
-            "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/c/ce/Captain_Nog_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Nog_head.png"
-          }
-        ]
-      },
-      "13175": {
-        "pageid": 13175,
-        "ns": 6,
-        "title": "File:Captain Pike head.png",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/3/38/Captain_Pike_head.png/100px-Captain_Pike_head.png",
+            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/6/6f/Captain_Morgan_Bateson_head.png/100px-Captain_Morgan_Bateson_head.png",
             "thumbwidth": 100,
-            "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/3/38/Captain_Pike_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Pike_head.png"
-          }
-        ]
-      },
-      "2933": {
-        "pageid": 2933,
-        "ns": 6,
-        "title": "File:Captain Proton Paris head.png",
-        "imagerepository": "local",
-        "imageinfo": [
-          {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/4/46/Captain_Proton_Paris_head.png/100px-Captain_Proton_Paris_head.png",
-            "thumbwidth": 100,
-            "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/4/46/Captain_Proton_Paris_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Proton_Paris_head.png"
+            "thumbheight": 99,
+            "url": "http://startrektimelineswiki.com/w/images/6/6f/Captain_Morgan_Bateson_head.png",
+            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:Captain_Morgan_Bateson_head.png"
           }
         ]
       },

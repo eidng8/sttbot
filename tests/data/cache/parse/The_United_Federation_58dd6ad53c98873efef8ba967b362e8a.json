@@ -427,7 +427,7 @@
     }
   ],
   "images": [
-    "1star_sm.png",
+    "StarItem.png",
     "Chef_Neelix_head.png",
     "Chief_Engineer_Torres_head.png",
     "Commander_Spock_head.png",
@@ -440,7 +440,6 @@
     "Teenager_Nog_head.png",
     "Bartender_Quark_head.png",
     "Cadet_Nog_head.png",
-    "2star_sm.png",
     "DIP.png",
     "ENG.png",
     "SEC.png",

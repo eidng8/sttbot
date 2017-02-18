@@ -858,6 +858,11 @@
     {
       "ns": 10,
       "exists": "",
+      "*": "Template:--"
+    },
+    {
+      "ns": 10,
+      "exists": "",
       "*": "Template:DropTest/3"
     },
     {
@@ -888,11 +893,6 @@
     {
       "ns": 10,
       "exists": "",
-      "*": "Template:--"
-    },
-    {
-      "ns": 10,
-      "exists": "",
       "*": "Template:DropTest/2"
     },
     {
@@ -909,7 +909,7 @@
   "images": [
     "SB-Klingon_K'Vort_Bird-of-Prey.png",
     "Chronitonsbg.png",
-    "2star_sm.png",
+    "StarItem.png",
     "Normal_64.png",
     "Elite_64.png",
     "Epic_64.png",

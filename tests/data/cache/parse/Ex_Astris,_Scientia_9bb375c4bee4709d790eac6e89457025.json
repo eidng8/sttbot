@@ -482,7 +482,7 @@
     }
   ],
   "images": [
-    "1star_sm.png",
+    "StarItem.png",
     "Chief_Engineer_Torres_head.png",
     "CMO_'Bones'_McCoy_head.png",
     "CMO_Bashir_head.png",
@@ -503,7 +503,6 @@
     "Will_Riker_head.png",
     "Yeoman_Rand_head.png",
     "Acting_Ensign_Crusher_head.png",
-    "2star_sm.png",
     "CMD.png",
     "ENG.png",
     "SCI.png",

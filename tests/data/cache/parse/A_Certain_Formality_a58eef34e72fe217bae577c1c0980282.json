@@ -322,7 +322,7 @@
     }
   ],
   "images": [
-    "1star_sm.png",
+    "StarItem.png",
     "Botanist_Keiko_head.png",
     "Chief_Engineer_Torres_head.png",
     "Comm_Officer_Uhura_head.png",
@@ -333,7 +333,6 @@
     "Lt_Jadzia_Dax_head.png",
     "Yeoman_Rand_head.png",
     "Cadet_Sito_Jaxa_head.png",
-    "2star_sm.png",
     "CMD.png",
     "DIP.png",
     "SEC.png",
