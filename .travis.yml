@@ -13,5 +13,5 @@ install:
 
 script:
   - php ./go.php
-  - rm -fr ./tests/data/cache/*
+  - cp -R ./cache/ ./tests/data/cache/
   - phpunit -d memory_limit=512m --no-coverage
