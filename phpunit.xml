@@ -15,9 +15,21 @@
          syntaxCheck="false"
          bootstrap="./tests/bootstrap.php">
     <testsuites>
-        <testsuite name="Star Trek Timelines scraper Test Suite">
-            <directory>./tests/</directory>
-            <exclude>tests/data</exclude>
+      <testsuite name="Basic Tests">
+        <directory>./tests/Log</directory>
+        <directory>./tests/Models</directory>
+        <directory>./tests/Traits</directory>
+      </testsuite>
+      <testsuite name="Wiki Tests">
+        <directory>./tests/Wiki/Models</directory>
+        <directory>./tests/Wiki/Api</directory>
+        <directory>./tests/Wiki/Templates</directory>
+        <file>./tests/Wiki/IndexerTest.php</file>
+        <file>./tests/Wiki/ExporterTest.php</file>
+      </testsuite>
+      <testsuite name="Integration Tests">
+        <file>./tests/Wiki/AnalystTest.php</file>
+        <file>./tests/Wiki/WikiTest.php</file>
         </testsuite>
     </testsuites>
     <filter>
