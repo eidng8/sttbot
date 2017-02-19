@@ -10,7 +10,6 @@ namespace eidng8\Wiki;
 
 class Exporter
 {
-
     /**
      * @var Analyst
      */
