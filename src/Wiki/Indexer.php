@@ -12,7 +12,6 @@ use eidng8\Wiki\Models\Skills;
 
 class Indexer
 {
-
     /**
      * @var array
      */
@@ -42,7 +41,6 @@ class Indexer
      * @var array
      */
     public $traitIndex;
-
 
     public function __construct()
     {

@@ -15,7 +15,6 @@ use eidng8\Wiki\Models\Skills;
 
 class IndexerTest extends TestCase
 {
-
     /**
      * @var Wiki
      */

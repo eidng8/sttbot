@@ -23,7 +23,6 @@ class ExporterTest extends TestCase
      */
     private static $wiki;
 
-
     protected function setUp()
     {
         parent::setUp();
@@ -81,7 +80,7 @@ class ExporterTest extends TestCase
                     'race',
                     'skills',
                     'stars',
-                    'traits'
+                    'traits',
                 ],
                 $member
             );
