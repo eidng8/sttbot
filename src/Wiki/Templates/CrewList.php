@@ -185,12 +185,15 @@ class CrewList extends Template
         $this->parse->tables();
         $table = $this->parse->table();
         $skills = $this->skillList($table);
-        $values = $this->skillValue($table, $skills);
+        list($max, $raw) = $this->skillValue($table, $skills);
         $tmp = [];
+        $tmpr = [];
         foreach ($skills as $idx => $skill) {
-            $tmp[$skill] = $values[$idx];
+            $tmp[$skill] = $max[$idx];
+            $tmpr[$skill] = $raw[$idx];
         }//end foreach
         $member->skills = new Skills($tmp);
+        $member->rawSkills = new Skills($tmpr);
     }//end skillValue()
 
     /**
@@ -230,6 +233,7 @@ class CrewList extends Template
             return null;
         }
 
+        $raw = [];
         $max = array_fill(0, count($skills), array_fill(0, 2, 0));
         foreach ($levels[1] as $level) {
             $lines = array_filter(explode("\n", $level));
@@ -239,9 +243,15 @@ class CrewList extends Template
                     continue;
                 }
                 foreach ($values[1] as $idx => $value) {
-                    $value = explode('|', trim($value));
-                    $low = (int)$value[0] + (int)$value[1];
-                    $high = (int)$value[0] + (int)$value[2];
+                    $value = array_map(
+                        function ($val) {
+                            return intval($val);
+                        },
+                        explode('|', trim($value))
+                    );
+                    $raw[$idx] = $value;
+                    $low = $value[0] + $value[1];
+                    $high = $value[0] + $value[2];
                     if ($low > $high) {
                         $tmp = $low;
                         $low = $high;
@@ -253,7 +263,7 @@ class CrewList extends Template
             }//end foreach
         }//end foreach
 
-        return $max;
+        return [$max, $raw];
     }//end get()
 
     /**
@@ -322,11 +332,6 @@ class CrewList extends Template
         $this->each(
             function (CrewMember $member) use (&$crew) {
                 $member = $member->toArray();
-                foreach ($member['skills'] as &$skill) {
-                    if (is_array($skill)) {
-                        $skill = max($skill);
-                    }
-                }//end foreach
                 unset($member['charpage'], $member['page']);
                 $crew[] = $member;
             }

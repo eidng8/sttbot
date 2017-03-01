@@ -195,9 +195,9 @@ class CrewListTest extends TestCase
         foreach ($crew as $member) {
             foreach ($member['skills'] as $name => $skill) {
                 $this->assertInternalType(
-                    'integer',
+                    'array',
                     $skill,
-                    "$member[name] skill '$name' should be integer"
+                    "$member[name] skill '$name' should be array"
                 );
             }//end foreach
             foreach ($member['traits'] as $trait) {

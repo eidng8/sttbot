@@ -70,6 +70,13 @@ class CrewMember extends Model implements Hyperlink
     public $skills;
 
     /**
+     * Skills the member possesses, in raw format
+     *
+     * @var Skills
+     */
+    public $rawSkills;
+
+    /**
      * Traits the member possesses
      *
      * @var string[]
@@ -218,7 +225,7 @@ class CrewMember extends Model implements Hyperlink
             $value = $value[1];
 
             return $value + $this->traitBonus($step, $idx)
-                   >= $skill->epic() * ($critical ? 1.25 : 1);
+                >= $skill->epic() * ($critical ? 1.25 : 1);
         }//end foreach
 
         return false;
@@ -322,7 +329,8 @@ class CrewMember extends Model implements Hyperlink
             'page'      => $this->page,
             'picture'   => $this->picture,
             'race'      => $this->race,
-            'skills'    => $this->skills->toArray(),
+            'skills'    => $this->rawSkills ?
+                $this->rawSkills->toArray() : $this->skills->toArray(),
             'stars'     => $this->stars,
             'traits'    => $this->traits,
         ];

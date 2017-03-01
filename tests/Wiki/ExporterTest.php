@@ -146,7 +146,7 @@ class ExporterTest extends TestCase
     ) {
         foreach ($member['skills'] as $index => $skill) {
             $this->assertSame(
-                $expected->skills[$exported['skills'][$index]][1],
+                $expected->rawSkills[$exported['skills'][$index]],
                 $skill
             );
         }//end foreach
