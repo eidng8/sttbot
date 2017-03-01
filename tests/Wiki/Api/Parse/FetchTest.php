@@ -33,11 +33,11 @@ class FetchTest extends Base
         $actual = $parse->get();
         $this->assertSame('Crew', $actual['title']);
         $this->assertSame(66, $actual['pageid']);
-        $this->assertTrue($actual['links']['"Dark Ages" McCoy']);
-        $this->assertTrue($actual['links']['Changeling (Character)']);
+        $this->assertTrue($actual['links']['Command']);
+        $this->assertTrue($actual['links']['Engineering']);
         $this->assertTrue($actual['templates']['Template:Skill']);
         $this->assertTrue($actual['templates']['Template:MPCrewList']);
-        $this->assertTrue($actual['images']['Changeling_Bashir_head.png']);
+        $this->assertTrue($actual['images']['CMD.png']);
         $this->assertSame($parse->get(), $actual);
     }
 
@@ -72,11 +72,11 @@ class FetchTest extends Base
         $actual = $parse->get();
         $this->assertSame('Crew', $actual['title']);
         $this->assertSame(66, $actual['pageid']);
-        $this->assertTrue($actual['links']['"Dark Ages" McCoy']);
-        $this->assertTrue($actual['links']['Changeling (Character)']);
+        $this->assertTrue($actual['links']['Command']);
+        $this->assertTrue($actual['links']['Engineering']);
         $this->assertTrue($actual['templates']['Template:Skill']);
         $this->assertTrue($actual['templates']['Template:MPCrewList']);
-        $this->assertTrue($actual['images']['Changeling_Bashir_head.png']);
+        $this->assertTrue($actual['images']['CMD.png']);
         $this->assertSame($parse->get(), $actual);
 
         unlink(
