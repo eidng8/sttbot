@@ -98,7 +98,7 @@ abstract class Template implements WikiTextParser
      */
     protected function regex(): string
     {
-        return "/^\\s*\\{\\{{$this->name}.+?^\s*}}$/imsu";
+        return "/^\\s*\\{\\{{$this->name}.+?^\\s*}}$/imsu";
     }//end __construct()
 
     /**
