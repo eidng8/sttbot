@@ -378,6 +378,6 @@ class CrewList extends Template
      */
     protected function regex(): string
     {
-        return "/^\\s*\\{\\{{$this->name}.+?}}\\s*$/imsu";
+        return "/\\{\\{MPCrewList.+?<!--Traits-->[^}]+}}/imsu";
     }//end stats()
 }//end class
