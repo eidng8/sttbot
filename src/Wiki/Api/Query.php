@@ -136,8 +136,10 @@ class Query
 
         $returns = [];
         foreach ($nails['query']['pages'] as $nail) {
-            $returns[$thumbs[$nail['title']]]
-                = $nail['imageinfo'][0]['thumburl'];
+            if (!empty($nail['imageinfo'][0]['thumburl'])) {
+                $returns[$thumbs[$nail['title']]]
+                    = $nail['imageinfo'][0]['thumburl'];
+            }
         }//end foreach
 
         return $returns;
