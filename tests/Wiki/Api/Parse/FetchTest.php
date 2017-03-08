@@ -32,7 +32,6 @@ class FetchTest extends Base
         $parse->page('Crew', 9);
         $actual = $parse->get();
         $this->assertSame('Crew', $actual['title']);
-        $this->assertSame(66, $actual['pageid']);
         $this->assertTrue($actual['links']['Command']);
         $this->assertTrue($actual['links']['Engineering']);
         $this->assertTrue($actual['templates']['Template:Skill']);
@@ -71,7 +70,6 @@ class FetchTest extends Base
         $parse->page('Crew', 9);
         $actual = $parse->get();
         $this->assertSame('Crew', $actual['title']);
-        $this->assertSame(66, $actual['pageid']);
         $this->assertTrue($actual['links']['Command']);
         $this->assertTrue($actual['links']['Engineering']);
         $this->assertTrue($actual['templates']['Template:Skill']);
