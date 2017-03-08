@@ -1,0 +1,48 @@
+{
+    "title": "Ba'ku Worf",
+    "pageid": 13995,
+    "redirects": [],
+    "links": [
+        {
+            "ns": 0,
+            "exists": "",
+            "*": "Command"
+        },
+        {
+            "ns": 0,
+            "exists": "",
+            "*": "Security"
+        },
+        {
+            "ns": 0,
+            "exists": "",
+            "*": "Skills"
+        }
+    ],
+    "templates": [
+        {
+            "ns": 10,
+            "exists": "",
+            "*": "Template:Skill"
+        },
+        {
+            "ns": 10,
+            "exists": "",
+            "*": "Template:Stars"
+        },
+        {
+            "ns": 10,
+            "exists": "",
+            "*": "Template:SP"
+        }
+    ],
+    "images": [
+        "CMD.png",
+        "SEC.png",
+        "StarItem.png",
+        "1star_deprecated.png"
+    ],
+    "wikitext": {
+        "*": "==Away Team Skills==\n{{PAGENAME}} has the [[skills]] of {{skill|CMD|}} and {{skill|SEC|}}.\n{| class=\"wikitable\" style=\"text-align:center; font-size:13px;\"\n|-\n! colspan=\"16\" | {{PAGENAME}}'s Away Team Skills\n|-\n| &nbsp;\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|1|3}}\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|2|2}}\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|3|1}}\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|4|}}\n|-\n! Lvl\n| class=\"ATSLeft\" | {{Skill|CMD}} || {{Skill|SEC}}\n| class=\"ATSLeft\" | {{Skill|CMD}} || {{Skill|SEC}}\n| class=\"ATSLeft\" | {{Skill|CMD}} || {{Skill|SEC}}\n| class=\"ATSLeft\" | {{Skill|CMD}} || {{Skill|SEC}}\n|- <!-- Skill Points: {{SP|Base|MinRNG|MaxRNG}} -->\n| 1\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|42|11|22}} || {{SP|52|14|29}} <!--When entering skills for new characters please post proficiency for all stars. Prof doesn't change with fusion, only items.-->\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|42|11|22}} || {{SP|53|14|29}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|43|11|22}} || {{SP|54|14|29}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|44|11|22}} || {{SP|55|14|29}}\n|-\n| 10\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|52|12|31}} || {{SP|71|15|36}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|57|12|31}} || {{SP|76|15|36}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|65|12|31}} || {{SP|84|15|36}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|76|12|31}} || {{SP|95|15|36}}\n|-\n| 20\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP| 64|13|34}} || {{SP|105|16|41}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP| 74|13|34}} || {{SP|115|16|41}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP| 89|13|34}} || {{SP|131|16|41}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|110|13|34}} || {{SP|152|16|41}}\n|-\n| 30\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP| 83|17|44}} || {{SP|132|17|46}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP| 98|17|44}} || {{SP|147|17|46}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|120|17|44}} || {{SP|170|17|46}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|152|17|44}} || {{SP|202|17|46}}\n|-\n| 40\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP| 98|17|44}} || {{SP|158|25|78}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|118|17|44}} || {{SP|177|25|78}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|148|17|44}} || {{SP|209|25|78}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|189|17|44}} || {{SP|251|25|78}}\n|-\n| 50\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|113|23|58}} || {{SP|199|29|100}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|138|23|58}} || {{SP|223|29|100}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|175|23|58}} || {{SP|262|29|100}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|227|23|58}} || {{SP|315|29|100}}\n|-\n| 60\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|132|27|68}} || {{SP|240|43|130}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|162|27|68}} || {{SP|269|43|130}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|206|27|68}} || {{SP|316|43|130}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|269|27|68}} || {{SP|379|43|130}}\n|-\n| 70\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|159|47|108}} || {{SP|319|69|184}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|0|47|108}} || {{SP|0|69|184}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|246|47|108}} || {{SP|408|69|184}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|318|47|108}} || {{SP|481|69|184}}\n|-\n| 80\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|201|47|108}} || {{SP|408|89|244}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|0|47|108}} || {{SP|0|89|244}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|300|47|108}} || {{SP|509|89|244}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|383|47|108}} || {{SP|593|89|244}}\n|-\n| 90\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|278|92|193}} || {{SP|522|99|264}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|0|92|193}} || {{SP|0|99|264}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|0|92|193}} || {{SP|0|99|264}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|0|92|193}} || {{SP|0|99|264}}\n|-\n| 100\n| <!-- 1-Star --> class=\"ATSLeft\" | {{SP|319|117|268}} || {{SP|671|119|304}}\n| <!-- 2-Star --> class=\"ATSLeft\" | {{SP|0|117|268}} || {{SP|0|119|304}}\n| <!-- 3-Star --> class=\"ATSLeft\" | {{SP|0|117|268}} || {{SP|0|119|304}}\n| <!-- 4-Star --> class=\"ATSLeft\" | {{SP|547|117|268}} || {{SP|902|119|304}}\n|}"
+    }
+}

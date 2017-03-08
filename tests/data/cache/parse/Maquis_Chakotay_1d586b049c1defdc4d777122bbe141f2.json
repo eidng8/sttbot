@@ -1,47 +1,47 @@
 {
-  "title": "Maquis Chakotay",
-  "pageid": 1359,
-  "redirects": [],
-  "links": [
-    {
-      "ns": 0,
-      "exists": "",
-      "*": "Command"
-    },
-    {
-      "ns": 0,
-      "exists": "",
-      "*": "Security"
-    },
-    {
-      "ns": 0,
-      "exists": "",
-      "*": "Skills"
+    "title": "Maquis Chakotay",
+    "pageid": 4771,
+    "redirects": [],
+    "links": [
+        {
+            "ns": 0,
+            "exists": "",
+            "*": "Command"
+        },
+        {
+            "ns": 0,
+            "exists": "",
+            "*": "Security"
+        },
+        {
+            "ns": 0,
+            "exists": "",
+            "*": "Skills"
+        }
+    ],
+    "templates": [
+        {
+            "ns": 10,
+            "exists": "",
+            "*": "Template:Skill"
+        },
+        {
+            "ns": 10,
+            "exists": "",
+            "*": "Template:Stars"
+        },
+        {
+            "ns": 10,
+            "exists": "",
+            "*": "Template:SP"
+        }
+    ],
+    "images": [
+        "CMD.png",
+        "SEC.png",
+        "StarItem.png"
+    ],
+    "wikitext": {
+        "*": "==Away Team Skills==\nMaquis Chakotay has the [[skills]] of {{skill|cmd|}} and {{skill|sec|}}.\n{| class=\"wikitable\" style=\"text-align:center; font-size:13px;\"\n|-\n! colspan=\"3\" | {{PAGENAME}}'s Away Team Skills\n|-\n| &nbsp;\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|1}}\n|-\n! Lvl\n| class=\"ATSLeft\" | {{Skill|CMD}} || {{Skill|SEC}}\n|-\n|1\n| class=\"ATSLeft\" | {{SP|21|4|10}} || {{SP|16|2|4}} \n|-\n|10\n| class=\"ATSLeft\" | {{SP|32|4|14}} || {{SP|22|3|7}}\n|-\n|20\n| class=\"ATSLeft\" | {{SP|44|7|21}} || {{SP|27|4|10}}\n|-\n|30\n| class=\"ATSLeft\" | {{SP|66|8|26}} || {{SP|34|4|10}}\n|-\n|40\n| class=\"ATSLeft\" | {{SP|78|8|30}} || {{SP|39|6|20}}\n|-\n|50\n| class=\"ATSLeft\" | {{SP|88|15|53}} || {{SP|49|6|20}}\n|-\n|60\n| class=\"ATSLeft\" | {{SP|98|15|53}} || {{SP|64|10|42}}\n|-\n|70\n| class=\"ATSLeft\" | {{SP|123|20|68}} || {{SP|79|10|42}}\n|-\n|80\n| class=\"ATSLeft\" | {{SP|148|30|108}} || {{SP|84|10|42}}\n|-\n|90\n| class=\"ATSLeft\" | {{SP|168|36|122}} || {{SP|104|30|92}}\n|-\n|100\n| class=\"ATSLeft\" | {{SP|178|56|202}} || {{SP|138|55|157}}\n|-\n|}"
     }
-  ],
-  "templates": [
-    {
-      "ns": 10,
-      "exists": "",
-      "*": "Template:Skill"
-    },
-    {
-      "ns": 10,
-      "exists": "",
-      "*": "Template:Stars"
-    },
-    {
-      "ns": 10,
-      "exists": "",
-      "*": "Template:SP"
-    }
-  ],
-  "images": [
-    "CMD.png",
-    "SEC.png",
-    "StarItem.png"
-  ],
-  "wikitext": {
-    "*": "==Away Team Skills==\nMaquis Chakotay has the [[skills]] of {{skill|cmd|}} and {{skill|sec|}}.\n{| class=\"wikitable\" style=\"text-align:center; font-size:13px;\"\n|-\n! colspan=\"3\" | {{PAGENAME}}'s Away Team Skills\n|-\n| &nbsp;\n| colspan=\"2\" class=\"ATSLeft\" | {{Stars|1}}\n|-\n! Lvl\n| class=\"ATSLeft\" | {{Skill|CMD}} || {{Skill|SEC}}\n|-\n|1\n| class=\"ATSLeft\" | {{SP|21|4|10}} || {{SP|16|2|4}} \n|-\n|10\n| class=\"ATSLeft\" | {{SP|32|4|14}} || {{SP|22|3|7}}\n|-\n|20\n| class=\"ATSLeft\" | {{SP|44|7|21}} || {{SP|27|4|10}}\n|-\n|30\n| class=\"ATSLeft\" | {{SP|66|8|26}} || {{SP|34|4|10}}\n|-\n|40\n| class=\"ATSLeft\" | {{SP|78|8|30}} || {{SP|39|6|20}}\n|-\n|50\n| class=\"ATSLeft\" | {{SP|88|15|53}} || {{SP|49|6|20}}\n|-\n|60\n| class=\"ATSLeft\" | {{SP|98|15|53}} || {{SP|64|10|42}}\n|-\n|70\n| class=\"ATSLeft\" | {{SP|123|20|68}} || {{SP|79|10|42}}\n|-\n|80\n| class=\"ATSLeft\" | {{SP|148|30|108}} || {{SP|84|10|42}}\n|-\n|90\n| class=\"ATSLeft\" | {{SP|168|36|122}} || {{SP|104|30|92}}\n|-\n|100\n| class=\"ATSLeft\" | {{SP|178|56|202}} || {{SP|138|55|157}}\n|-\n|}"
-  }
 }
