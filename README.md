@@ -44,7 +44,6 @@ This project serves a few purpose:
 Do NOT delete
 
 - tests/data/cache/query/2bc2554e05cf988e81f73d138cc51212.json
-- tests/data/cache/query/36d83a95eae2f5574983568936f15ce9.json
 
 
 -------------------

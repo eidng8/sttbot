@@ -85,13 +85,7 @@ EOT;
     public function testTable()
     {
         $this->foundTables = null;
-        $this->wikiText = json_decode(
-            file_get_contents(
-                static::DIR_CACHE .
-                '/parse/Crew_1e8d43d73cc2f92192ca041f6ef6fcc7.json'
-            ),
-            true
-        )['wikitext']['*'];
+        $this->wikiText = static::TEXT . "\n" . static::TEXT;
         $this->assertSame(2, $this->numTables());
     }//end testTable()
 

@@ -18,6 +18,35 @@ use Mockery;
  */
 class FetchTest extends Base
 {
+    private $page = "test-get-fetched";
+
+    private $path;
+
+    protected function setUp(Http $http = null)
+    {
+        parent::setUp($http);
+        $this->path = static::DIR_CACHE .
+                      "/parse/{$this->page}_7a73fff6ff41f1c59683aec0d2e7597e.json";
+        file_put_contents(
+            $this->path,
+            json_encode(
+                [
+                    'title'     => 'a title',
+                    'links'     => [['exists' => true, '*' => 'a link']],
+                    'images'    => ['img'],
+                    'templates' => [['exists' => true, '*' => 'a template']],
+                    'wikitext'  => ['*' => 'some text'],
+                ]
+            )
+        );
+    }
+
+    public function tearDown()
+    {
+        parent::tearDown();
+        unlink($this->path);
+    }
+
     public function testGetCached()
     {
         $parse = Mockery::mock(
@@ -29,61 +58,14 @@ class FetchTest extends Base
 
         /* @var Parse $parse */
         $parse->cacheRoot(static::DIR_CACHE);
-        $parse->page('Crew', 9);
+        $parse->page($this->page);
         $actual = $parse->get();
-        $this->assertSame('Crew', $actual['title']);
-        $this->assertTrue($actual['links']['Command']);
-        $this->assertTrue($actual['links']['Engineering']);
-        $this->assertTrue($actual['templates']['Template:Skill']);
-        $this->assertTrue($actual['templates']['Template:MPCrewList']);
-        $this->assertTrue($actual['images']['CMD.png']);
+        $this->assertSame('a title', $actual['title']);
+        $this->assertTrue($actual['links']['a link']);
+        $this->assertTrue($actual['templates']['a template']);
+        $this->assertTrue($actual['images']['img']);
         $this->assertSame($parse->get(), $actual);
     }
-
-    public function testGetFetch()
-    {
-        $this->setUp(
-            Http::shouldRespond(
-                [new Response(200, [], file_get_contents(static::$cacheFile))]
-            )
-        );
-        $parse = Mockery::mock(
-            Parse::class . '[fetch]',
-            [
-                Http::shouldRespond(
-                    [
-                        new Response(
-                            200,
-                            [],
-                            '{"parse":' . file_get_contents(static::$cacheFile)
-                            . '}'
-                        ),
-                    ]
-                ),
-            ]
-        );
-        /* @noinspection PhpMethodParametersCountMismatchInspection */
-        $parse->shouldReceive('fetch')->passthru();
-
-        /* @var Parse $parse */
-        $parse->cacheRoot(static::DIR_CACHE . '/not-exist');
-        $parse->page('Crew', 9);
-        $actual = $parse->get();
-        $this->assertSame('Crew', $actual['title']);
-        $this->assertTrue($actual['links']['Command']);
-        $this->assertTrue($actual['links']['Engineering']);
-        $this->assertTrue($actual['templates']['Template:Skill']);
-        $this->assertTrue($actual['templates']['Template:MPCrewList']);
-        $this->assertTrue($actual['images']['CMD.png']);
-        $this->assertSame($parse->get(), $actual);
-
-        unlink(
-            static::DIR_CACHE .
-            '/not-exist/parse/Crew_1e8d43d73cc2f92192ca041f6ef6fcc7.json'
-        );
-        rmdir(static::DIR_CACHE . '/not-exist/parse');
-        rmdir(static::DIR_CACHE . '/not-exist');
-    }//end testGetCached()
 
     public function testGetNothing()
     {

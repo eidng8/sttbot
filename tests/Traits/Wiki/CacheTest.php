@@ -57,13 +57,11 @@ class CacheTest extends TestCase
 
     public function testGetCache()
     {
-        touch(
-            static::DIR_CACHE .
-            '/parse/Crew_1e8d43d73cc2f92192ca041f6ef6fcc7.json'
-        );
-        $this->assertNotFalse(
-            $this->cache('parse/Crew_1e8d43d73cc2f92192ca041f6ef6fcc7')
-        );
+        $file = "/parse/test-no-fetcher";
+        $path = static::DIR_CACHE . "$file.json";
+        file_put_contents($path, '{"a":"b"}');
+        $this->assertNotFalse($this->cache($file));
+        unlink($path);
     }//end removeFile()
 
     public function testGetCacheNotExist()
