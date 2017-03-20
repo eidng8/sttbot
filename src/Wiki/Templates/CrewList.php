@@ -46,15 +46,15 @@ class CrewList extends Template
     /**
      * CrewList constructor.
      *
-     * @param string $wikiText wiki text to be parsed
+     * @param string $wikiText          wiki text to be parsed
      * @param Parse  $parse
-     * @param Query  $query    pass a {@see Query} instance to also retrieve
-     *                         picture URL
+     * @param Query  $query             pass a {@see Query} instance to also
+     *                                  retrieve picture URL
      */
     public function __construct(
         string $wikiText,
         Parse $parse,
-        Query $query = null
+        Query $query
     ) {
         $this->parse = $parse;
         $this->query = $query;
@@ -106,6 +106,7 @@ class CrewList extends Template
 
         $members = $this->fetchPictures($members);
         foreach ($members as $member) {
+            $this->fetchToc($member);
             $this->fetchDetail($member);
             $this->stats($member);
         }//end foreach
@@ -161,15 +162,73 @@ class CrewList extends Template
         }
 
         $chunks = array_chunk($crew, 50);
-        foreach ($chunks as $chunk) {
-            $images = $this->query->thumbnails(array_column($chunk, 'name'));
-            foreach ($chunk as $member) {
-                $member['picture'] = $images[$member->name] ?? null;
+        $sizes = [
+            Query::$WIDTH_THUMBNAIL_1X,
+            Query::$WIDTH_THUMBNAIL_1X5,
+            Query::$WIDTH_THUMBNAIL_2X,
+        ];
+        foreach ($sizes as $index => $size) {
+            foreach ($chunks as $chunk) {
+                $images = $this->query->thumbnails(
+                    array_column($chunk, 'name'),
+                    $size
+                );
+                foreach ($chunk as $member) {
+                    if (0 == $index) {
+                        $member['picture'] = [$images[$member->name] ?? null];
+                    } else {
+                        $pics = $member['picture'];
+                        $pics[] = $images[$member->name] ?? null;
+                        $member['picture'] = $pics;
+                        // Because we are actually access the `$picture` through
+                        // magic `__get()` method. Directly pushing to the
+                        // attribute will cause the Indirect modification of
+                        // overloaded element has no effect exception.
+                        // Even using array_push() won't fix the error.
+                        //$member['picture'][] = $images[$member->name] ?? null;
+                    }
+                }//end foreach
             }//end foreach
         }//end foreach
 
         return $crew;
     }//end skillList()
+
+    /**
+     * Get all portrait images
+     *
+     * @param CrewMember $member
+     *
+     * @return void
+     */
+    public function fetchToc(CrewMember $member): void
+    {
+        $this->parse->resetOptions();
+        $this->parse->page($member->name, 0);
+        $this->parse->get(true);
+        $this->parse->tables();
+        $table = $this->parse->table();
+        if (!$table) {
+            return;
+        }
+
+        preg_match(
+            '/.+__TOC__[^[]+\[\[([^\]|]+)\|([^\]|]+)/imsu',
+            $table,
+            $file
+        );
+        if (empty($file)) {
+            return;
+        }
+        $width = (int)$file[2];
+        $sizes = [$width, round($width * 1.5), $width * 2];
+        $urls = [];
+        foreach ($sizes as $size) {
+            $url = $this->query->imageInfo([$file[1] => $member->name], $size);
+            $urls[] = $url[$member->name];
+        }//end foreach
+        $member->portrait = $urls;
+    }//end fetchToc()
 
     /**
      * Fetch crew member detail information

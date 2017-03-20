@@ -87,10 +87,20 @@ class TestCase extends PHPUnit_Framework_TestCase
         );
     }//end newApiInstance()
 
-    protected function checkArrayKeys(array $expected, array $exported)
+    /**
+     * Check if two array has same set of keys
+     *
+     * @param array $expected
+     * @param array $actual
+     *
+     * @return void
+     */
+    protected function checkArrayKeys(array $expected, array $actual)
     {
-        $keys = array_keys($exported);
+        $keys = array_keys($actual);
         sort($keys);
-        $this->assertSame($keys, $expected);
+        $expk = $expected;
+        sort($expk);
+        $this->assertSame($keys, $expk);
     }//end checkArrayKeys()
 }//enc class

@@ -48,7 +48,11 @@ class CrewListTest extends TestCase
         );
         // @codingStandardsIgnoreStart
         $this->assertSame(
-            'http://startrektimelineswiki.com/w/images/thumb/2/25/%22Dark_Ages%22_McCoy_head.png/100px-%22Dark_Ages%22_McCoy_head.png',
+            [
+                'http://startrektimelineswiki.com/w/images/thumb/2/25/%22Dark_Ages%22_McCoy_head.png/100px-%22Dark_Ages%22_McCoy_head.png',
+                'http://startrektimelineswiki.com/w/images/thumb/2/25/%22Dark_Ages%22_McCoy_head.png/150px-%22Dark_Ages%22_McCoy_head.png',
+                'http://startrektimelineswiki.com/w/images/thumb/2/25/%22Dark_Ages%22_McCoy_head.png/200px-%22Dark_Ages%22_McCoy_head.png',
+            ],
             $tmpl->byName('"Dark Ages" McCoy')->picture
         );
         // @codingStandardsIgnoreEnd
@@ -74,7 +78,11 @@ class CrewListTest extends TestCase
         );
         // @codingStandardsIgnoreStart
         $this->assertSame(
-            'http://startrektimelineswiki.com/w/images/thumb/d/d0/Changeling_Bashir_head.png/100px-Changeling_Bashir_head.png',
+            [
+                'http://startrektimelineswiki.com/w/images/thumb/d/d0/Changeling_Bashir_head.png/100px-Changeling_Bashir_head.png',
+                'http://startrektimelineswiki.com/w/images/thumb/d/d0/Changeling_Bashir_head.png/150px-Changeling_Bashir_head.png',
+                'http://startrektimelineswiki.com/w/images/thumb/d/d0/Changeling_Bashir_head.png/200px-Changeling_Bashir_head.png',
+            ],
             $tmpl->byName('Changeling Bashir')->picture
         );
         // @codingStandardsIgnoreEnd

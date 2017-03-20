@@ -30,11 +30,18 @@ class CrewMember extends Model implements Hyperlink
     public $page;
 
     /**
-     * Member portrait
+     * Member thumbnail picture
      *
-     * @var string
+     * @var string[]
      */
     public $picture;
+
+    /**
+     * Member portrait picture
+     *
+     * @var string[]
+     */
+    public $portrait;
 
     /**
      * Rarity, number of stars
@@ -225,7 +232,7 @@ class CrewMember extends Model implements Hyperlink
             $value = $value[1];
 
             return $value + $this->traitBonus($step, $idx)
-                >= $skill->epic() * ($critical ? 1.25 : 1);
+                   >= $skill->epic() * ($critical ? 1.25 : 1);
         }//end foreach
 
         return false;
@@ -322,7 +329,7 @@ class CrewMember extends Model implements Hyperlink
      */
     public function toArray(): array
     {
-        return [
+        $return = [
             'character' => $this->character,
             'charpage'  => $this->charpage,
             'name'      => $this->name,
@@ -334,6 +341,11 @@ class CrewMember extends Model implements Hyperlink
             'stars'     => $this->stars,
             'traits'    => $this->traits,
         ];
+
+        if (!empty($this->portrait)) {
+            $return['portrait'] = $this->portrait;
+        }
+        return $return;
     }//end toArray()
 
     /**

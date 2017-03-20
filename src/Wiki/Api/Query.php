@@ -54,6 +54,48 @@ class Query
     public static $CONTINUE = 'continue';
 
     /**
+     * Thumbnail size
+     *
+     * @var int
+     */
+    public static $WIDTH_THUMBNAIL_1X = 100;
+
+    /**
+     * Thumbnail 1.5 size
+     *
+     * @var int
+     */
+    public static $WIDTH_THUMBNAIL_1X5 = 150;
+
+    /**
+     * Thumbnail 2x size
+     *
+     * @var int
+     */
+    public static $WIDTH_THUMBNAIL_2X = 200;
+
+    /**
+     * Portrait size
+     *
+     * @var int
+     */
+    public static $WIDTH_PORTRAIT_1X = 200;
+
+    /**
+     * Portrait 1.5 size
+     *
+     * @var int
+     */
+    public static $WIDTH_PORTRAIT_1X5 = 300;
+
+    /**
+     * Portrait 2x size
+     *
+     * @var int
+     */
+    public static $WIDTH_PORTRAIT_2X = 400;
+
+    /**
      * The HTTP instance.
      *
      * @var Http
@@ -84,11 +126,10 @@ class Query
     public function resetOptions()
     {
         $this->options = [
-            static::$PROP        => ['imageinfo'],
-            static::$IIPROP      => 'url',
-            static::$IIURLHEIGHT => '100',
-            static::$IIURLWIDTH  => '100',
-            static::$CONTINUE    => '',
+            static::$PROP       => ['imageinfo'],
+            static::$IIPROP     => 'url',
+            static::$IIURLWIDTH => '100',
+            static::$CONTINUE   => '',
         ];
     }//end resetOptions()
 
@@ -108,13 +149,57 @@ class Query
     }//end titles()
 
     /**
+     * Get image information
+     *
+     * @param array $files
+     * @param int   $width
+     *
+     * @return array
+     */
+    public function imageInfo(array $files, int $width = 100): array
+    {
+        if (empty($files)) {
+            return [];
+        }
+
+        $this->properties(['imageinfo']);
+        $this->option(static::$TITLES, array_keys($files));
+        if (!$width) {
+            $this->removeOption(static::$IIURLWIDTH);
+        } else {
+            $this->option(static::$IIURLWIDTH, $width);
+        }
+        $this->content = null;
+        $nails = $this->get();
+        if (empty($nails['query']['pages'])) {
+            return [];
+        }
+
+        $returns = [];
+        foreach ($nails['query']['pages'] as $nail) {
+            $key = str_replace('_', ' ', $nail['title']);
+            if (empty($files[$key])) {
+                $key = str_replace(' ', '_', $nail['title']);
+            }
+            if (empty($nail['imageinfo'][0]['thumburl'])) {
+                $returns[$files[$key]] = $nail['imageinfo'][0]['url'];
+            } else {
+                $returns[$files[$key]] = $nail['imageinfo'][0]['thumburl'];
+            }
+        }//end foreach
+
+        return $returns;
+    }//end imageInfo()
+
+    /**
      * Get image info
      *
      * @param string[] $titles images to get
+     * @param int      $width
      *
-     * @return string[]
+     * @return array|\string[]
      */
-    public function thumbnails(array $titles): array
+    public function thumbnails(array $titles, int $width = 100): array
     {
         // if (empty($titles) || !is_array($titles)) { we use type declaration
         if (empty($titles)) {
@@ -126,23 +211,7 @@ class Query
             $thumbs["File:$title head.png"] = $title;
         }//end foreach
 
-        $this->properties(['imageinfo']);
-        $this->option(static::$TITLES, array_keys($thumbs));
-        $this->content = null;
-        $nails = $this->get();
-        if (empty($nails['query']['pages'])) {
-            return [];
-        }
-
-        $returns = [];
-        foreach ($nails['query']['pages'] as $nail) {
-            if (!empty($nail['imageinfo'][0]['thumburl'])) {
-                $returns[$thumbs[$nail['title']]]
-                    = $nail['imageinfo'][0]['thumburl'];
-            }
-        }//end foreach
-
-        return $returns;
+        return $this->imageInfo($thumbs, $width);
     }//end thumbnails()
 
     /**

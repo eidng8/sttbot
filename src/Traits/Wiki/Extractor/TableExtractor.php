@@ -52,7 +52,7 @@ trait TableExtractor
             $this->tables();
         }
 
-        return true;
+        return !empty($this->foundTables);
     }//end numTables()
 
     /**
@@ -81,7 +81,7 @@ trait TableExtractor
      *
      * @return string
      */
-    public function table(int $idx = 0): string
+    public function table(int $idx = 0): ?string
     {
         return $this->tablesExtracted() ? $this->foundTables[$idx] : null;
     }//end tablesExtracted()

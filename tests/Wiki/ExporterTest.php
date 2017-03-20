@@ -72,6 +72,14 @@ class ExporterTest extends TestCase
         foreach ($exported['crew'] as $member) {
             $expected = static::$wiki->crew()->byName($member['name']);
             $this->assertInstanceOf(CrewMember::class, $expected);
+
+            // some member don't have portrait
+            $check = $member;
+            if (!empty($check['portrait'])) {
+                $this->assertSame($expected->portrait, $member['portrait']);
+            }
+
+            unset($check['portrait']);
             $this->checkArrayKeys(
                 [
                     'character',
@@ -82,7 +90,7 @@ class ExporterTest extends TestCase
                     'stars',
                     'traits',
                 ],
-                $member
+                $check
             );
             $this->assertSame($expected->picture, $member['picture']);
             $this->assertSame(
