@@ -24,6 +24,11 @@
             "*": "Template:Map"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -1096,6 +1101,11 @@
             "*": "Template:DropTest/Right of Conquest/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

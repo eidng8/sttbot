@@ -289,6 +289,11 @@
             "*": "Gold-Pressed Latinum"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Gravitic Caliper"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "He Means Well"
@@ -896,6 +901,11 @@
             "*": "Template:DropTest/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/note"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:DropTest/Hounded/3"

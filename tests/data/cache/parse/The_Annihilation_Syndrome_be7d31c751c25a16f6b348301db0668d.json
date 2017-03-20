@@ -17,6 +17,11 @@
             "*": "Template:DropTest/The Annihilation Syndrome/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -1136,12 +1141,17 @@
         {
             "ns": 10,
             "exists": "",
-            "*": "Template:DropTest/6"
+          "*": "Template:DropTest/4"
         },
         {
             "ns": 10,
             "exists": "",
-            "*": "Template:DropTest/4"
+          "*": "Template:DropTest/2"
+        },
+      {
+        "ns": 10,
+        "exists": "",
+        "*": "Template:DropTest/note"
         },
         {
             "ns": 10,

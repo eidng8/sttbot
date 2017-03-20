@@ -128,11 +128,6 @@
         {
             "ns": 0,
             "exists": "",
-            "*": "Astrometric Chart"
-        },
-        {
-            "ns": 0,
-            "exists": "",
             "*": "Away Team"
         },
         {
@@ -181,6 +176,11 @@
             "*": "Cardassian Hospitality"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Casing"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Celestial Temple"
@@ -261,6 +261,11 @@
             "*": "Emitter Crystal"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Encoded Communique"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Ethical Alternatives"
@@ -359,11 +364,6 @@
             "ns": 0,
             "exists": "",
             "*": "Instant Intervention"
-        },
-        {
-            "ns": 0,
-            "exists": "",
-            "*": "Interlink"
         },
         {
             "ns": 0,
@@ -498,11 +498,6 @@
         {
             "ns": 0,
             "exists": "",
-            "*": "Optronic Circuit"
-        },
-        {
-            "ns": 0,
-            "exists": "",
             "*": "Organian Aid"
         },
         {
@@ -521,6 +516,11 @@
             "*": "Pirate Problems"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Polyalloy"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Power Cell"
@@ -628,11 +628,6 @@
         {
             "ns": 0,
             "exists": "",
-            "*": "Sensor"
-        },
-        {
-            "ns": 0,
-            "exists": "",
             "*": "Serious Business"
         },
         {
@@ -646,6 +641,11 @@
             "*": "Something Rotten"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Spices"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Starfleet Uniform Pattern"
@@ -663,7 +663,7 @@
         {
             "ns": 0,
             "exists": "",
-            "*": "Subprocessor"
+          "*": "Synthesized Polymer"
         },
         {
             "ns": 0,
@@ -806,6 +806,11 @@
             "*": "With Friends Like These"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Writing PADD (TNG)"
+        },
+      {
             "ns": 14,
             "exists": "",
             "*": "Category:Astrophysicist"
@@ -1051,6 +1056,6 @@
         "Credits_sm.png"
     ],
     "wikitext": {
-        "*": "{{Infobox mission\n |Box title = Death's Endeavor<br />[E7-M13B]\n |Image file = AT-Deflector Dish-First Contact.png\n |Image size = 200px\n |Row 1 title = Episode \n |Row 1 info = 7 - [[When Falcons Clash]]\n |Row 2 title = Mission \n |Row 2 info = 13th\n |Row 3 title = Type\n |Row 3 info = [[Away Team]]\n |Row 4 title = Cost\n |Row 4 info = {{currency|CRN}} {{triple| 18 |22 |24 }}\n |Row 5 title = \n |Row 5 info = \n }}\n\n'''{{PAGENAME}}''' is the thirteenth [[mission]] in Episode 7, [[When Falcons Clash]]. It takes place at [[Remus]] in the [[Romulan (system)|Romulan System]].\n* This mission is only available if you choose '''[[KCA Faction Center|Klingon-Cardassian Alliance]] Victory''', otherwise the mission will be [[Garak's Gamble]] for choosing '''[[Romulan Star Empire Faction Center|Romulan Star Empire]] Victory'''.\n__TOC__\n{{Clear}}\n==Mission Walkthrough==\n{{MWHead\n| MIntro    = Take out a Romulan prototype weapon of mass destruction, and help the Klingon-Cardassian Alliance decisively beat the Romulans it this region.\n| ChronCost = {{triple| 18 |22 |24 }}\n<!--Traits-->|Prodigy|Astrophysicist|Inspiring|Maverick|Saboteur|Undercover Operative|Tactician|Crafty|Innovator|Marksman\n| Notes     = \n}}\n{{MWalkHead}}\n{{MWalk1\n| Step        = 1\n| StepTitle   = Beam Onto Scimitar\n\n| ChoiceA     = Find the Scimitar's Shield Frequency\n| ChoiceAPic  = Deflector Dish-First Contact\n| SkillReqA   = {{triple|eng|230|485|890}}\n| OtherReqA   = \n| BonusTraitA = {{triple|Prodigy|Astrophysicist| | | }}\n| ItemRewardA = {{item|TR-580 Medical Tricorder|common}}<br>?<br>?\n| SuccessA    = {{Char}} successfully tuned the transporters to beam through the Scimitar's enhanced security shields.\n| FailA       = \n}}\n{{MWalk2\n| Step        = 2\n| StepTitle   = Divert Scimitar Security Forces\n\n| ChoiceA     = Lead Diversionary Attack\n| ChoiceAPic  = Corridor Battle-First Contact\n| SkillReqA   = {{triple|sec|230|485|890}}\n| OtherReqA   = {{cl/locked|Maverick|Inspiring}}\n| BonusTraitA = {{triple|Inspiring|Maverick|56| | }}\n| ItemRewardA = {{item|Database (Panel)|common}}<br>?<br>?\n| SuccessA    = \n| FailA       = \n\n| ChoiceB     = Interfere with Romulan Sensors\n| ChoiceBPic  = Sabotage Cardassians\n| SkillReqB   = {{triple|eng|230|485|890}}\n| OtherReqB   = \n| BonusTraitB = {{triple|Crafty|Innovator| | | }}\n| ItemRewardB = {{item|Emitter Crystal|common}}<br>?<br>?\n| SuccessB    = {{Char}} successfully used a tricorder to send out pulses which blocked Romulan internal security sensors.\n| FailB       = \n}}\n{{MWalk2\n| Step        = 3\n| StepTitle   = Thwart Automated Defenses\n\n| ChoiceA     = Hack In and Disable Systems\n| ChoiceAPic  = \n| SkillReqA   = {{triple|sci|230|485|890}}\n| OtherReqA   = Choose 2.A\n| BonusTraitA = {{triple|Saboteur|Undercover Operative| | | }}\n| ItemRewardA = \n| SuccessA    = \n| FailA       = \n\n| ChoiceB     = Destroy System Power Grid\n| ChoiceBPic  = Corridor Explosion\n| SkillReqB   = {{triple|sec|230|485|890}}\n| OtherReqB   = Choose 2.B\n| BonusTraitB = {{triple|Marksman| | | }}\n| ItemRewardB = \n| SuccessB    = {{Char}} fires into the automated defense system's power grid, a blunt but effective solution.\n| FailB       = \n}}\n{{MWalk1\n| Step        = 4\n| StepTitle   = Place Charges on Thalaron Generator\n\n| ChoiceA     = Set Up Detpacks\n| ChoiceAPic  = Sabotage Warp Core\n| SkillReqA   = {{triple|eng|230|485|890}}\n| OtherReqA   = \n| BonusTraitA = {{triple|Undercover Operative|Tactician| | | }}\n| ItemRewardA = {{item|Incense|common}}<br>?<br>?\n| SuccessA    = {{Char}} has skillfully placed the detpacks near the most vulnerable component of the thalaron generator.\n| FailA       = \n}}\n{{MWalkFoot\n| MissionPass = Our away team successfully boarded the Scimitar and planted explosives around the thalaron generator. We are ready to give the destruct order, but Regent Worf has advised us to wait for his arrival.\n| MissionFail = \n}}\n\n== Mission Rewards ==\n===Rare Rewards===\n{{RewardList|Rare\n|Normal=\n* {{item|Database (Panel)|common}}\n* {{item|Emitter Crystal|common}}\n* {{item|Incense|common}}\n* {{item|TR-580 Medical Tricorder|common}}\n|Elite=\n* {{item|Isolinear Chips|uncommon}}\n* {{item|Expansion Module|uncommon}}\n* {{item|Novel|uncommon}}\n* {{item|Clothing Pattern|uncommon}}\n|Epic=\n* {{item|Starfleet Uniform Pattern|rare}}\n* {{item|Alcohol|uncommon}}\n* {{item|Microconnector|uncommon}}\n* {{item|Furs|uncommon}}\n}}\n\n===Standard Rewards===\n{{RewardList|Standard\n|Normal=\n* &nbsp; {{item|Astrometric Chart|uncommon}}\n* &nbsp; {{item|Interlink|superrare}}\n* &nbsp; {{item|Subprocessor|rare}}\n* &nbsp; {{item|Interlink|common}}\n* &nbsp; {{item|Power Cell|basic}}\n|Elite=\n* &nbsp; {{item|Combadge (DS9)|uncommon}}\n* &nbsp; {{item|Emitter Crystal|superrare}}\n* &nbsp; {{item|Interlink|rare}}\n* &nbsp; {{item|Subprocessor|rare}}\n* &nbsp; {{item|Microconnector|uncommon}}\n|Epic=\n* &nbsp; {{item|Power Cell|superrare}}\n* &nbsp; {{item|Sensor|superrare}}\n* &nbsp; {{item|Microconnector|rare}}\n* &nbsp; {{item|Sensor|rare}}\n* &nbsp; {{item|Optronic Circuit|uncommon}}\n}}\n\n====Drop Chance====\n{{DropTest/multi}}\n\n=== Other Rewards ===\n{| style=\"text-align: center; margin:0px auto;\" class=\"wikitable\"\n! colspan=\"2\" | Currency<br>Rewards\n| {{level|n|m}}\n| {{level|el|m}}\n| {{level|ep|m}}\n|-\n! Capt XP\n! <small>1st-Run<br>Repeat</small>\n| #<br>#\n| #<br>#\n| #<br>#\n|-\n! colspan=\"2\" | Crew XP\n| #\n| #\n| #\n|-\n! [[Crew Experience Training|Training<br>XP]]\n! <small>[[Warp]] 1<br>[[Warp]] 10</small>\n| ?<br>?\n| ?<br>?\n| ?<br>?\n|-\n! Credits<br>{{currency|CRD}}\n! <small>regular<br>[[Warp]] 1</small>\n| ?<br>?\n| ?<br>?\n| ?<br>?\n|}\n{{MissionsNav}}\n\n[[Category:Away Team Missions]]\n[[Category:When Falcons Clash]]"
+      "*": "{{Infobox mission\n |Box title = Death's Endeavor<br />[E7-M13B]\n |Image file = AT-Deflector Dish-First Contact.png\n |Image size = 200px\n |Row 1 title = Episode \n |Row 1 info = 7 - [[When Falcons Clash]]\n |Row 2 title = Mission \n |Row 2 info = 13th\n |Row 3 title = Type\n |Row 3 info = [[Away Team]]\n |Row 4 title = Cost\n |Row 4 info = {{currency|CRN}} {{triple| 18 |22 |24 }}\n |Row 5 title = \n |Row 5 info = \n }}\n\n'''{{PAGENAME}}''' is the thirteenth [[mission]] in Episode 7, [[When Falcons Clash]]. It takes place at [[Remus]] in the [[Romulan (system)|Romulan System]].\n* This mission is only available if you choose '''[[KCA Faction Center|Klingon-Cardassian Alliance]] Victory''', otherwise the mission will be [[Garak's Gamble]] for choosing '''[[Romulan Star Empire Faction Center|Romulan Star Empire]] Victory'''.\n__TOC__\n{{Clear}}\n==Mission Walkthrough==\n{{MWHead\n| MIntro    = Take out a Romulan prototype weapon of mass destruction, and help the Klingon-Cardassian Alliance decisively beat the Romulans it this region.\n| ChronCost = {{triple| 18 |22 |24 }}\n<!--Traits-->|Prodigy|Astrophysicist|Inspiring|Maverick|Saboteur|Undercover Operative|Tactician|Crafty|Innovator|Marksman\n| Notes     = \n}}\n{{MWalkHead}}\n{{MWalk1\n| Step        = 1\n| StepTitle   = Beam Onto Scimitar\n\n| ChoiceA     = Find the Scimitar's Shield Frequency\n| ChoiceAPic  = Deflector Dish-First Contact\n| SkillReqA   = {{triple|eng|230|485|890}}\n| OtherReqA   = \n| BonusTraitA = {{triple|Prodigy|Astrophysicist| |118| }}\n| ItemRewardA = {{item|TR-580 Medical Tricorder|common}}<br>?<br>?\n| SuccessA    = {{Char}} successfully tuned the transporters to beam through the Scimitar's enhanced security shields.\n| FailA       = \n}}\n{{MWalk2\n| Step        = 2\n| StepTitle   = Divert Scimitar Security Forces\n\n| ChoiceA     = Lead Diversionary Attack\n| ChoiceAPic  = Corridor Battle-First Contact\n| SkillReqA   = {{triple|sec|230|485|890}}\n| OtherReqA   = {{cl/locked|Maverick|Inspiring}}\n| BonusTraitA = {{triple|Inspiring|Maverick|56|118| }}\n| ItemRewardA = {{item|Database (Panel)|common}}<br>?<br>?\n| SuccessA    = \n| FailA       = \n\n| ChoiceB     = Interfere with Romulan Sensors\n| ChoiceBPic  = Sabotage Cardassians\n| SkillReqB   = {{triple|eng|230|485|890}}\n| OtherReqB   = \n| BonusTraitB = {{triple|Crafty|Innovator| |118| }}\n| ItemRewardB = {{item|Emitter Crystal|common}}<br>?<br>?\n| SuccessB    = {{Char}} successfully used a tricorder to send out pulses which blocked Romulan internal security sensors.\n| FailB       = \n}}\n{{MWalk2\n| Step        = 3\n| StepTitle   = Thwart Automated Defenses\n\n| ChoiceA     = Hack In and Disable Systems\n| ChoiceAPic  = \n| SkillReqA   = {{triple|sci|230|485|890}}\n| OtherReqA   = Choose 2.A\n| BonusTraitA = {{triple|Saboteur|Undercover Operative| |118| }}\n| ItemRewardA = \n| SuccessA    = \n| FailA       = \n\n| ChoiceB     = Destroy System Power Grid\n| ChoiceBPic  = Corridor Explosion\n| SkillReqB   = {{triple|sec|230|485|890}}\n| OtherReqB   = Choose 2.B\n| BonusTraitB = {{triple|Marksman| |118| }}\n| ItemRewardB = \n| SuccessB    = {{Char}} fires into the automated defense system's power grid, a blunt but effective solution.\n| FailB       = \n}}\n{{MWalk1\n| Step        = 4\n| StepTitle   = Place Charges on Thalaron Generator\n\n| ChoiceA     = Set Up Detpacks\n| ChoiceAPic  = Sabotage Warp Core\n| SkillReqA   = {{triple|eng|230|485|890}}\n| OtherReqA   = \n| BonusTraitA = {{triple|Undercover Operative|Tactician| |118| }}\n| ItemRewardA = {{item|Incense|common}}<br>?<br>?\n| SuccessA    = {{Char}} has skillfully placed the detpacks near the most vulnerable component of the thalaron generator.\n| FailA       = \n}}\n{{MWalkFoot\n| MissionPass = Our away team successfully boarded the Scimitar and planted explosives around the thalaron generator. We are ready to give the destruct order, but Regent Worf has advised us to wait for his arrival.\n| MissionFail = \n}}\n\n== Mission Rewards ==\n===Rare Rewards===\n{{RewardList|Rare\n|Normal=\n* {{item|Database (Panel)|common}}\n* {{item|Emitter Crystal|common}}\n* {{item|Incense|common}}\n* {{item|TR-580 Medical Tricorder|common}}\n|Elite=\n* {{item|Isolinear Chips|uncommon}}\n* {{item|Expansion Module|uncommon}}\n* {{item|Novel|uncommon}}\n* {{item|Clothing Pattern|uncommon}}\n|Epic=\n* {{item|Starfleet Uniform Pattern|rare}}\n* {{item|Alcohol|uncommon}}\n* {{item|Microconnector|uncommon}}\n* {{item|Furs|uncommon}}\n}}\n\n===Standard Rewards===\n{{RewardList|Standard\n|Normal=\n* {{item|Alcohol|4}}\n* {{item|Polyalloy|3}}\n* {{item|Casing|2}}\n* {{item|Isolinear Chips|2}}\n* {{item|Furs|0}}\n|Elite=\n* {{item|Writing PADD (TNG)|2}}\n* {{item|Microconnector|3}}\n* {{item|Incense|2}}\n* {{item|Synthesized Polymer|2}}\n|Epic=\n* {{item|Combadge (DS9)|2}}\n* {{item|Encoded Communique|0}}\n* {{item|Power Cell|4}}\n* {{item|Spices|2}}\n}}\n\n====Drop Chance====\n{{DropTest/multi}}\n\n=== Other Rewards ===\n{| style=\"text-align: center; margin:0px auto;\" class=\"wikitable\"\n! colspan=\"2\" | Currency<br>Rewards\n| {{level|n|m}}\n| {{level|el|m}}\n| {{level|ep|m}}\n|-\n! Capt XP\n! <small>1st-Run<br>Repeat</small>\n| #<br>#\n| #<br>#\n| #<br>#\n|-\n! colspan=\"2\" | Crew XP\n| #\n| #\n| #\n|-\n! [[Crew Experience Training|Training<br>XP]]\n! <small>[[Warp]] 1<br>[[Warp]] 10</small>\n| ?<br>?\n| ?<br>?\n| ?<br>?\n|-\n! Credits<br>{{currency|CRD}}\n! <small>regular<br>[[Warp]] 1</small>\n| ?<br>?\n| ?<br>?\n| ?<br>?\n|}\n{{MissionsNav}}\n\n[[Category:Away Team Missions]]\n[[Category:When Falcons Clash]]"
     }
 }

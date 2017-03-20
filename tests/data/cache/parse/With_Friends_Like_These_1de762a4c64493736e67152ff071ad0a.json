@@ -15,9 +15,15 @@
         },
         {
             "ns": 10,
+          "exists": "",
             "*": "Template:DropTest/With Friends Like These/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -1100,6 +1106,16 @@
             "*": "Template:DropTest/note"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/With Friends Like These/3"
+        },
+      {
+        "ns": 10,
+        "exists": "",
+        "*": "Template:DropTest/2"
+      },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

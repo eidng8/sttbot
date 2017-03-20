@@ -19,6 +19,11 @@
             "*": "Template:DropTest/Ancient Guardians/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -161,11 +166,6 @@
         {
             "ns": 0,
             "exists": "",
-            "*": "Clothing Pattern"
-        },
-        {
-            "ns": 0,
-            "exists": "",
             "*": "Common Ground"
         },
         {
@@ -279,6 +279,11 @@
             "*": "Garak's Gamble"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Gold-Pressed Latinum"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "He Means Well"
@@ -389,6 +394,11 @@
             "*": "Memory Alpha System"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Micro-Resonator"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Mission"
@@ -467,11 +477,6 @@
             "ns": 0,
             "exists": "",
             "*": "Pirate Problems"
-        },
-        {
-            "ns": 0,
-            "exists": "",
-            "*": "Power Cell"
         },
         {
             "ns": 0,
@@ -562,11 +567,6 @@
             "ns": 0,
             "exists": "",
             "*": "Self Control"
-        },
-        {
-            "ns": 0,
-            "exists": "",
-            "*": "Sensor"
         },
         {
             "ns": 0,
@@ -890,6 +890,16 @@
             "*": "Template:DropTest/Ancient Guardians/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
+        "ns": 10,
+        "exists": "",
+        "*": "Template:DropTest/note"
+      },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"
@@ -905,6 +915,6 @@
         "Credits_sm.png"
     ],
     "wikitext": {
-        "*": "{{Infobox mission\n |Box title\t= Ancient Guardians<br />[E6-M2]\n |Image file\t= SB-Galaxy Class.png\n |Image size\t= 200px\n |Row 1 title\t= Episode \n |Row 1 info\t= 6 - [[Something Rotten]]\n |Row 2 title\t= Mission \n |Row 2 info\t= 2nd\n |Row 3 title\t= Type\n |Row 3 info\t= [[Space Battle]]\n |Row 4 title\t= Cost\n |Row 4 info\t= {{currency|CRN}} {{triple| 16 | 18 | 24 }}\n |Row 5 title\t= \n |Row 5 info\t= \n}}\n\n'''Ancient Guardians''' is the second [[mission]] in Episode 6, [[Something Rotten]]. It takes place at [[Memory Alpha]] in the [[Memory Alpha System]].\n\n__TOC__\n\n{{Clear}}\n\n== Mission Walkthrough ==\n\n{| class=\"wikitable\" style=\"text-align: center; margin-left: auto; margin-right: auto;\"\n! colspan=\"4\" | Ancient Guardians \n|-\n| colspan=\"4\" | ''[[Captain Archer]]: My crew and I were brought into this timeline by Starfleet<br />and given a new ship for the express purpose of protecting this technology.<br />And now that you've discovered it... I have my orders. I'm sorry, Captain.''\n|-\n| colspan=\"4\" | '''Against''': [[Captain Archer]] in [[Galaxy Class Ship]] {{stars|3}}<br>'''Chroniton cost''': {{triple|16|18|24}}\n|-\n! \n! {{level|1}}\n! {{level|2}}\n! {{level|3}}\n|-\n| '''Shields'''\n| 20000 / 42500 <ref>Second values are from test to make ship battles more \"challenging\".</ref>\n| 30000 / 77000\n| 122000 / 299500\n|-\n| '''Shield Regeneration''' \n| 900 / 960\n| 1100 / 1360\n| 2700 / 3780\n|-\n| '''Hull'''\n| 42000 / 85000\n| 65000 / 154000\n| 238000 / 599000\n|-\n| '''Evasion'''\n| 2 / 3\n| 3 / 6\n| 5 / 10\n|-\n| '''Evasion Power''' \n| 1900 / 2590\n| 2300 / 4480\n| 4300 / 15760\n|-\n| '''Attack'''\n| 3 / 4\n| 3 / 6\n| 5 / 11\n|-\n| '''Attack Power''' \n| 2100 / 2900\n| 2500 / 5020\n| 4300 / 17630\n|-\n| '''Attack Speed'''\n| 1.03s / 0.82s\n| 1.03s / 0.82s\n| 1.03s / 0.82s\n|-\n| '''Accuracy''' \n| 3 / 4\n| 3 / 6\n| 5 / 11\n|-\n| '''Accuracy Power'''\n| 2100 / 3130\n| 2500 / 5420\n| 3800 / 19030\n|-\n| '''Crit Rating''' \n| 800 / 500\n| 800 / 500\n| 1000 / 500\n|-\n| '''Crit Bonus'''\n| 8000 / 5000\n| 8000 / 5000\n| 10000 / 5000\n|-\n| colspan=\"4\" | ''Despite Captain Archer and his Galaxy-class starship, we were able to<br />handily defeat them in battle. We are free to continue our investigation.''\n|}\n\n<references/>\n\n== Mission Rewards ==\n\n===Standard Rewards===\n{{RewardList|Standard\n|Normal=\n* {{item|Writing PADD (TNG)|uncommon}}\n* {{item|Relay|superrare}}\n* {{item|Relay|rare}}\n* {{item|Furs|uncommon}}\n* {{item|Furs|common}}\n|Elite=\n* {{item|Expansion Module|superrare}}\n* {{item|Spices|superrare}}\n* {{item|Furs|rare}}\n* {{item|Alcohol|uncommon}}\n* {{item|Emitter Crystal|uncommon}}\n|Epic=\n* {{item|Power Cell|superrare}}\n* {{item|Sensor|superrare}}\n* {{item|Database (Panel)|rare}}\n* {{item|Clothing Pattern|rare}}\n* {{item|Spices|uncommon}}\n}}\n\n====Drop Chance====\n{{DropTest/multi}}\n\n=== Other Rewards ===\n{| style=\"text-align: center; margin:0px auto;\" class=\"wikitable\"\n! colspan=\"2\" | Currency<br>Rewards\n| {{level|n|m}}\n| {{level|el|m}}\n| {{level|ep|m}}\n|-\n! Capt XP\n! <small>1st-Run<br>Repeat</small>\n| 902<br>32\n| 984<br>34\n| 1034<br>34\n|- \n! Crew XP ||\n| 90\n| 102\n| 114\n|-\n! [[Crew Experience Training|Training<br>XP]]\n! <small>[[Warp]] 1<br>[[Warp]] 10</small>\n| ?<br>?\n| 220<br>?\n| ?<br>?\n|-\n! Credits<br>{{currency|CRD}}\n! <small>regular<br>[[Warp]] 1</small>\n| 1200<br>?\n| 1350<br>944\n| 1800<br>?\n|}\n\n==Notes==\n* No notes.\n\n{{MissionsNav}}\n\n[[Category:Space Battle Missions]]\n[[Category:Something Rotten]]"
+      "*": "{{Infobox mission\n |Box title\t= Ancient Guardians<br />[E6-M2]\n |Image file\t= SB-Galaxy Class.png\n |Image size\t= 200px\n |Row 1 title\t= Episode \n |Row 1 info\t= 6 - [[Something Rotten]]\n |Row 2 title\t= Mission \n |Row 2 info\t= 2nd\n |Row 3 title\t= Type\n |Row 3 info\t= [[Space Battle]]\n |Row 4 title\t= Cost\n |Row 4 info\t= {{currency|CRN}} {{triple| 16 | 18 | 24 }}\n |Row 5 title\t= \n |Row 5 info\t= \n}}\n\n'''Ancient Guardians''' is the second [[mission]] in Episode 6, [[Something Rotten]]. It takes place at [[Memory Alpha]] in the [[Memory Alpha System]].\n\n__TOC__\n\n{{Clear}}\n\n== Mission Walkthrough ==\n\n{| class=\"wikitable\" style=\"text-align: center; margin-left: auto; margin-right: auto;\"\n! colspan=\"4\" | Ancient Guardians \n|-\n| colspan=\"4\" | ''[[Captain Archer]]: My crew and I were brought into this timeline by Starfleet<br />and given a new ship for the express purpose of protecting this technology.<br />And now that you've discovered it... I have my orders. I'm sorry, Captain.''\n|-\n| colspan=\"4\" | '''Against''': [[Captain Archer]] in [[Galaxy Class Ship]] {{stars|3}}<br>'''Chroniton cost''': {{triple|16|18|24}}\n|-\n! \n! {{level|1}}\n! {{level|2}}\n! {{level|3}}\n|-\n| '''Shields'''\n| 20000 / 42500 <ref>Second values are from test to make ship battles more \"challenging\".</ref>\n| 30000 / 77000\n| 122000 / 299500\n|-\n| '''Shield Regeneration''' \n| 900 / 960\n| 1100 / 1360\n| 2700 / 3780\n|-\n| '''Hull'''\n| 42000 / 85000\n| 65000 / 154000\n| 238000 / 599000\n|-\n| '''Evasion'''\n| 2 / 3\n| 3 / 6\n| 5 / 10\n|-\n| '''Evasion Power''' \n| 1900 / 2590\n| 2300 / 4480\n| 4300 / 15760\n|-\n| '''Attack'''\n| 3 / 4\n| 3 / 6\n| 5 / 11\n|-\n| '''Attack Power''' \n| 2100 / 2900\n| 2500 / 5020\n| 4300 / 17630\n|-\n| '''Attack Speed'''\n| 1.03s / 0.82s\n| 1.03s / 0.82s\n| 1.03s / 0.82s\n|-\n| '''Accuracy''' \n| 3 / 4\n| 3 / 6\n| 5 / 11\n|-\n| '''Accuracy Power'''\n| 2100 / 3130\n| 2500 / 5420\n| 3800 / 19030\n|-\n| '''Crit Rating''' \n| 800 / 500\n| 800 / 500\n| 1000 / 500\n|-\n| '''Crit Bonus'''\n| 8000 / 5000\n| 8000 / 5000\n| 10000 / 5000\n|-\n| colspan=\"4\" | ''Despite Captain Archer and his Galaxy-class starship, we were able to<br />handily defeat them in battle. We are free to continue our investigation.''\n|}\n\n<references/>\n\n== Mission Rewards ==\n\n===Standard Rewards===\n{{RewardList|Standard\n|Normal=\n* {{item|Writing PADD (TNG)|uncommon}}\n* {{item|Relay|superrare}}\n* {{item|Relay|rare}}\n* {{item|Furs|uncommon}}\n* {{item|Furs|common}}\n|Elite=\n* {{item|Expansion Module|superrare}}\n* {{item|Spices|superrare}}\n* {{item|Furs|rare}}\n* {{item|Alcohol|uncommon}}\n* {{item|Emitter Crystal|uncommon}}\n|Epic=\n* {{item|Micro-Resonator|basic}}\n* {{item|Gold-Pressed Latinum|superrare}}\n* {{item|Database (Panel)|rare}}\n* {{item|Spices|uncommon}}\n}}\n\n====Drop Chance====\n{{DropTest/multi}}\n\n=== Other Rewards ===\n{| style=\"text-align: center; margin:0px auto;\" class=\"wikitable\"\n! colspan=\"2\" | Currency<br>Rewards\n| {{level|n|m}}\n| {{level|el|m}}\n| {{level|ep|m}}\n|-\n! Capt XP\n! <small>1st-Run<br>Repeat</small>\n| 902<br>32\n| 984<br>34\n| 1034<br>34\n|- \n! Crew XP ||\n| 90\n| 102\n| 114\n|-\n! [[Crew Experience Training|Training<br>XP]]\n! <small>[[Warp]] 1<br>[[Warp]] 10</small>\n| ?<br>?\n| 220<br>?\n| ?<br>?\n|-\n! Credits<br>{{currency|CRD}}\n! <small>regular<br>[[Warp]] 1</small>\n| 1200<br>?\n| 1350<br>944\n| 1800<br>?\n|}\n\n==Notes==\n* No notes.\n\n{{MissionsNav}}\n\n[[Category:Space Battle Missions]]\n[[Category:Something Rotten]]"
     }
 }

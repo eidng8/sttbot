@@ -871,6 +871,11 @@
             "*": "Template:DropTest/Coursing Hounds/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/note"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

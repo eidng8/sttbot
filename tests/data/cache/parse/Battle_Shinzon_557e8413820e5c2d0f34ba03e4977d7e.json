@@ -354,6 +354,11 @@
             "*": "Isolinear Chips"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Laser Scalpel"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Long Distance Call"
@@ -901,6 +906,11 @@
             "*": "Template:DropTest/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/note"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:DropTest/Battle Shinzon/3"

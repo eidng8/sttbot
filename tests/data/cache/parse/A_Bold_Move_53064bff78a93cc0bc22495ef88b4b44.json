@@ -569,6 +569,11 @@
             "*": "Self Control"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Sensor"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Serious Business"
@@ -895,6 +900,11 @@
             "*": "Template:DropTest/A Bold Move/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

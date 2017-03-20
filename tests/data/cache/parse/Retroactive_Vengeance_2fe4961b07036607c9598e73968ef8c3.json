@@ -19,6 +19,11 @@
             "*": "Template:DropTest/Retroactive Vengeance/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -564,6 +569,11 @@
             "*": "Rockslide"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Rules of Acquisition"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Salvage the Chavez"
@@ -604,6 +614,11 @@
             "*": "Space Battle"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Starfleet Uniform Pattern"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Stolen Honor"
@@ -896,6 +911,11 @@
             "*": "Template:DropTest/Retroactive Vengeance/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/note"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:DropTest/Retroactive Vengeance/3"
@@ -916,6 +936,6 @@
         "Credits_sm.png"
     ],
     "wikitext": {
-        "*": "{{Infobox mission\n |Box title\t= Retroactive Vengeance<br />[E7-M8]\n |Image file\t= SB-Constellation Class.png\n |Image size\t= 200px\n |Row 1 title\t= Episode \n |Row 1 info\t= 7 - [[When Falcons Clash]]\n |Row 2 title\t= Mission \n |Row 2 info\t= 8th\n |Row 3 title\t= Type\n |Row 3 info\t= [[Space Battle]]\n |Row 4 title\t= Cost\n |Row 4 info\t= {{currency|CRN}} {{triple| 16 | 22| 24}}\n |Row 5 title\t= \n |Row 5 info\t= \n}}\n\n\n'''{{PAGENAME}}''' is the eight [[mission]] in Episode 7, [[When Falcons Clash]]. It takes place in [[Arloff IX]] in the [[Arloff|Arloff System]].\n\n__TOC__\n{{Clear}}\n== Mission Walkthrough ==\n\n{| class=\"wikitable\" style=\"text-align: center; margin-left: auto; margin-right: auto;\"\n! colspan=\"4\" | {{PAGENAME}}\n|-\n| colspan=\"4\" | '' ''\n|-\n| colspan=\"4\" | '''Against''': ''Unknown Starfleet Crew'' in [[Constellation Class]] {{stars|1}}<br>'''Chroniton cost''': {{triple|16| 22| 24}}\n|-\n! \n! {{level|1}}\n! {{level|2}}\n! {{level|3}}\n|-\n| '''Shields'''\n| \n| \n| \n|-\n| '''Shield Regeneration''' \n| \n| \n| \n|-\n| '''Hull'''\n| \n| \n| \n|-\n| '''Evasion'''\n| \n| \n| \n|-\n| '''Evasion Power''' \n| \n| \n| \n|-\n| '''Attack'''\n| \n| \n| \n|-\n| '''Attack Power''' \n|\n| \n| \n|-\n| '''Attack Speed'''\n| \n|\n|\n|-\n| '''Accuracy''' \n| \n| \n| \n|-\n| '''Accuracy Power'''\n| \n| \n|\n|-\n| '''Crit Rating''' \n| \n| \n| \n|-\n| '''Crit Bonus'''\n| \n| \n| \n|-\n| colspan=\"4\" | \n|}\n\n== Mission Rewards ==\n\n===Standard Rewards===\n{{RewardList|Standard\n|Normal=\n* {{item|Emitter Crystal|superrare}}\n* {{item|Subprocessor|rare}}\n* {{item|Pattern Enhancer|uncommon}}\n* {{item|Isolinear Chips|common}}\n* {{item|Database (Panel)|basic}}\n|Elite=\n* {{item|Casing|superrare}}\n* {{item|Microconnector|rare}}\n* {{item|Interlink|rare}}\n* {{item|Phaser Type 1|uncommon}}\n* {{item|Relay|uncommon}}\n|Epic=\n* {{item|Incense|superrare}}\n* {{item|Emitter Crystal|rare}}\n* {{item|Alcohol|rare}}\n* {{item|Field Rations|uncommon}}\n* {{item|Microconnector|uncommon}}\n}}\n\n====Drop Chance====\n{{DropTest/multi}}\n\n=== Other Rewards ===\n{| style=\"text-align: center; margin:0px auto;\" class=\"wikitable\"\n! colspan=\"2\" | Currency<br>Rewards\n| {{level|n|m}}\n| {{level|el|m}}\n| {{level|ep|m}}\n|-\n! Capt XP\n! <small>1st-Run<br>Repeat</small>\n| 943<br>?\n| 1004<br>?\n| 1034<br>?\n|-\n! colspan=\"2\" | Crew XP\n| 96\n| 108\n| 114\n|-\n! [[Crew Experience Training|Training<br>XP]]\n! <small>[[Warp]] 1<br>[[Warp]] 10</small>\n| ?<br>?\n| ?<br>?\n| ?<br>?\n|-\n! Credits<br>{{currency|CRD}}\n! <small>regular<br>[[Warp]] 1</small>\n| 1200<br>?\n| 1650<br>?\n| 1800<br>?\n|}\n\n{{MissionsNav}}\n\n[[Category:Space Battle Missions]]\n[[Category:When Falcons Clash]]"
+      "*": "{{Infobox mission\n |Box title\t= Retroactive Vengeance<br />[E7-M8]\n |Image file\t= SB-Constellation Class.png\n |Image size\t= 200px\n |Row 1 title\t= Episode \n |Row 1 info\t= 7 - [[When Falcons Clash]]\n |Row 2 title\t= Mission \n |Row 2 info\t= 8th\n |Row 3 title\t= Type\n |Row 3 info\t= [[Space Battle]]\n |Row 4 title\t= Cost\n |Row 4 info\t= {{currency|CRN}} {{triple| 16 | 22| 24}}\n |Row 5 title\t= \n |Row 5 info\t= \n}}\n\n\n'''{{PAGENAME}}''' is the eight [[mission]] in Episode 7, [[When Falcons Clash]]. It takes place in [[Arloff IX]] in the [[Arloff|Arloff System]].\n\n__TOC__\n{{Clear}}\n== Mission Walkthrough ==\n\n{| class=\"wikitable\" style=\"text-align: center; margin-left: auto; margin-right: auto;\"\n! colspan=\"4\" | {{PAGENAME}}\n|-\n| colspan=\"4\" | '' ''\n|-\n| colspan=\"4\" | '''Against''': ''Unknown Starfleet Crew'' in [[Constellation Class]] {{stars|1}}<br>'''Chroniton cost''': {{triple|16| 22| 24}}\n|-\n! \n! {{level|1}}\n! {{level|2}}\n! {{level|3}}\n|-\n| '''Shields'''\n| \n| \n| \n|-\n| '''Shield Regeneration''' \n| \n| \n| \n|-\n| '''Hull'''\n| \n| \n| \n|-\n| '''Evasion'''\n| \n| \n| \n|-\n| '''Evasion Power''' \n| \n| \n| \n|-\n| '''Attack'''\n| \n| \n| \n|-\n| '''Attack Power''' \n|\n| \n| \n|-\n| '''Attack Speed'''\n| \n|\n|\n|-\n| '''Accuracy''' \n| \n| \n| \n|-\n| '''Accuracy Power'''\n| \n| \n|\n|-\n| '''Crit Rating''' \n| \n| \n| \n|-\n| '''Crit Bonus'''\n| \n| \n| \n|-\n| colspan=\"4\" | \n|}\n\n== Mission Rewards ==\n\n===Standard Rewards===\n{{RewardList|Standard\n|Normal=\n* {{item|Emitter Crystal|superrare}}\n* {{item|Subprocessor|rare}}\n* {{item|Pattern Enhancer|uncommon}}\n* {{item|Isolinear Chips|common}}\n* {{item|Database (Panel)|basic}}\n|Elite=\n* {{item|Microconnector|rare}}\n* {{item|Interlink|rare}}\n* {{item|Phaser Type 1|uncommon}}\n* {{item|Relay|uncommon}}\n*\n|Epic=\n* {{item|Rules of Acquisition|basic}}\n* {{item|Starfleet Uniform Pattern|superrare}}\n* {{item|Field Rations|uncommon}}\n* {{item|Microconnector|uncommon}}\n*\n}}\n\n====Drop Chance====\n{{DropTest/multi}}\n\n=== Other Rewards ===\n{| style=\"text-align: center; margin:0px auto;\" class=\"wikitable\"\n! colspan=\"2\" | Currency<br>Rewards\n| {{level|n|m}}\n| {{level|el|m}}\n| {{level|ep|m}}\n|-\n! Capt XP\n! <small>1st-Run<br>Repeat</small>\n| 943<br>?\n| 1004<br>?\n| 1034<br>?\n|-\n! colspan=\"2\" | Crew XP\n| 96\n| 108\n| 114\n|-\n! [[Crew Experience Training|Training<br>XP]]\n! <small>[[Warp]] 1<br>[[Warp]] 10</small>\n| ?<br>?\n| ?<br>?\n| ?<br>?\n|-\n! Credits<br>{{currency|CRD}}\n! <small>regular<br>[[Warp]] 1</small>\n| 1200<br>?\n| 1650<br>?\n| 1800<br>?\n|}\n\n{{MissionsNav}}\n\n[[Category:Space Battle Missions]]\n[[Category:When Falcons Clash]]"
     }
 }

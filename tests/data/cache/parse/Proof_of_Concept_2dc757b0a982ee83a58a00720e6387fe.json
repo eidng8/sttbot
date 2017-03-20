@@ -19,6 +19,11 @@
             "*": "Template:DropTest/Proof of Concept/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -404,6 +409,11 @@
             "*": "Material Assistance"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Medical Scanner (Logical)"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Microconnector"
@@ -885,6 +895,11 @@
             "*": "Template:DropTest/Proof of Concept/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

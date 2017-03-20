@@ -179,6 +179,11 @@
             "*": "Clothing Pattern"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Combadge (TNG)"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Common Ground"
@@ -349,6 +354,11 @@
             "*": "Instant Intervention"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Interlink"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Internal Dispute"
@@ -474,6 +484,11 @@
             "*": "Organian Aid"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Phaser Type 1"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Picking the Bones"
@@ -853,11 +868,6 @@
         {
             "ns": 10,
             "exists": "",
-            "*": "Template:--"
-        },
-        {
-            "ns": 10,
-            "exists": "",
             "*": "Template:DropTest/3"
         },
         {
@@ -871,6 +881,11 @@
             "*": "Template:="
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/4"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:DropTest/6"
@@ -878,7 +893,7 @@
         {
             "ns": 10,
             "exists": "",
-            "*": "Template:DropTest/4"
+          "*": "Template:DropTest/2"
         },
         {
             "ns": 10,
@@ -888,7 +903,7 @@
         {
             "ns": 10,
             "exists": "",
-            "*": "Template:DropTest/2"
+          "*": "Template:--"
         },
         {
             "ns": 10,

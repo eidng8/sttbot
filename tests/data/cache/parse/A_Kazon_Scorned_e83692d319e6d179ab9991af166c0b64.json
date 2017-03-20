@@ -19,6 +19,11 @@
             "*": "Template:DropTest/A Kazon Scorned/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -876,6 +881,11 @@
             "*": "Template:DropTest/A Kazon Scorned/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:DropTest/A Kazon Scorned/3"

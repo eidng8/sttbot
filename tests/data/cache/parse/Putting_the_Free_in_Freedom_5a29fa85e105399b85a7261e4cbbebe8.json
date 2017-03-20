@@ -15,6 +15,7 @@
         },
         {
             "ns": 10,
+          "exists": "",
             "*": "Template:DropTest/Putting the Free in Freedom/3"
         },
         {
@@ -1100,6 +1101,11 @@
             "*": "Template:DropTest/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/Putting the Free in Freedom/3"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

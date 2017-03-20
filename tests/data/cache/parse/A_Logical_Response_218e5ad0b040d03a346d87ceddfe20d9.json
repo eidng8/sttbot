@@ -886,6 +886,16 @@
             "*": "Template:DropTest/A Logical Response/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
+        "ns": 10,
+        "exists": "",
+        "*": "Template:DropTest/note"
+      },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

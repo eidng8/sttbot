@@ -19,6 +19,11 @@
             "*": "Template:DropTest/The Mad Vedek/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:DropTest/Mortals and Mayhem/2"
@@ -1086,6 +1091,11 @@
             "*": "Template:DropTest/The Mad Vedek/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/2"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

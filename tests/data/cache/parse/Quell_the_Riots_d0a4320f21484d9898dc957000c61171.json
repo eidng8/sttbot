@@ -15,6 +15,7 @@
         },
         {
             "ns": 10,
+          "exists": "",
             "*": "Template:DropTest/Quell the Riots/3"
         },
         {
@@ -708,6 +709,11 @@
             "*": "Striking at Shadows"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Subprocessor"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Synthesized Polymer"
@@ -1145,6 +1151,11 @@
             "*": "Template:DropTest/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/Quell the Riots/3"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"

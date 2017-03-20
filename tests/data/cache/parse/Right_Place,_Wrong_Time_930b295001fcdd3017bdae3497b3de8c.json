@@ -19,6 +19,11 @@
             "*": "Template:DropTest/Right Place, Wrong Time/3"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Chroniton"
@@ -329,6 +334,11 @@
             "*": "Improvised Entry"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Incense"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Indiscriminate Mind"
@@ -559,6 +569,11 @@
             "*": "Romulan D'deridex Warbird"
         },
         {
+          "ns": 0,
+          "exists": "",
+          "*": "Romulan Encryption Algorithm"
+        },
+      {
             "ns": 0,
             "exists": "",
             "*": "Salvage the Chavez"
@@ -906,6 +921,11 @@
             "*": "Template:DropTest/2"
         },
         {
+          "ns": 10,
+          "exists": "",
+          "*": "Template:DropTest/note"
+        },
+      {
             "ns": 10,
             "exists": "",
             "*": "Template:MissionsNav"
