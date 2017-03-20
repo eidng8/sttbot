@@ -8,6 +8,9 @@
 
 namespace eidng8\Wiki;
 
+/**
+ * Export data to JSON
+ */
 class Exporter
 {
     /**

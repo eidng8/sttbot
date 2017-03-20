@@ -10,6 +10,9 @@ namespace eidng8\Wiki;
 
 use eidng8\Wiki\Models\Skills;
 
+/**
+ * Create various index
+ */
 class Indexer
 {
     /**
