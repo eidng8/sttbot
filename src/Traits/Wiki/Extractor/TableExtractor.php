@@ -85,4 +85,22 @@ trait TableExtractor
     {
         return $this->tablesExtracted() ? $this->foundTables[$idx] : null;
     }//end tablesExtracted()
+
+    /**
+     * Find away team skill table
+     *
+     * @return string
+     */
+    public function findAwayTable(): ?string
+    {
+        if (!$this->tablesExtracted()) {
+            return null;
+        }
+        foreach ($this->foundTables as $table) {
+            if (preg_match('/^!.*Away Team Skills\s*$/imsu', $table)) {
+                return $table;
+            }
+        }//end foreach
+        return null;
+    }//end findAwayTable()
 }//end trait

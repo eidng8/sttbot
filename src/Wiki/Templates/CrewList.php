@@ -106,7 +106,6 @@ class CrewList extends Template
 
         $members = $this->fetchPictures($members);
         foreach ($members as $member) {
-            $this->fetchToc($member);
             $this->fetchDetail($member);
             $this->stats($member);
         }//end foreach
@@ -199,17 +198,17 @@ class CrewList extends Template
      *
      * @param CrewMember $member
      *
-     * @return void
+     * @return bool
      */
-    public function fetchToc(CrewMember $member): void
+    public function fetchToc(CrewMember $member): bool
     {
         $this->parse->resetOptions();
-        $this->parse->page($member->name, 0);
+        $this->parse->page($member->name);
         $this->parse->get(true);
         $this->parse->tables();
         $table = $this->parse->table();
         if (!$table) {
-            return;
+            return false;
         }
 
         preg_match(
@@ -218,7 +217,7 @@ class CrewList extends Template
             $file
         );
         if (empty($file)) {
-            return;
+            return false;
         }
         $width = (int)$file[2];
         $sizes = [$width, round($width * 1.5), $width * 2];
@@ -228,6 +227,7 @@ class CrewList extends Template
             $urls[] = $url[$member->name];
         }//end foreach
         $member->portrait = $urls;
+        return true;
     }//end fetchToc()
 
     /**
@@ -237,12 +237,9 @@ class CrewList extends Template
      */
     public function fetchDetail(CrewMember $member): void
     {
-        $this->parse->resetOptions();
-        // Tuvix has an extra section on how to get it.
-        $this->parse->page($member->name, 'Tuvix' == $member->name ? 3 : 2);
-        $this->parse->get(true);
-        $this->parse->tables();
-        $table = $this->parse->table();
+        $this->fetchToc($member);
+        // all tables have been extracted in `fetchToc()`
+        $table = $this->parse->findAwayTable();
         $skills = $this->skillList($table);
         list($max, $raw) = $this->skillValue($table, $skills);
         $tmp = [];
