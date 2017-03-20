@@ -404,7 +404,7 @@ class MissionListTest extends TestCase
         $this->assertSame(
             [
                 'names'  => ['astrophysicist'],
-                'values' => [0, 40, 80],
+                'values' => [0, 0, 0],
             ],
             $step->traits[0]->toArray()
         );
