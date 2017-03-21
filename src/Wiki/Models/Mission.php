@@ -169,12 +169,13 @@ class Mission extends Model implements Hyperlink
     {
         if (static::SPACE_BATTLE === $this->type) {
             return [
+                'cost'    => $this->cost->toArray(),
+                'episode' => $this->episode,
+                'image'   => $this->image,
+                'index'   => $this->index,
                 'name'    => $this->name,
                 'page'    => $this->page,
-                'episode' => $this->episode,
-                'index'   => $this->index,
                 'type'    => $this->type,
-                'cost'    => $this->cost->toArray(),
             ];
         }
 
@@ -188,15 +189,16 @@ class Mission extends Model implements Hyperlink
         }//end foreach
 
         return [
+            'cost'    => $this->cost->toArray(),
+            'episode' => $this->episode,
+            'image'   => $this->image,
+            'index'   => $this->index,
+            'locks'   => $this->locks,
             'name'    => $this->name,
             'page'    => $this->page,
-            'episode' => $this->episode,
-            'index'   => $this->index,
-            'type'    => $this->type,
-            'cost'    => $this->cost->toArray(),
-            'locks'   => $this->locks,
-            'traits'  => $this->traits,
             'steps'   => $steps,
+            'traits'  => $this->traits,
+            'type'    => $this->type,
         ];
     }//end toArray()
 }//end class
