@@ -32,8 +32,7 @@ class MissionTest extends TestCase
     public function testLoad()
     {
         $json = file_get_contents(
-            static::DIR_CACHE
-            . '/parse/Picking_the_Bones_4f51e525b22337c60d893d6744a7f579.json'
+            static::DIR_SAMPLE . '/Picking_the_Bones.json'
         );
         $text = json_decode($json, true)['wikitext']['*'];
         $actual = Mission::load($text);
@@ -183,8 +182,7 @@ class MissionTest extends TestCase
     public function testCadetAdvLoad()
     {
         $json = file_get_contents(
-            static::DIR_CACHE
-            . '/parse/History_Interrupted_0638fe01cbbde6c62eb701bf86a95657.json'
+            static::DIR_SAMPLE . '/History_Interrupted.json'
         );
         $text = json_decode($json, true)['wikitext']['*'];
         $actual = Mission::load($text, null, ['advanced' => true]);
