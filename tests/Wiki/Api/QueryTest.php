@@ -64,7 +64,7 @@ class QueryTest extends TestCase
 
     public function testThumbnails()
     {
-        // cache/query/36d83a95eae2f5574983568936f15ce9.json
+        // cache/query/7339807f55a20bd84efcb9571c9f8694.json
         $actual = $this->query->thumbnails(
             ['"Dark Ages" McCoy', 'Changeling Bashir']
         );
