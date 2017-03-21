@@ -162,39 +162,61 @@ class Mission extends Template
     public function parseStep(string $text): array
     {
         $columns = [
-            'BonusTrait' => 'traits',
-            'OtherReq'   => 'locks',
-            'SkillReq'   => 'skills',
+            'steptitle'  => 'name',
+            'choice'     => 'alt',
+            'bonustrait' => 'traits',
+            'otherreq'   => 'locks',
+            'skillreq'   => 'skills',
         ];
         $fields = implode('|', array_keys($columns));
         $regex
-            = "/^\\s*\\|\\s*($fields)\\w\\s*=\\s*(\\{\\{[^}]+}}).*?(?:Adv:\\s*(\\{\\{[^}]+}}))?\\s*$/imsu";
+            = "/^\\h*\\|\\h*($fields)([a-z])?(Pic)?\\h*=\\h*(.+)?\\h*$/imu";
         preg_match_all($regex, $text, $found);
 
         $props = [];
-        $current = -1;
-        foreach ($found[0] as $idx => $item) {
-            // $found[1] holds the list of keys, e.g. SkillReq
+        // $found[1] holds the list of keys, e.g. 'SkillReq', 'Choice', etc.
+        $found[1] = array_map('strtolower', $found[1]);
+        // $found[2] holds the step alternative, e.g. 'A', 'B', etc.
+        $found[2] = array_map('strtolower', $found[2]);
+        // $found[3] is only useful for alternative thumbnail
+        $found[3] = array_map('strtolower', $found[3]);
+        // $found[4] holds value of properties
+        // loop through all found properties
+        foreach ($found[4] as $idx => $value) {
             $key = $columns[$found[1][$idx]];
-            if ('SkillReq' == $found[1][$idx]) {
-                $current++;
-                if (empty($props[$key][$current])) {
-                    $props['skills'][$current] = null;
-                    $props['traits'][$current] = null;
-                    $props['locks'][$current] = null;
-                }
+            if (!empty($found[2][$idx])) {
+                $alt = ord($found[2][$idx]) - ord('a');
+            } else {
+                $alt = null;
+            }
+            if ('choice' == $found[1][$idx] && 'pic' == $found[3][$idx]) {
+                $props['images'][$alt] = $value;
+            } elseif (null !== $alt) {
+                $props[$key][$alt] = $value;
+            } else {
+                $props[$key] = $value;
             }
 
-            try {
-                $props[$key][$current] = $this->parseStepProp(
-                    $key,
-                    $found[2][$idx],
-                    $found[3][$idx]
-                );
-            } catch (InvalidTemplateException | EmptyTemplateException $e) {
-                Log::notice($e->getMessage());
-            } catch (\Exception $e) {
-                Log::warn($e->getMessage());
+            if (in_array($key, ['locks', 'skills', 'traits'])) {
+                try {
+                    $values = [];
+                    if (!empty($value)) {
+                        preg_match(
+                            '/(\{\{[^}]+}})(?:.*Adv:\h*(\{\{[^}]+}}))?/iu',
+                            $value,
+                            $values
+                        );
+                    }
+                    $props[$key][$alt] = $this->parseStepProp(
+                        $key,
+                        empty($values[1]) ? '' : $values[1],
+                        empty($values[2]) ? '' : $values[2]
+                    );
+                } catch (InvalidTemplateException | EmptyTemplateException $e) {
+                    Log::notice($e->getMessage());
+                } catch (\Exception $e) {
+                    Log::warn($e->getMessage());
+                }
             }
         }//end foreach
 

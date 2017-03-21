@@ -13,6 +13,17 @@ namespace eidng8\Wiki\Models;
  */
 class MissionStep extends Model
 {
+
+    /**
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @var array
+     */
+    public $images;
+
     /**
      * @var ReqAndBonus[]
      */
