@@ -168,6 +168,7 @@ class Query
         foreach ($sizes as $size) {
             $this->properties(['imageinfo']);
             $this->option(static::$TITLES, array_keys($files));
+            $size = (int)$size;
             if (!$size) {
                 $this->removeOption(static::$IIURLWIDTH);
             } else {
