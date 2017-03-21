@@ -23,7 +23,7 @@ try {
         mkdir(__DIR__ . '/www', 0644);
     }
 
-    $api_url = 'http://stt.wiki/w/api.php';
+    $api_url = 'https://stt.wiki/w/api.php';
     $api = new eidng8\Wiki\Api\Api(
         new eidng8\Wiki\Api\Http($api_url),
         __DIR__ . '/cache'
