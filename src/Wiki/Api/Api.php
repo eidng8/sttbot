@@ -13,6 +13,12 @@ namespace eidng8\Wiki\Api;
  */
 class Api
 {
+    public static $PREFIXES
+        = [
+            'http://startrektimelineswiki.com/',
+            'https://stt.wiki/',
+        ];
+
     /**
      * Cache root directory
      *
@@ -49,9 +55,21 @@ class Api
     protected $expandTemplates;
 
     /**
+     * Remove prefix from the given URL
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    public static function removePrefix($url)
+    {
+        return str_replace(static::$PREFIXES, '', $url);
+    }//end removePrefix()
+
+    /**
      * Api constructor.
      *
-     * @param Http   $http      Http instance
+     * @param Http   $http Http instance
      * @param string $cacheRoot
      */
     public function __construct(Http $http, string $cacheRoot)
