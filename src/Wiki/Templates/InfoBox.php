@@ -43,6 +43,19 @@ class InfoBox extends Template
         $title = trim(strip_tags($title[1]));
         $mission['title'] = $title;
 
+        // extract image
+        preg_match_all(
+            '/Image (file|size)\s*=\s*([^\n]+)/imsu',
+            $this->found[0],
+            $image
+        );
+        if (!empty($image) && !empty($image[1][1]) && 'size' == $image[1][1]) {
+            $mission[static::IMAGE] = [
+                'file' => $image[2][0],
+                'size' => (int)$image[2][1],
+            ];
+        }
+
         // extract all items
         preg_match_all('/Row \d (.+?)\s= (.+?)$/imsu', $this->found[0], $info);
 
@@ -162,4 +175,14 @@ class InfoBox extends Template
     {
         return $this->found[static::COST];
     }//end cost()
+
+    /**
+     * Returns mission image
+     *
+     * @return array
+     */
+    public function image(): array
+    {
+        return $this->found[static::IMAGE];
+    }//end image()
 }//end class

@@ -73,6 +73,14 @@ class Mission extends Model implements Hyperlink
      */
     public $cost;
 
+    /**
+     * @var array
+     */
+    public $image;
+
+    /**
+     * @var string[]
+     */
     public $locks;
 
     /**

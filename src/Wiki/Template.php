@@ -21,6 +21,8 @@ abstract class Template implements WikiTextParser
 
     public const CADET_CHALLENGE = 'cadet challenge';
 
+    public const IMAGE = 'image';
+
     public const COST = 'cost';
 
     public const CREW = 'crew';

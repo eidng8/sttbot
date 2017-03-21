@@ -379,6 +379,7 @@ class Mission extends Template
         $model->episode = $info->episode();
         $model->index = $info->sequence();
         $model->cost = $info->cost()->get();
+        $model->image = $info->image();
         if ('away team' != $info->type()) {
             $model->type = MissionModel::SPACE_BATTLE;
         } else {
