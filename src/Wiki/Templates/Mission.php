@@ -169,7 +169,6 @@ class Mission extends Template
         $fields = implode('|', array_keys($columns));
         $regex
             = "/^\\s*\\|\\s*($fields)\\w\\s*=\\s*(\\{\\{[^}]+}}).*?(?:Adv:\\s*(\\{\\{[^}]+}}))?\\s*$/imsu";
-        // = "/(?:^\\s*\\|\\s*($fields)\\w\\s*=\\s*(\\{\\{[^}]+}})\s*$)/imsu";
         preg_match_all($regex, $text, $found);
 
         $props = [];
@@ -185,10 +184,7 @@ class Mission extends Template
                     $props['locks'][$current] = null;
                 }
             }
-            // $props[$key][$current] = trim(
-            //     $found[$this->advanced ? 3 : 2][$idx],
-            //     " -\t\0\xb"
-            // );
+
             try {
                 $props[$key][$current] = $this->parseStepProp(
                     $key,
@@ -201,76 +197,6 @@ class Mission extends Template
                 Log::warn($e->getMessage());
             }
         }//end foreach
-
-        // $props = array_filter($props);
-
-        // skills & traits are all Triples
-        // if (!empty($props['skills'])) {
-        //     $props['skills'] = array_map(
-        //         function ($skill) use ($text) {
-        //             if (empty($skill)) {
-        //                 return null;
-        //             }
-        //
-        //             $triple = Triple::load($skill);
-        //             if (!$triple) {
-        //                 Log::notice("$this->name:\n$text");
-        //                 return null;
-        //             }
-        //             return $triple;
-        //         },
-        //         $props['skills']
-        //     );
-        // }
-
-        // if (!empty($props['traits'])) {
-        //     $props['traits'] = array_map(
-        //         function ($trait) use ($text) {
-        //             if (empty($trait)) {
-        //                 return null;
-        //             }
-        //
-        //             $trait = trim($trait);
-        //             if (empty($trait) || '{' !== $trait[0]) {
-        //                 return null;
-        //             }
-        //             $triple = Triple::load($trait);
-        //             if (!$triple) {
-        //                 Log::notice("$this->name:\n$text");
-        //                 return null;
-        //             }
-        //
-        //             // fill empty values with guess values
-        //             $guess = 2;
-        //             if (!$triple->elite()) {
-        //                 $triple->elite($triple->normal() * $guess);
-        //             }
-        //             if (!$triple->epic()) {
-        //                 $triple->epic($triple->elite() * $guess);
-        //             }
-        //             return $triple;
-        //         },
-        //         $props['traits']
-        //     );
-        // }
-
-        // if (!empty($props['locks'])) {
-        //     $props['locks'] = array_map(
-        //         function ($lock) {
-        //             if (empty($lock)) {
-        //                 return null;
-        //             }
-        //
-        //             $locks = explode('|', trim($lock, " {}-\t\0\xb"));
-        //             array_shift($locks);
-        //             return array_map('strtolower', array_filter($locks));
-        //         },
-        //         $props['locks']
-        //     );
-        //     if (empty($props['locks'])) {
-        //         unset($props['locks']);
-        //     }
-        // }
 
         return $props;
     }//end parseStep()
@@ -403,15 +329,6 @@ class Mission extends Template
 
                 if (!empty($step['locks'])) {
                     $values->locks = $step['locks'];
-                    // $it = new RecursiveIteratorIterator(
-                    //     new RecursiveArrayIterator(array_filter($step['locks']))
-                    // );
-                    // foreach ($it as $v) {
-                    //     $v = trim($v);
-                    //     if (!empty($v)) {
-                    //         $values->locks[] = $v;
-                    //     }
-                    // }
                 }
 
                 $model->steps[] = $values;
