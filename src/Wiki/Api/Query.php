@@ -151,41 +151,51 @@ class Query
     /**
      * Get image information
      *
-     * @param array $files
-     * @param int   $width
+     * @param array     $files
+     * @param int|int[] $width
      *
      * @return array
      */
-    public function imageInfo(array $files, int $width = 100): array
+    public function imageInfo(array $files, $width = 0): array
     {
         if (empty($files)) {
             return [];
         }
 
-        $this->properties(['imageinfo']);
-        $this->option(static::$TITLES, array_keys($files));
-        if (!$width) {
-            $this->removeOption(static::$IIURLWIDTH);
-        } else {
-            $this->option(static::$IIURLWIDTH, $width);
-        }
-        $this->content = null;
-        $nails = $this->get();
-        if (empty($nails['query']['pages'])) {
-            return [];
-        }
-
+        $wantArray = is_array($width); // do we want an array of image sizes?
+        $sizes = (array)$width;
         $returns = [];
-        foreach ($nails['query']['pages'] as $nail) {
-            $key = str_replace('_', ' ', $nail['title']);
-            if (empty($files[$key])) {
-                $key = str_replace(' ', '_', $nail['title']);
-            }
-            if (empty($nail['imageinfo'][0]['thumburl'])) {
-                $returns[$files[$key]] = $nail['imageinfo'][0]['url'];
+        foreach ($sizes as $size) {
+            $this->properties(['imageinfo']);
+            $this->option(static::$TITLES, array_keys($files));
+            if (!$size) {
+                $this->removeOption(static::$IIURLWIDTH);
             } else {
-                $returns[$files[$key]] = $nail['imageinfo'][0]['thumburl'];
+                $this->option(static::$IIURLWIDTH, $size);
             }
+            $this->content = null;
+            $nails = $this->get();
+            if (empty($nails['query']['pages'])) {
+                continue;
+            }
+
+            foreach ($nails['query']['pages'] as $nail) {
+                $key = str_replace('_', ' ', $nail['title']);
+                if (empty($files[$key])) {
+                    $key = str_replace(' ', '_', $nail['title']);
+                }
+                if (empty($nail['imageinfo'][0]['thumburl'])) {
+                    $url = $nail['imageinfo'][0]['url'];
+                } else {
+                    $url = $nail['imageinfo'][0]['thumburl'];
+                }
+                $url = Api::removePrefix($url);
+                if ($wantArray) {
+                    $returns[$files[$key]][] = $url;
+                } else {
+                    $returns[$files[$key]] = $url;
+                }
+            }//end foreach
         }//end foreach
 
         return $returns;
@@ -194,12 +204,12 @@ class Query
     /**
      * Get image info
      *
-     * @param string[] $titles images to get
-     * @param int      $width
+     * @param string[]  $titles images to get
+     * @param int|int[] $width
      *
      * @return array|\string[]
      */
-    public function thumbnails(array $titles, int $width = 100): array
+    public function thumbnails(array $titles, $width = 0): array
     {
         // if (empty($titles) || !is_array($titles)) { we use type declaration
         if (empty($titles)) {

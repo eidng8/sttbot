@@ -222,10 +222,8 @@ class CrewList extends Template
         $width = (int)$file[2];
         $sizes = [$width, round($width * 1.5), $width * 2];
         $urls = [];
-        foreach ($sizes as $size) {
-            $url = $this->query->imageInfo([$file[1] => $member->name], $size);
-            $urls[] = $url[$member->name];
-        }//end foreach
+        $url = $this->query->imageInfo([$file[1] => $member->name], $sizes);
+        $urls[] = $url[$member->name];
         $member->portrait = $urls;
         return true;
     }//end fetchToc()
