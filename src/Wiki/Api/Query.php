@@ -8,6 +8,7 @@
 
 namespace eidng8\Wiki\Api;
 
+use eidng8\Log\Log;
 use eidng8\Traits\Wiki\Cache;
 use eidng8\Traits\Wiki\Properties;
 
@@ -181,6 +182,11 @@ class Query
             }
 
             foreach ($nails['query']['pages'] as $nail) {
+                if (array_key_exists('missing', $nail)) {
+                    Log::warn("$nail[title] is missing");
+                    continue;
+                }
+
                 $key = str_replace('_', ' ', $nail['title']);
                 if (empty($files[$key])) {
                     $key = str_replace(' ', '_', $nail['title']);
@@ -219,7 +225,12 @@ class Query
 
         $thumbs = [];
         foreach ($titles as $title) {
-            $thumbs["File:$title head.png"] = $title;
+            if ('Apollo' == $title) {
+                // please note the CAPPED H
+                $thumbs["File:$title Head.png"] = $title;
+            } else {
+                $thumbs["File:$title head.png"] = $title;
+            }
         }//end foreach
 
         return $this->imageInfo($thumbs, $width);
