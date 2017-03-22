@@ -188,9 +188,14 @@ class Query
                 }
 
                 $key = str_replace('_', ' ', $nail['title']);
-                if (empty($files[$key])) {
+                if (!array_key_exists($key, $files)) {
                     $key = str_replace(' ', '_', $nail['title']);
                 }
+                if (!array_key_exists($key, $files)) {
+                    Log::debug("extraeous data returned for $key");
+                    continue;
+                }
+
                 if (empty($nail['imageinfo'][0]['thumburl'])) {
                     $url = $nail['imageinfo'][0]['url'];
                 } else {
@@ -224,8 +229,21 @@ class Query
         }
 
         $thumbs = [];
+        // this crew have their thumbnail with a capped 'h'
+        $capped = [
+            'Apollo',
+            'Augment Riker',
+            'Dr. Hippocrates Noah',
+            'Emotion Chip Data',
+            'Garak, Elim Garak',
+            'Goddess of Empathy Troi',
+            'Niners Kira Nerys',
+            'Niners Rom',
+            'Umpire Odo',
+
+        ];
         foreach ($titles as $title) {
-            if ('Apollo' == $title) {
+            if (in_array($title, $capped)) {
                 // please note the CAPPED H
                 $thumbs["File:$title Head.png"] = $title;
             } else {

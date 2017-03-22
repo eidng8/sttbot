@@ -8,6 +8,7 @@
 
 namespace eidng8\Tests\Wiki\Api;
 
+use eidng8\Log\Log;
 use eidng8\Tests\TestCase;
 use eidng8\Wiki\Api\Http;
 use eidng8\Wiki\Api\Query;
@@ -37,6 +38,7 @@ class QueryTest extends TestCase
         }
         $this->query = new Query($http);
         $this->query->cacheRoot(static::DIR_CACHE);
+        Log::forTest();
     }
 
     public function testTitles()
@@ -78,4 +80,27 @@ class QueryTest extends TestCase
         $query = new Query(Http::shouldRespond([new Response(200, [], '')]));
         $this->assertEmpty($query->thumbnails(['nothing']));
     }//end testGetThumbnailsGotNull()
+
+    public function testMissionThumbnailShouldLogWarning()
+    {
+        $http = Http::shouldRespond(
+            [
+                new Response(
+                    200,
+                    [],
+                    file_get_contents(
+                        static::DIR_SAMPLE . '/missing-thumbnail.json'
+                    )
+                ),
+            ]
+        );
+        $query = new Query($http);
+        $query->thumbnails(['Apollo', 'Changeling Bashir']);
+        $this->assertTrue(
+            Log::$testOutput->hasWarningThatMatches(
+                '/File:.+\.png is missing/'
+            ),
+            'Missing thumbnail should trigger warning.'
+        );
+    }//end testMissionThumbnailShouldLogWarning()
 }//end class
