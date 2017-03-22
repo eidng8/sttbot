@@ -7,11 +7,13 @@ cache:
 
 before_script:
   - phpenv config-rm xdebug.ini
-  - pwd
-  - curl -o `pwd`/cacert.pem https://curl.haxx.se/ca/cacert.pem
+#  - pwd
+#  - curl -so `pwd`/cacert.pem https://curl.haxx.se/ca/cacert.pem
+  - curl -si https://stt.wiki/wiki/Main_Page
 
 install:
  - composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
 
 script:
-  - php -d openssl.cafile=`pwd`/cacert.pem ./go.php && cp -R ./cache/ ./tests/data/cache/ && phpunit -d memory_limit=512m --no-coverage
+  - php ./go.php && cp -R ./cache/ ./tests/data/cache/ && phpunit -d memory_limit=512m --no-coverage
+#  - php -d openssl.cafile=`pwd`/cacert.pem ./go.php && cp -R ./cache/ ./tests/data/cache/ && phpunit -d memory_limit=512m --no-coverage
