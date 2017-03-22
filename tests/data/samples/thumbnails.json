@@ -1,0 +1,33 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "8310": {
+        "pageid": 8310,
+        "ns": 6,
+        "title": "File:\"Dark Ages\" McCoy head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "url": "https://stt.wiki/w/images/c/c2/%27%27Dark_Ages%27%27_McCoy_Head.png",
+            "descriptionurl": "https://stt.wiki/wiki/File:%27%27Dark_Ages%27%27_McCoy_Head.png",
+            "descriptionshorturl": "https://stt.wiki/w/index.php?curid=5927"
+          }
+        ]
+      },
+      "8400": {
+        "pageid": 8400,
+        "ns": 6,
+        "title": "File:Changeling Bashir head.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "url": "https://stt.wiki/w/images/d/df/Changeling_Bashir_Head.png",
+            "descriptionurl": "https://stt.wiki/wiki/File:Changeling_Bashir_Head.png",
+            "descriptionshorturl": "https://stt.wiki/w/index.php?curid=3197"
+          }
+        ]
+      }
+    }
+  }
+}

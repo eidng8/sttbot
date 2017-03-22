@@ -18,12 +18,6 @@ use GuzzleHttp\Psr7\Response;
  */
 class QueryTest extends TestCase
 {
-    /**
-     * test cache
-     *
-     * @var string
-     */
-    private static $cacheFile;
 
     /**
      * Test subject
@@ -32,24 +26,14 @@ class QueryTest extends TestCase
      */
     private $query;
 
-    public static function setUpBeforeClass()
-    {
-        parent::setUpBeforeClass();
-
-        static::$cacheFile = static::DIR_CACHE
-                             . '/query/2bc2554e05cf988e81f73d138cc51212.json';
-        touch(static::$cacheFile);
-    }
-
     /**
      * {@inheritdoc}
      */
     protected function setUp(Http $http = null)
     {
         parent::setUp();
-
         if (!$http) {
-            $http = Http::shouldRespond([new Response(200)]);
+            $http = Http::shouldRespond([new Response(400)]);
         }
         $this->query = new Query($http);
         $this->query->cacheRoot(static::DIR_CACHE);
@@ -64,15 +48,24 @@ class QueryTest extends TestCase
 
     public function testThumbnails()
     {
-        // cache/query/7339807f55a20bd84efcb9571c9f8694.json
-        $actual = $this->query->thumbnails(
+        $http = Http::shouldRespond(
+            [
+                new Response(
+                    200,
+                    [],
+                    file_get_contents(static::DIR_SAMPLE . '/thumbnails.json')
+                ),
+            ]
+        );
+        $query = new Query($http);
+        $actual = $query->thumbnails(
             ['"Dark Ages" McCoy', 'Changeling Bashir']
         );
         $this->assertTrue(is_string($actual['"Dark Ages" McCoy']));
         $this->assertContains('McCoy', $actual['"Dark Ages" McCoy']);
         $this->assertTrue(is_string($actual['Changeling Bashir']));
         $this->assertContains('Bashir', $actual['Changeling Bashir']);
-        $this->assertSame($this->query->get(), $this->query->get());
+        $this->assertSame($query->get(), $query->get());
     }//end testThumbnails()
 
     public function testThumbnailsWithEmptyTitle()
@@ -82,7 +75,7 @@ class QueryTest extends TestCase
 
     public function testThumbnailsGotNull()
     {
-        // cache/query/2bc2554e05cf988e81f73d138cc51212.json
-        $this->assertEmpty($this->query->thumbnails(['nothing']));
+        $query = new Query(Http::shouldRespond([new Response(200, [], '')]));
+        $this->assertEmpty($query->thumbnails(['nothing']));
     }//end testGetThumbnailsGotNull()
 }//end class
