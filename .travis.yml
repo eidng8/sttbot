@@ -12,6 +12,4 @@ install:
  - composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
 
 script:
-  - php ./go.php
-  - cp -R ./cache/ ./tests/data/cache/
-  - phpunit -d memory_limit=512m --no-coverage
+  - php ./go.php && cp -R ./cache/ ./tests/data/cache/ && phpunit -d memory_limit=512m --no-coverage
