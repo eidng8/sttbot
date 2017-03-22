@@ -46,4 +46,5 @@ try {
     file_put_contents("$dir/data.json", json_encode($export, JSON_OPTIONS));
 } catch (Exception $ex) {
     eidng8\Log\Log::err($ex->getMessage());
+    exit(1);
 }
