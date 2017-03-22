@@ -40,7 +40,14 @@ class MissionStep extends Model
     public $locks;
 
     /**
-     * @var CrewMember[]
+     * Step altervative texts
+     *
+     * @var string[]
+     */
+    public $alt;
+
+    /**
+     * @var CrewMember[][]
      */
     protected $crew;
 
@@ -83,6 +90,9 @@ class MissionStep extends Model
         }
 
         $return = [
+            'name'   => $this->name,
+            'alt'    => $this->alt,
+            'images' => $this->images,
             'skills' => $skills,
             'traits' => $traits,
             'locks'  => $this->locks,

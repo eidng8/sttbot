@@ -190,11 +190,11 @@ class Mission extends Template
                 $alt = null;
             }
             if ('choice' == $found[1][$idx] && 'pic' == $found[3][$idx]) {
-                $props['images'][$alt] = $value;
+                $props['images'][$alt] = trim($value);
             } elseif (null !== $alt) {
-                $props[$key][$alt] = $value;
+                $props[$key][$alt] = trim($value);
             } else {
-                $props[$key] = $value;
+                $props[$key] = trim($value);
             }
 
             if (in_array($key, ['locks', 'skills', 'traits'])) {
@@ -337,6 +337,10 @@ class Mission extends Template
             $model->steps = [];
             foreach ($this->found['steps'] as $step) {
                 $values = new MissionStep();
+                $values->name = $step['name'];
+                $values->alt = $step['alt'];
+                $values->images = $step['images'];
+
                 $values->skills = array_map(
                     [$this, 'loadReqAndBonusModel'],
                     $step['skills']
@@ -388,5 +392,5 @@ class Mission extends Template
         $model->set($values->get());
 
         return $model;
-    }//end validateModel()
+    }
 }//end class

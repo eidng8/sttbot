@@ -107,7 +107,7 @@ class MissionList extends WikiBase
                     if ($search == strtolower($model->name)
                         && (empty($epSearch)
                             || strtolower($epSearch)
-                            == strtolower($model->episode))
+                               == strtolower($model->episode))
                     ) {
                         return $model;
                     }
@@ -334,7 +334,7 @@ class MissionList extends WikiBase
                 $info[] = $miss;
             }
         }//end foreach
-
+        $this->fetchImages($info);
         return $info;
     }//end parseMissions()
 
@@ -400,4 +400,40 @@ class MissionList extends WikiBase
             $step['traits'] = $traits;
         }//end foreach
     }//end flattenSteps()
+
+    /**
+     * Fetch all image URL
+     *
+     * @param Mission[] $missions
+     *
+     * @return void
+     */
+    private function fetchImages(array $missions): void
+    {
+        foreach ($missions as $mission) {
+            $mission = $mission->get();
+            $mission->image = $this->query->imageInfo(
+                ["File:{$mission->image['file']}" => $mission->name],
+                [
+                    $mission->image['size'],
+                    round($mission->image['size'] * 1.5),
+                    $mission->image['size'] * 2,
+                ]
+            )[$mission->name];
+
+            if (MissionModel::AWAY_TEAM != $mission->type) {
+                continue;
+            }
+            foreach ($mission->steps as $step) {
+                foreach ($step->images as $idx => &$image) {
+                    if (empty($image)) {
+                        continue;
+                    }
+                    $image = $this->query->imageInfo(
+                        ["File:AT-$image.png" => $step->alt[$idx]]
+                    )[$step->alt[$idx]];
+                }//end foreach
+            }//end foreach
+        }//end foreach
+    }//end validateModel()
 }//end class
