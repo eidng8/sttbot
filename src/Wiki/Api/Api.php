@@ -16,6 +16,7 @@ class Api
     public static $PREFIXES
         = [
             'http://startrektimelineswiki.com/',
+            'http://stt.wiki/',
             'https://stt.wiki/',
         ];
 
