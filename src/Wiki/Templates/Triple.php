@@ -14,7 +14,7 @@ use eidng8\Wiki\Template;
 /**
  * Triple template parser
  *
- * @see http://startrektimelineswiki.com/wiki/Template:Triple
+ * @see https://stt.wiki/wiki/Template:Triple
  */
 class Triple extends Template
 {

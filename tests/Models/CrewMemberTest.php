@@ -65,7 +65,7 @@ class CrewMemberTest extends TestCase
         );
 
         $this->assertSame(
-            'http://startrektimelineswiki.com/w/images/thumb/d/d0'
+            'https://stt.wiki/w/images/thumb/d/d0'
             . '/Changeling_Bashir_head.png/100px-Changeling_Bashir_head.png',
             static::$model->thumbnail()
         );

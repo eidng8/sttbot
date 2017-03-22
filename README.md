@@ -27,7 +27,7 @@ Code Climate
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 Star Trek Timelines data miner. Extracts data from 
-http://startrektimelineswiki.com/ and serves to [stthb](https://github.com/eidng8/stthb)
+https://stt.wiki/ and serves to [stthb](https://github.com/eidng8/stthb)
 
 ----------------
 
@@ -37,14 +37,6 @@ This project serves a few purpose:
 * As a trial of specific MediaWiki wiki-text parser;
 * As a test bed to try out PHP 7.1 features & tools;
 * As a test bed to try out various public services;
-
-
-----------------
-
-Do NOT delete
-
-- tests/data/cache/query/2bc2554e05cf988e81f73d138cc51212.json
-- tests/data/cache/query/7339807f55a20bd84efcb9571c9f8694.json
 
 
 -------------------

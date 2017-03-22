@@ -13,7 +13,7 @@ use eidng8\Wiki\Template;
 /**
  * InfoBox template parser
  *
- * @see http://startrektimelineswiki.com/wiki/Template:Infobox
+ * @see https://stt.wiki/wiki/Template:Infobox
  */
 class InfoBox extends Template
 {

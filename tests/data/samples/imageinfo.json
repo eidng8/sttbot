@@ -12,11 +12,11 @@
         "imagerepository": "local",
         "imageinfo": [
           {
-            "thumburl": "http://startrektimelineswiki.com/w/images/thumb/b/ba/1701_Jadzia_Dax_head.png/100px-1701_Jadzia_Dax_head.png",
+            "thumburl": "https://stt.wiki/w/images/thumb/b/ba/1701_Jadzia_Dax_head.png/100px-1701_Jadzia_Dax_head.png",
             "thumbwidth": 100,
             "thumbheight": 100,
-            "url": "http://startrektimelineswiki.com/w/images/b/ba/1701_Jadzia_Dax_head.png",
-            "descriptionurl": "http://startrektimelineswiki.com/wiki/File:1701_Jadzia_Dax_head.png"
+            "url": "https://stt.wiki/w/images/b/ba/1701_Jadzia_Dax_head.png",
+            "descriptionurl": "https://stt.wiki/wiki/File:1701_Jadzia_Dax_head.png"
           }
         ]
       }
