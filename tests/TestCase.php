@@ -82,7 +82,7 @@ class TestCase extends TestCaseBase
     protected function newApiInstance(): Api
     {
         return new Api(
-            new Http('http://startrektimelineswiki.com/w/api.php'),
+            new Http('https://stt.wiki/w/api.php'),
             static::DIR_CACHE
         );
     }//end newApiInstance()
