@@ -13,12 +13,12 @@ use eidng8\Wiki;
 use eidng8\Wiki\Api\Api;
 use eidng8\Wiki\Api\Http;
 use Monolog\Logger;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as TestCaseBase;
 
 /**
  * TestCase
  */
-class TestCase extends PHPUnit_Framework_TestCase
+class TestCase extends TestCaseBase
 {
     /**
      * Unit test cache directory

@@ -8,8 +8,9 @@
 namespace eidng8\Tests\Wiki\Models;
 
 use eidng8\Wiki\Models\Skills;
+use PHPUnit\Framework\TestCase as TestCaseBase;
 
-class SkillsTest extends \PHPUnit_Framework_TestCase
+class SkillsTest extends TestCaseBase
 {
     public function testOffsetExists()
     {

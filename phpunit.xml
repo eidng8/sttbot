@@ -16,12 +16,12 @@
          bootstrap="./tests/bootstrap.php">
   <testsuites>
     <testsuite name="Star Trek Timelines scraper Test Suite">
-      <directory suffix=".php">./tests/Log</directory>
-      <directory suffix=".php">./tests/Models</directory>
-      <directory suffix=".php">./tests/Traits</directory>
-      <directory suffix=".php">./tests/Wiki/Api</directory>
-      <directory suffix=".php">./tests/Wiki/Models</directory>
-      <directory suffix=".php">./tests/Wiki/Templates</directory>
+      <directory suffix="Test.php">./tests/Log</directory>
+      <directory suffix="Test.php">./tests/Models</directory>
+      <directory suffix="Test.php">./tests/Traits</directory>
+      <directory suffix="Test.php">./tests/Wiki/Api</directory>
+      <directory suffix="Test.php">./tests/Wiki/Models</directory>
+      <directory suffix="Test.php">./tests/Wiki/Templates</directory>
       <file>./tests/AnalystTest.php</file>
       <file>./tests/Wiki/IndexerTest.php</file>
       <file>./tests/Wiki/ExporterTest.php</file>
