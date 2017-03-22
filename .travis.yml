@@ -9,7 +9,7 @@ before_script:
   - phpenv config-rm xdebug.ini
 #  - pwd
 #  - curl -so `pwd`/cacert.pem https://curl.haxx.se/ca/cacert.pem
-  - curl -si https://stt.wiki/wiki/Main_Page
+  - curl -si https://stt.wiki/w/api.php?disabletoc&redirects&prop=wikitext%7Ctemplates%7Clinks%7Cimages&page=Missions&action=parse&format=json
 
 install:
  - composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
