@@ -7,14 +7,13 @@ cache:
 
 before_script:
   - phpenv config-rm xdebug.ini
-#  - pwd
-#  - curl -so `pwd`/cacert.pem https://curl.haxx.se/ca/cacert.pem
-  - curl -si 'https://stt.wiki/w/api.php?disabletoc&redirects&prop=wikitext%7Ctemplates%7Clinks%7Cimages&page=Missions&action=parse&format=json'
-  - php -i
 
 install:
  - composer install --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
 
 script:
   - php ./go.php && cp -R ./cache/ ./tests/data/cache/ && phpunit -d memory_limit=512m --no-coverage
-#  - php -d openssl.cafile=`pwd`/cacert.pem ./go.php && cp -R ./cache/ ./tests/data/cache/ && phpunit -d memory_limit=512m --no-coverage
+
+# Currently, on Travis, the GNU cURL SSL issue (gnutls_handshake failed) breaks the build.
+# This requires re-compiling PHP runtime, which we can't do on the Travis box.
+# We should come back later, to see if the issue has been solved from Travis' side.
